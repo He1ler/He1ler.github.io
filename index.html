@@ -25,10 +25,11 @@
 <body class="bg-deep text-white">
 
   <!-- Header -->
-  <header class="text-center py-10 bg-black shadow-lg border-b border-red-700">
+  <header class="relative text-center py-10 bg-black shadow-lg border-b border-red-700 overflow-hidden">
     <div id="particles-js" class="absolute inset-0 z-0"></div>
-    <h1 class="text-5xl font-bold neon-red">My Game Portfolio</h1>
-    <p class="mt-2 text-gray-400">Crafted with Unity, C#, and passion</p>
+    <div class="relative z-10">
+      <h1 class="text-5xl font-bold neon-red">My Game Portfolio</h1>
+      <p class="mt-2 text-gray-400">Crafted with Unity, C#, and passion</p>
     <div class="mt-6 flex justify-center gap-4 flex-wrap">
 
     <!-- GitHub -->
@@ -135,7 +136,7 @@
     &copy; 2025 Denys Korolchuk aka Heller — Unity & Game Developer
   </footer>
 
-  
+
   <script>
     particlesJS('particles-js', {
       particles: {
