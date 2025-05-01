@@ -90,7 +90,7 @@
   
   </section>
 <!-- About Me Section -->
- 
+
   <!-- Projects Section -->
   <main class="max-w-screen-2xl mx-auto px-6 py-12">
     
@@ -148,10 +148,18 @@
     <!-- Duplicate the section above for each new project -->
 
   <!-- Footer -->
-  <footer class="text-center py-6 bg-black text-gray-500 border-t border-red-700 text-sm">
-    &copy; 2025 Denys Korolchuk aka Heller — Unity & Game Developer
-  </footer>
+<!-- Particle Container (Top of Footer) -->
+<div id="footer-particles" class="w-full h-24 -mb-24"></div>
 
+<!-- Footer -->
+<footer class="relative text-center py-8 bg-gradient-to-b from-[#1a0000] to-black text-gray-400 border-t border-red-700 text-sm shadow-inner animate-fade-in">
+  <div class="absolute top-0 left-0 w-full h-1 bg-red-700 shadow-[0_0_20px_5px_#ff0000] animate-pulse"></div>
+
+  <p class="z-10 relative">
+    &copy; 2025 <strong class="text-red-400">Denys Korolchuk</strong> aka <span class="text-red-500 font-semibold">Heller</span> — Unity & Game Developer
+  </p>
+</footer>
+  <!-- Footer -->
 
   <script>
     particlesJS('particles-js', {
@@ -166,6 +174,25 @@
       interactivity: {
         events: {
           onhover: { enable: true, mode: 'repulse' }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+  <script>
+    particlesJS('footer-particles', {
+      particles: {
+        number: { value: 40 },
+        color: { value: '#ff0000' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.2 },
+        size: { value: 2 },
+        move: { speed: 0.5, direction: 'top', straight: false },
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: false },
+          onclick: { enable: false }
         }
       },
       retina_detect: true
