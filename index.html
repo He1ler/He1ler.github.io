@@ -116,13 +116,29 @@
     <!-- Duplicate the section above for each new project -->
 
     <!-- Separator Section -->
-<div class="my-16 text-center">
-    <div class="flex items-center justify-center">
-      <div class="flex-grow h-px bg-red-700 opacity-40"></div>
-      <span class="px-6 text-red-400 text-lg font-semibold tracking-wider uppercase">Next Chapter</span>
-      <div class="flex-grow h-px bg-red-700 opacity-40"></div>
+    <div class="relative my-20">
+      <div class="flex items-center justify-center">
+        <!-- Left Glow Line -->
+        <div class="flex-grow h-0.5 bg-gradient-to-r from-transparent via-red-600 to-transparent 
+                    animate-pulse shadow-[0_0_10px_2px_#ff000088]"></div>
+    
+        <!-- Label with Glow and Icon -->
+        <span class="relative px-6 text-red-400 text-lg font-semibold tracking-wider uppercase">
+          <span class="absolute inset-0 blur-sm opacity-30 text-red-500 animate-pulse">Next Chapter</span>
+          <span class="relative z-10 flex items-center gap-2">
+            <svg class="w-5 h-5 text-red-400 animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
+                 viewBox="0 0 24 24">
+              <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+            Next Chapter
+          </span>
+        </span>
+    
+        <!-- Right Glow Line -->
+        <div class="flex-grow h-0.5 bg-gradient-to-l from-transparent via-red-600 to-transparent 
+                    animate-pulse shadow-[0_0_10px_2px_#ff000088]"></div>
+      </div>
     </div>
-  </div>
     <!-- Separator Section -->
 
       <!-- Projects Section -->
