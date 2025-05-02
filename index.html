@@ -117,25 +117,17 @@
     <!-- Duplicate the section above for each new project -->
 
     <!-- Separator Section -->
-    <div class="relative my-24">
-      <div class="flex items-center justify-center">
-        <!-- Left Glowing Line -->
-        <div class="flex-grow h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent 
-                    animate-pulse shadow-[0_0_20px_4px_#ff000088]"></div>
+    <div class="relative my-24 flex justify-center">
+      <!-- Glowing Frame Container -->
+      <div class="relative px-12 py-6 border-2 border-red-600 rounded-xl text-center 
+                  text-3xl font-bold uppercase tracking-widest text-red-400
+                  shadow-[0_0_25px_5px_#ff000088] animate-pulse">
     
-        <!-- Center Text with Glow -->
-        <span class="relative px-10 py-4 text-3xl font-bold uppercase tracking-widest text-red-400">
-          <!-- Glowing behind-text effect -->
-          <span class="absolute inset-0 text-red-600 blur-md opacity-80 animate-pulse select-none">
-            Next Chapter
-          </span>
-          <!-- Foreground Text -->
-          <span class="relative z-10">Next Chapter</span>
-        </span>
+        <!-- Behind Glow Layer -->
+        <div class="absolute inset-0 rounded-xl border-2 border-red-500 opacity-30 blur-md animate-pulse"></div>
     
-        <!-- Right Glowing Line -->
-        <div class="flex-grow h-1 bg-gradient-to-l from-transparent via-red-600 to-transparent 
-                    animate-pulse shadow-[0_0_20px_4px_#ff000088]"></div>
+        <!-- Foreground Text -->
+        <span class="relative z-10">Next Chapter</span>
       </div>
     </div>
     <!-- Separator Section -->
