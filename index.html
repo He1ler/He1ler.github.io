@@ -117,13 +117,17 @@
     <!-- Duplicate the section above for each new project -->
 
     <!-- Separator Section -->
-    <div class="my-16 w-full">
-      <div class="flex items-center justify-center w-full px-4">
-        <div class="flex-grow h-1 bg-red-700 opacity-40 shadow-[0_0_20px_#ff0000]"></div>
-        <span class="px-8 py-2 mx-4 text-red-400 text-xl font-bold tracking-wider uppercase border border-red-700 rounded shadow-[0_0_10px_#ff0000] bg-black">
-          Next Chapter
-        </span>
-        <div class="flex-grow h-1 bg-red-700 opacity-40 shadow-[0_0_20px_#ff0000]"></div>
+    <div class="relative my-24 flex justify-center">
+      <!-- Glowing Frame Container -->
+      <div class="relative w-full py-6 border-2 border-red-600 rounded-xl text-center 
+                  text-3xl font-bold uppercase tracking-widest text-red-400
+                  shadow-[0_0_25px_5px_#ff000088] animate-pulse">
+    
+        <!-- Behind Glow Layer -->
+        <div class="absolute inset-0 rounded-xl border-2 border-red-500 opacity-30 blur-md animate-pulse"></div>
+    
+        <!-- Foreground Text -->
+        <span class="relative z-10">Next Chapter</span>
       </div>
     </div>
     <!-- Separator Section -->
