@@ -17,9 +17,24 @@
       background-color: #181818;
     }
     .border-glow {
-      border: 1px solid #ff003c22;
-      box-shadow: 0 0 10px #ff003c33;
+    border: 2px solid #ff003c55; /* Slightly visible border */
+    box-shadow: 0 0 20px #ff003c66, 0 0 40px #ff003c33; /* Double glow */
+    transition: box-shadow 0.3s ease;
     }
+    @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px #ff003c66, 0 0 40px #ff003c33;
+    }
+    50% {
+      box-shadow: 0 0 30px #ff003caa, 0 0 60px #ff003c44;
+    }
+  }
+
+  .border-glow {
+    border: 2px solid #ff003c55;
+    box-shadow: 0 0 20px #ff003c66, 0 0 40px #ff003c33;
+    animation: pulse-glow 2s infinite;
+  }
   </style>
 </head>
 <body class="bg-deep text-white">
@@ -155,7 +170,7 @@
       </div>
     </section>
   </main>
-    <!-- Project Block -->
+      <!-- Projects Section -->
     <!-- Duplicate the section above for each new project -->
 
   <!-- Footer -->
