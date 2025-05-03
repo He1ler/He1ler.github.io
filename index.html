@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ============================================================== -->
+  <!-- META INFORMATION                                               -->
+  <!-- ============================================================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Game development portfolio for Unity developer Denys Korolchuk">
   <title>My Game Portfolio | Denys Korolchuk</title>
+
+  <!-- ============================================================== -->
+  <!-- EXTERNAL RESOURCES & STYLESHEETS                               -->
+  <!-- ============================================================== -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+  <!-- ============================================================== -->
+  <!-- CUSTOM STYLES                                                  -->
+  <!-- ============================================================== -->
   <style>
+    /* Base Styles */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       scroll-behavior: smooth;
     }
+    
+    /* Color & Effect Classes */
     .neon-red {
       color: #ff003c;
     }
@@ -27,6 +46,8 @@
       box-shadow: 0 0 20px rgba(255, 0, 60, 0.4), 0 0 40px rgba(255, 0, 60, 0.2);
       transition: box-shadow 0.3s ease;
     }
+    
+    /* Animations */
     @keyframes pulse-glow {
       0%, 100% {
         box-shadow: 0 0 20px rgba(255, 0, 60, 0.4), 0 0 40px rgba(255, 0, 60, 0.2);
@@ -35,11 +56,15 @@
         box-shadow: 0 0 30px rgba(255, 0, 60, 0.67), 0 0 60px rgba(255, 0, 60, 0.27);
       }
     }
+    
+    /* Applied Animations */
     .border-glow {
       border: 2px solid rgba(255, 0, 60, 0.33);
       box-shadow: 0 0 20px rgba(255, 0, 60, 0.4), 0 0 40px rgba(255, 0, 60, 0.2);
       animation: pulse-glow 2s infinite;
     }
+    
+    /* Modal Styling */
     #mediaModal {
       opacity: 0;
       pointer-events: none;
@@ -56,6 +81,8 @@
     #mediaModal.visible img, #mediaModal.visible video {
       transform: scale(1);
     }
+    
+    /* Fade In Animation for Sections */
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -70,7 +97,9 @@
 
 <body class="bg-deep text-white">
 
-  <!-- Media Modal (supports both image and video) -->
+  <!-- ============================================================== -->
+  <!-- MEDIA MODAL - Used for displaying images and videos            -->
+  <!-- ============================================================== -->
   <div id="mediaModal" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50" aria-modal="true" role="dialog">
     <button onclick="closeModal()" class="absolute top-5 right-8 text-white text-4xl cursor-pointer hover:text-red-500 transition" aria-label="Close modal">&times;</button>
 
@@ -83,8 +112,12 @@
       Your browser does not support the video tag.
     </video>
   </div>
+  <!-- END MEDIA MODAL -->
 
-  <!-- Header -->
+
+  <!-- ============================================================== -->
+  <!-- HEADER SECTION - Site title and social links                   -->
+  <!-- ============================================================== -->
   <header class="relative text-center py-20 bg-black shadow-lg border-b border-red-700 overflow-hidden">
     <div id="particles-js" class="absolute inset-0 z-0"></div>
     <div class="absolute bottom-0 left-0 w-full h-1 bg-red-700 shadow-[0_0_20px_5px_#ff0000] animate-pulse"></div>
@@ -125,17 +158,18 @@
       </div>
     </div>
   </header>
+  <!-- END HEADER SECTION -->
 
-  <!-- About Me Section -->
+
+  <!-- ============================================================== -->
+  <!-- ABOUT ME SECTION                                               -->
+  <!-- ============================================================== -->
   <section class="fade-in relative max-w-5xl mx-auto mt-20 px-8 py-12 bg-gradient-to-br from-[#1a0000] via-[#140000] to-[#1a0000] text-white border border-red-700 rounded-2xl shadow-xl overflow-hidden">
     <!-- Glowing Accent Bar -->
     <div class="absolute top-0 left-0 w-full h-1 bg-red-600 shadow-[0_0_15px_3px_#ff0000] animate-pulse"></div>
   
     <!-- Section Header -->
     <div class="flex items-center gap-4 mb-6">
-      <!--<svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path d="M12 11c0 1.657-1.343 3-3 3S6 12.657 6 11s1.343-3 3-3 3 1.343 3 3zm6 6c0-1.5-3-2.25-6-2.25S6 15.5 6 17v1h12v-1z" />
-      </svg> -->
       <h2 class="text-4xl font-bold text-red-500 tracking-wide">About Me</h2>
     </div>
   
@@ -147,8 +181,12 @@
       I'm also experienced in <span class="text-red-400 font-semibold">AI tools</span>, editor extensions, and building scalable systems that help games ship faster and shine brighter.
     </p>
   </section>
+  <!-- END ABOUT ME SECTION -->
 
-  <!-- Separator Section -->
+
+  <!-- ============================================================== -->
+  <!-- PROJECTS SEPARATOR                                             -->
+  <!-- ============================================================== -->
   <div class="fade-in relative my-24 flex justify-center">
     <!-- Glowing Frame Container -->
     <div class="relative w-full py-6 border-4 border-red-600 rounded-xl text-center 
@@ -164,10 +202,17 @@
       <span class="relative z-10" id="projects">Projects</span>
     </div>
   </div>
+  <!-- END PROJECTS SEPARATOR -->
 
-  <!-- Projects Section -->
+
+  <!-- ============================================================== -->
+  <!-- PROJECTS SECTION - Main content area                           -->
+  <!-- ============================================================== -->
   <main class="max-w-screen-2xl mx-auto px-6 py-12">
-    <!-- Project Block: Cyber Raid -->
+    
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 1: Cyber Raid                        -->
+    <!-- -------------------------------------------- -->
     <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Cyber Raid</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
@@ -248,8 +293,11 @@
         <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Zenject</span>
       </div>
     </section>
+    <!-- END PROJECT 1 -->
 
-    <!-- Project Block: Your Next Project -->
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 2: Night Stalker                     -->
+    <!-- -------------------------------------------- -->
     <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Night Stalker</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
@@ -270,11 +318,16 @@
         <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Procedural Animation</span>
       </div>
     </section>
+    <!-- END PROJECT 2 -->
 
     <!-- You can add more project blocks here -->
   </main>
+  <!-- END PROJECTS SECTION -->
 
-  <!-- Contact Section -->
+
+  <!-- ============================================================== -->
+  <!-- CONTACT SECTION                                                -->
+  <!-- ============================================================== -->
   <section class="fade-in relative max-w-5xl mx-auto my-24 px-8 py-12 bg-gradient-to-br from-[#1a0000] via-[#140000] to-[#1a0000] text-white border border-red-700 rounded-2xl shadow-xl overflow-hidden">
     <!-- Glowing Accent Bar -->
     <div class="absolute top-0 left-0 w-full h-1 bg-red-600 shadow-[0_0_15px_3px_#ff0000] animate-pulse"></div>
@@ -297,10 +350,16 @@
       denys.korolchuk@example.com
     </a>
   </section>
+  <!-- END CONTACT SECTION -->
+
+
   <!-- Extra spacing div -->
   <div class="h-24"></div>
 
-  <!-- Footer -->
+
+  <!-- ============================================================== -->
+  <!-- FOOTER SECTION                                                 -->
+  <!-- ============================================================== -->
   <footer class="w-full block relative text-center py-12 bg-gradient-to-b from-[#1a0000] to-black text-gray-400 border-t border-red-700 text-sm shadow-inner">
     <!-- Glowing Top Bar -->
     <div class="absolute top-0 left-0 w-full h-1 bg-red-700 shadow-[0_0_20px_5px_#ff0000] animate-pulse"></div>
@@ -312,11 +371,18 @@
       Back to Top ↑
     </button>
   </footer>
+  <!-- END FOOTER SECTION -->
 
+
+  <!-- ============================================================== -->
+  <!-- SCRIPTS                                                        -->
+  <!-- ============================================================== -->
   <script>
     // Initialize particles with optimized settings
     document.addEventListener('DOMContentLoaded', function() {
-      // Initialize particles with reduced particle count for better performance
+      // -------------------------------------------- 
+      // PARTICLES.JS INITIALIZATION
+      // -------------------------------------------- 
       particlesJS('particles-js', {
         particles: {
           number: { value: 100, density: { enable: true, value_area: 800 } },
@@ -357,7 +423,9 @@
         retina_detect: true
       });
 
-      // Initialize Swiper with improved options
+      // -------------------------------------------- 
+      // SWIPER INITIALIZATION
+      // -------------------------------------------- 
       const swiper = new Swiper('.mySwiper', {
         slidesPerView: 1,
         spaceBetween: 20,
@@ -385,7 +453,9 @@
         }
       });
 
-      // Intersection Observer for fade-in animations
+      // -------------------------------------------- 
+      // INTERSECTION OBSERVER FOR ANIMATIONS
+      // -------------------------------------------- 
       const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -407,6 +477,9 @@
       });
     });
 
+    // -------------------------------------------- 
+    // MODAL FUNCTIONS
+    // -------------------------------------------- 
     // Improved modal functions with keyboard support
     function openModal(src, type) {
       const modal = document.getElementById('mediaModal');
@@ -456,6 +529,9 @@
         closeModal();
       }
     }
+    // END MODAL FUNCTIONS
   </script>
+  <!-- END SCRIPTS -->
+
 </body>
 </html>
