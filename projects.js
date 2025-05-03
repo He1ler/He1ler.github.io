@@ -13,33 +13,23 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(data => {
         console.log('Projects data loaded:', data);
         
-        // Get the container where projects will be inserted
-        const projectsContainer = document.querySelector('main');
-        console.log('Projects container:', projectsContainer);
-        
-        if (!projectsContainer) {
-          console.error('Main container not found!');
-          return;
-        }
-        
-        // Clear any existing content
-        projectsContainer.innerHTML = '';
-        
         // Process each project in the JSON
         data.projects.forEach(project => {
-          console.log('Creating project section for:', project.title);
-          // Create project section
-          const projectSection = createProjectSection(project);
-          console.log('Created project section:', projectSection);
+          console.log('Populating project section for:', project.title);
           
-          // Append to the container
-          projectsContainer.appendChild(projectSection);
-          console.log('Appended project section to container');
+          // Find the project section by ID
+          const projectSection = document.getElementById(project.id);
+          if (!projectSection) {
+            console.warn(`Project section with ID ${project.id} not found`);
+            return;
+          }
+          
+          // Populate the project content
+          populateProjectSection(projectSection, project);
           
           // Initialize Swiper for this project if it has media
           if (project.media && project.media.length > 0) {
             console.log('Initializing Swiper for:', project.title);
-            // Use the global initializeSwiper function
             if (typeof initializeSwiper === 'function') {
               initializeSwiper();
             }
@@ -48,54 +38,53 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Add fade-in animation to all sections
         addFadeInAnimation();
-        
-        // Log the final state of the container
-        console.log('Final container HTML:', projectsContainer.innerHTML);
       })
       .catch(error => {
         console.error('Error loading projects:', error);
       });
   });
   
-  // Create a project section element from project data
-  function createProjectSection(project) {
-    const section = document.createElement('section');
-    section.className = 'fade-in mb-16 border-glow rounded-lg p-6 bg-black';
-    section.id = project.id;
+  // Populate a project section with content
+  function populateProjectSection(section, project) {
+    // Find or create title element
+    let title = section.querySelector('.project-title');
+    if (!title) {
+      title = document.createElement('h2');
+      title.className = 'project-title text-3xl font-bold neon-red mb-4';
+      section.insertBefore(title, section.firstChild);
+    }
+    title.textContent = project.title;
     
-    // Create header
-    const header = document.createElement('h2');
-    header.className = 'text-3xl font-bold neon-red mb-4';
-    header.textContent = project.title;
-    section.appendChild(header);
-    
-    // Create description
-    const description = document.createElement('p');
-    description.className = 'text-gray-300 mb-6 max-w-4xl';
+    // Find or create description element
+    let description = section.querySelector('.project-description');
+    if (!description) {
+      description = document.createElement('p');
+      description.className = 'project-description text-gray-300 mb-6 max-w-4xl';
+      section.insertBefore(description, title.nextSibling);
+    }
     description.textContent = project.description;
-    section.appendChild(description);
     
-    // Create media gallery if available
-    if (project.media && project.media.length > 0) {
-      const galleryContainer = createMediaGallery(project);
-      section.appendChild(galleryContainer);
-    } else {
-      // Create placeholder if no media
-      const placeholder = document.createElement('div');
-      placeholder.className = 'rounded-lg w-full h-64 md:h-80 border border-red-600 shadow-lg flex items-center justify-center bg-gradient-to-r from-red-900/20 to-black';
+    // Handle media gallery
+    const galleryContainer = section.querySelector('.project-gallery');
+    if (galleryContainer && project.media && project.media.length > 0) {
+      // Clear existing gallery content
+      galleryContainer.innerHTML = '';
       
-      const placeholderText = document.createElement('p');
-      placeholderText.className = 'text-red-400 text-lg';
-      placeholderText.textContent = 'Media coming soon';
-      
-      placeholder.appendChild(placeholderText);
-      section.appendChild(placeholder);
+      // Create media gallery
+      const gallery = createMediaGallery(project);
+      galleryContainer.appendChild(gallery);
     }
     
-    // Add technologies
-    section.appendChild(createTechnologiesList(project.technologies));
-    
-    return section;
+    // Handle technologies
+    const techContainer = section.querySelector('.project-technologies');
+    if (techContainer) {
+      // Clear existing technologies
+      techContainer.innerHTML = '';
+      
+      // Create technologies list
+      const techList = createTechnologiesList(project.technologies);
+      techContainer.appendChild(techList);
+    }
   }
   
   // Create a media gallery for a project

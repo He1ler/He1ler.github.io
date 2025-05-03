@@ -7,22 +7,54 @@ body {
     background-color: #080808;
   }
   
-  /* Debug styles - temporary */
+  /* Projects section styles */
   main {
-    border: 2px solid red;
-    min-height: 200px;
     position: relative;
     z-index: 1;
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
   
-  section {
-    border: 2px solid blue;
-    margin: 20px;
-    padding: 20px;
+  /* Project section styles */
+  .project-section {
+    margin-bottom: 4rem;
     position: relative;
     z-index: 1;
+  }
+  
+  /* Project separator styles */
+  .project-separator {
+    position: relative;
+    margin: 3rem 0;
+    text-align: center;
+  }
+  
+  .project-separator::before,
+  .project-separator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #dc2626, transparent);
+  }
+  
+  .project-separator::before {
+    left: 0;
+  }
+  
+  .project-separator::after {
+    right: 0;
+  }
+  
+  .project-separator span {
+    display: inline-block;
+    padding: 0 1rem;
+    color: #dc2626;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
   }
   
   /* Ensure projects are visible */
