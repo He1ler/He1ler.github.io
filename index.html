@@ -37,6 +37,19 @@
   }
   </style>
 </head>
+<!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<div id="mediaModal" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50">
+  <span onclick="closeModal()" class="absolute top-5 right-8 text-white text-4xl cursor-pointer hover:text-red-500 transition">&times;</span>
+  <img id="modalImage" class="max-h-[90vh] max-w-[90vw] border border-red-600 shadow-2xl rounded-lg" />
+</div>
+
 <body class="bg-deep text-white">
 
   <!-- Header -->
@@ -138,19 +151,55 @@
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
       </p>
 
-     <!-- Media Gallery -->
-     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <video controls class="rounded-lg w-full border border-red-600 shadow-lg">
-          <source src="videos/cyber-raid-demo.mp4" type="video/mp4" />
-        </video>
-        <img src="Images/Tram/Tram1.jpg" alt="Screenshot 1" class="rounded-lg w-full border border-red-600 shadow-lg" />
-        <img src="Images/Tram/Tram2.jpg" alt="Screenshot 2" class="rounded-lg w-full border border-red-600 shadow-lg" />
-        <img src="Images/Tram/Tram3.jpg" alt="Screenshot 3" class="rounded-lg w-full border border-red-600 shadow-lg" />
-        <img src="Images/Tram/Tram4.jpg" alt="Screenshot 4" class="rounded-lg w-full border border-red-600 shadow-lg" />
-        <img src="Images/Tram/Tram5.jpg" alt="Screenshot 5" class="rounded-lg w-full border border-red-600 shadow-lg" />
-        <img src="Images/Tram/Tram6.jpg" alt="Screenshot 6" class="rounded-lg w-full border border-red-600 shadow-lg" />
-        <!-- Add more <img> or <video> elements here -->
-      </div>
+     <!-- Gallery Swiper -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+
+    <!-- Slide -->
+    <div class="swiper-slide">
+      <video controls class="rounded-lg w-full border border-red-600 shadow-lg">
+        <source src="videos/cyber-raid-demo.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- Slide -->
+    <div class="swiper-slide">
+      <img src="Images/Tram/Tram1.jpg"
+      alt="Screenshot"
+      class="rounded-lg w-full cursor-pointer border border-red-600"
+      onclick="openModal(this.src)" />
+    </div>
+
+    <!-- More slides... -->
+    <img src="Images/Tram/Tram2.jpg"
+    alt="Screenshot"
+    class="rounded-lg w-full cursor-pointer border border-red-600"
+    onclick="openModal(this.src)" />
+    <img src="Images/Tram/Tram3.jpg"
+     alt="Screenshot"
+     class="rounded-lg w-full cursor-pointer border border-red-600"
+     onclick="openModal(this.src)" />
+     <img src="Images/Tram/Tram4.jpg"
+     alt="Screenshot"
+     class="rounded-lg w-full cursor-pointer border border-red-600"
+     onclick="openModal(this.src)" />
+     <img src="Images/Tram/Tram5.jpg"
+     alt="Screenshot"
+     class="rounded-lg w-full cursor-pointer border border-red-600"
+     onclick="openModal(this.src)" />
+     <img src="Images/Tram/Tram6.jpg"
+     alt="Screenshot"
+     class="rounded-lg w-full cursor-pointer border border-red-600"
+     onclick="openModal(this.src)" />
+    <!-- Add more here -->
+
+  </div>
+
+  <!-- Optional: Navigation Buttons -->
+  <div class="swiper-button-next text-red-500"></div>
+  <div class="swiper-button-prev text-red-500"></div>
+
+</div>
     </section>
   </main>
   <!-- Projects Section -->
@@ -225,6 +274,33 @@
       },
       retina_detect: true
     });
+
+    const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
+
+  function openModal(src) {
+    document.getElementById('mediaModal').classList.remove('hidden');
+    document.getElementById('modalImage').src = src;
+  }
+
+  function closeModal() {
+    document.getElementById('mediaModal').classList.add('hidden');
+  }
   </script>
 </body>
 </html>
