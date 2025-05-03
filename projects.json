@@ -1,0 +1,48 @@
+{
+    "projects": [
+      {
+        "id": "cyber-raid",
+        "title": "Cyber Raid",
+        "description": "Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.",
+        "technologies": ["Unity", "C#", "ECS", "Shader Graph", "Zenject"],
+        "media": [
+          {
+            "type": "video",
+            "src": "videos/cyber-raid-demo.mp4",
+            "thumbnail": ""
+          },
+          {
+            "type": "image",
+            "src": "Images/Tram/Tram1.jpg"
+          },
+          {
+            "type": "image",
+            "src": "Images/Tram/Tram2.jpg"
+          },
+          {
+            "type": "image",
+            "src": "Images/Tram/Tram3.jpg"
+          },
+          {
+            "type": "image",
+            "src": "Images/Tram/Tram4.jpg"
+          },
+          {
+            "type": "image",
+            "src": "Images/Tram/Tram5.jpg"
+          },
+          {
+            "type": "image",
+            "src": "Images/Tram/Tram6.jpg"
+          }
+        ]
+      },
+      {
+        "id": "night-stalker",
+        "title": "Night Stalker",
+        "description": "A stealth-based horror game where players navigate through a dystopian future city. Features advanced AI behavior systems and dynamic lighting. Built using Unity's URP and custom gameplay systems.",
+        "technologies": ["Unity", "URP", "C#", "AI Systems", "Procedural Animation"],
+        "media": []
+      }
+    ]
+  }

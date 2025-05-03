@@ -1,0 +1,239 @@
+/* main.css - Main styles for the portfolio website */
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #080808;
+  }
+  
+  /* Color & Effect Classes */
+  .neon-red {
+    color: #ff003c;
+  }
+  
+  .bg-deep {
+    background-color: #080808;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #0d0d0d;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #ff003c;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ff2259;
+  }
+  
+  /* Background grid pattern */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(255, 0, 60, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 0, 60, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* Media aspect ratio handling */
+  .media-container {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  }
+  
+  .media-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Navigation styles */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 40;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(139, 0, 0, 0.5);
+  }
+  
+  nav a.text-gray-300:hover {
+    color: #f87171;
+    transition: color 0.3s ease;
+  }
+  
+  /* Header section styles */
+  header {
+    position: relative;
+    text-align: center;
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+    background-color: black;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #b91c1c;
+    overflow: hidden;
+  }
+  
+  header .social-link {
+    background-color: #200000;
+    border: 1px solid #ef4444;
+    transition: background-color 0.3s;
+  }
+  
+  header .social-link:hover {
+    background-color: #b91c1c;
+    color: white;
+    box-shadow: 0 0 10px #ff0000;
+  }
+  
+  /* CTA button */
+  .cta-button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: #dc2626;
+    color: white;
+    font-weight: bold;
+    border-radius: 9999px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #b91c1c;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 60, 0.5);
+  }
+  
+  /* About section styles */
+  #about {
+    position: relative;
+    max-width: 64rem;
+    margin: 6rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #1a0000, #140000, #1a0000);
+    color: white;
+    border: 1px solid #b91c1c;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+  
+  /* Projects separator */
+  .projects-separator {
+    position: relative;
+    margin: 6rem 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .projects-separator-inner {
+    position: relative;
+    width: 100%;
+    padding: 1.5rem 0;
+    border: 4px solid #dc2626;
+    border-radius: 0.75rem;
+    text-align: center;
+    font-size: 1.875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #f87171;
+    box-shadow: 0 0 25px 5px rgba(255, 0, 0, 0.53);
+  }
+  
+  /* Projects section */
+  .project-card {
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(255, 0, 60, 0.5), 0 0 60px rgba(255, 0, 60, 0.3);
+  }
+  
+  /* Project tech tags */
+  .tech-tag {
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(139, 0, 0, 0.3);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: #fca5a5;
+  }
+  
+  /* Contact section */
+  #contact {
+    position: relative;
+    max-width: 64rem;
+    margin: 6rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #1a0000, #140000, #1a0000);
+    color: white;
+    border: 1px solid #b91c1c;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+  
+  .contact-email {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #200000;
+    border: 1px solid #ef4444;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  }
+  
+  .contact-email:hover {
+    background-color: #b91c1c;
+    color: white;
+    box-shadow: 0 0 10px #ff0000;
+  }
+  
+  /* Footer */
+  footer {
+    width: 100%;
+    display: block;
+    position: relative;
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(to bottom, #1a0000, #000);
+    color: #9ca3af;
+    border-top: 1px solid #b91c1c;
+    font-size: 0.875rem;
+    box-shadow: inset 0 15px 10px -10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .back-to-top {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(139, 0, 0, 0.3);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: #fca5a5;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-to-top:hover {
+    background-color: #b91c1c;
+  }

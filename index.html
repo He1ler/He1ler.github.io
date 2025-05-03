@@ -27,121 +27,9 @@
   <!-- ============================================================== -->
   <!-- CUSTOM STYLES                                                  -->
   <!-- ============================================================== -->
-  <style>
-    /* Base Styles */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      scroll-behavior: smooth;
-      background-color: #080808;
-    }
-    
-    /* Color & Effect Classes */
-    .neon-red {
-      color: #ff003c;
-    }
-    .bg-deep {
-      background-color: #080808;
-    }
-    .border-glow {
-      border: 2px solid rgba(255, 0, 60, 0.33);
-      box-shadow: 0 0 20px rgba(255, 0, 60, 0.4), 0 0 40px rgba(255, 0, 60, 0.2);
-      transition: box-shadow 0.3s ease;
-    }
-    
-    /* Animations */
-    @keyframes pulse-glow {
-      0%, 100% {
-        box-shadow: 0 0 20px rgba(255, 0, 60, 0.4), 0 0 40px rgba(255, 0, 60, 0.2);
-      }
-      50% {
-        box-shadow: 0 0 30px rgba(255, 0, 60, 0.67), 0 0 60px rgba(255, 0, 60, 0.27);
-      }
-    }
-    
-    /* Applied Animations */
-    .border-glow {
-      border: 2px solid rgba(255, 0, 60, 0.33);
-      box-shadow: 0 0 20px rgba(255, 0, 60, 0.4), 0 0 40px rgba(255, 0, 60, 0.2);
-      animation: pulse-glow 2s infinite;
-    }
-    
-    /* Modal Styling */
-    #mediaModal {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.5s ease-in-out;
-    }
-    #mediaModal.visible {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    #mediaModal img, #mediaModal video {
-      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-      transform: scale(0.95);
-    }
-    #mediaModal.visible img, #mediaModal.visible video {
-      transform: scale(1);
-    }
-    
-    /* Fade In Animation for Sections */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    }
-    .section-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Card hover effect */
-    .project-card {
-      transition: all 0.3s ease;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 30px rgba(255, 0, 60, 0.5), 0 0 60px rgba(255, 0, 60, 0.3);
-    }
-
-    /* Media aspect ratio handling */
-    .media-container {
-      position: relative;
-      overflow: hidden;
-      height: 0;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    }
-    .media-item {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0d0d0d;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #ff003c;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #ff2259;
-    }
-    
-    /* Background grid pattern */
-    .grid-pattern {
-      background-image: 
-        linear-gradient(rgba(255, 0, 60, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 0, 60, 0.05) 1px, transparent 1px);
-      background-size: 20px 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/modal.css">
 </head>
 
 <body class="bg-deep text-white">
@@ -365,11 +253,11 @@
 
 
   <!-- ============================================================== -->
-  <!-- PROJECTS SECTION                               -->
+  <!-- PROJECTS SECTION                                              -->
   <!-- ============================================================== -->
   <main class="max-w-7xl mx-auto px-6 py-12">
       
- <!-- -------------------------------------------- -->
+    <!-- -------------------------------------------- -->
     <!-- PROJECT 1: Cyber Raid                        -->
     <!-- -------------------------------------------- -->
     <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
@@ -396,44 +284,44 @@
           <!-- Slide: Image -->
           <div class="swiper-slide">
             <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
-                 style="background-image: url('Images/Tram/Tram1.jpg')" 
-                 onclick="openModal('Images/Tram/Tram1.jpg', 'image')">
+                 style="background-image: url('assets/images/Tram/Tram1.jpg')" 
+                 onclick="openModal('assets/images/Tram/Tram1.jpg', 'image')">
             </div>
           </div>
 
           <!-- Slide: More Images -->
           <div class="swiper-slide">
             <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
-                 style="background-image: url('Images/Tram/Tram2.jpg')" 
-                 onclick="openModal('Images/Tram/Tram2.jpg', 'image')">
+                 style="background-image: url('assets/images/Tram/Tram2.jpg')" 
+                 onclick="openModal('assets/images/Tram/Tram2.jpg', 'image')">
             </div>
           </div>
 
           <div class="swiper-slide">
             <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
-                 style="background-image: url('Images/Tram/Tram3.jpg')" 
-                 onclick="openModal('Images/Tram/Tram3.jpg', 'image')">
+                 style="background-image: url('assets/images/Tram/Tram3.jpg')" 
+                 onclick="openModal('assets/images/Tram/Tram3.jpg', 'image')">
             </div>
           </div>
 
           <div class="swiper-slide">
             <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
-                 style="background-image: url('Images/Tram/Tram4.jpg')" 
-                 onclick="openModal('Images/Tram/Tram4.jpg', 'image')">
+                 style="background-image: url('assets/images/Tram/Tram4.jpg')" 
+                 onclick="openModal('assets/images/Tram/Tram4.jpg', 'image')">
             </div>
           </div>
 
           <div class="swiper-slide">
             <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
-                 style="background-image: url('Images/Tram/Tram5.jpg')" 
-                 onclick="openModal('Images/Tram/Tram5.jpg', 'image')">
+                 style="background-image: url('assets/images/Tram/Tram5.jpg')" 
+                 onclick="openModal('assets/images/Tram/Tram5.jpg', 'image')">
             </div>
           </div>
 
           <div class="swiper-slide">
             <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
-                 style="background-image: url('Images/Tram/Tram6.jpg')" 
-                 onclick="openModal('Images/Tram/Tram6.jpg', 'image')">
+                 style="background-image: url('assets/images/Tram/Tram6.jpg')" 
+                 onclick="openModal('assets/images/Tram/Tram6.jpg', 'image')">
             </div>
           </div>
         </div>
@@ -454,32 +342,6 @@
     </section>
     <!-- END PROJECT 1 -->
 
-    <!-- -------------------------------------------- -->
-    <!-- PROJECT 2: Night Stalker                     -->
-    <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
-      <h2 class="text-3xl font-bold neon-red mb-4">Night Stalker</h2>
-      <p class="text-gray-300 mb-6 max-w-4xl">
-        A stealth-based horror game where players navigate through a dystopian future city. Features advanced AI behavior systems and dynamic lighting. Built using Unity's URP and custom gameplay systems.
-      </p>
-
-      <!-- Placeholder for when you have media -->
-      <div class="rounded-lg w-full h-64 md:h-80 border border-red-600 shadow-lg flex items-center justify-center bg-gradient-to-r from-red-900/20 to-black">
-        <p class="text-red-400 text-lg">Media coming soon</p>
-      </div>
-
-      <!-- Project Technologies -->
-      <div class="mt-6 flex flex-wrap gap-2">
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Unity</span>
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">URP</span>
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">C#</span>
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">AI Systems</span>
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Procedural Animation</span>
-      </div>
-    </section>
-    <!-- END PROJECT 2 -->
-
-    <!-- You can add more project blocks here -->
   </main>
   <!-- END PROJECTS SECTION -->
 
@@ -487,7 +349,7 @@
   <!-- ============================================================== -->
   <!-- CONTACT SECTION                                                -->
   <!-- ============================================================== -->
-  <section class="fade-in relative max-w-5xl mx-auto my-24 px-8 py-12 bg-gradient-to-br from-[#1a0000] via-[#140000] to-[#1a0000] text-white border border-red-700 rounded-2xl shadow-xl overflow-hidden">
+  <section id="contact" class="fade-in relative max-w-5xl mx-auto my-24 px-8 py-12 bg-gradient-to-br from-[#1a0000] via-[#140000] to-[#1a0000] text-white border border-red-700 rounded-2xl shadow-xl overflow-hidden">
     <!-- Glowing Accent Bar -->
     <div class="absolute top-0 left-0 w-full h-1 bg-red-600 shadow-[0_0_15px_3px_#ff0000] animate-pulse"></div>
   
@@ -505,7 +367,7 @@
     </p>
 
     <!-- Contact Email -->
-    <a href="mailto:denys.korolchuk@example.com" class="inline-block mt-4 bg-[#200000] border border-red-500 hover:bg-red-700 hover:text-white hover:shadow-[0_0_10px_#ff0000] px-6 py-3 rounded-full transition duration-300 text-white shadow-md">
+    <a href="mailto:hellerkorol@gmail.com" class="inline-block mt-4 bg-[#200000] border border-red-500 hover:bg-red-700 hover:text-white hover:shadow-[0_0_10px_#ff0000] px-6 py-3 rounded-full transition duration-300 text-white shadow-md">
       hellerkorol@gmail.com
     </a>
   </section>
@@ -536,171 +398,11 @@
   <!-- ============================================================== -->
   <!-- SCRIPTS                                                        -->
   <!-- ============================================================== -->
-  <script>
-    // Initialize particles with optimized settings
-    document.addEventListener('DOMContentLoaded', function() {
-      // -------------------------------------------- 
-      // PARTICLES.JS INITIALIZATION
-      // -------------------------------------------- 
-      particlesJS('particles-js', {
-        particles: {
-          number: { value: 100, density: { enable: true, value_area: 800 } },
-          color: { value: '#ff0000' },
-          shape: { type: 'circle' },
-          opacity: { 
-            value: 0.5, 
-            random: true,
-            anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
-          },
-          size: { 
-            value: 5,
-            random: true,
-            anim: { enable: true, speed: 3, size_min: 0.1, sync: false }
-          },
-          move: { 
-            enable: true,
-            speed: 1,
-            direction: "none",
-            random: true,
-            straight: false,
-            out_mode: "out",
-            bounce: false
-          }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: { enable: true, mode: "repulse" },
-            onclick: { enable: true, mode: "push" },
-            resize: true
-          },
-          modes: {
-            repulse: { distance: 100, duration: 0.4 },
-            push: { particles_nb: 4 }
-          }
-        },
-        retina_detect: true
-      });
-
-      // -------------------------------------------- 
-      // SWIPER INITIALIZATION
-      // -------------------------------------------- 
-      const swiper = new Swiper('.mySwiper', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-          delay: 2000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        },
-        breakpoints: {
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 }
-        },
-        keyboard: {
-          enabled: true
-        },
-        a11y: {
-          prevSlideMessage: 'Previous slide',
-          nextSlideMessage: 'Next slide'
-        }
-      });
-
-      // -------------------------------------------- 
-      // INTERSECTION OBSERVER FOR ANIMATIONS
-      // -------------------------------------------- 
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('section-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      // Observe all elements with fade-in class
-      document.querySelectorAll('.fade-in').forEach(section => {
-        observer.observe(section);
-      });
-    });
-
-    // -------------------------------------------- 
-    // MODAL FUNCTIONS
-    // -------------------------------------------- 
-    // Improved modal functions with keyboard support
-    function openModal(src, type) {
-      const modal = document.getElementById('mediaModal');
-      const modalImage = document.getElementById('modalImage');
-      const modalVideo = document.getElementById('modalVideo');
-      const videoSource = document.getElementById('modalVideoSource');
-
-      // Show modal
-      modal.classList.add('visible');
-      
-      // Set focus trap
-      modal.setAttribute('tabindex', '-1');
-      modal.focus();
-
-      if (type === 'video' || src.endsWith('.mp4')) {
-        modalImage.classList.add('hidden');
-        modalVideo.classList.remove('hidden');
-        videoSource.src = src;
-        modalVideo.load();
-        modalVideo.play();
-      } else {
-        modalVideo.classList.add('hidden');
-        modalImage.classList.remove('hidden');
-        modalImage.src = src;
-      }
-
-      // Add event listener for ESC key
-      document.addEventListener('keydown', handleEscKey);
-    }
-
-    function closeModal() {
-      const modal = document.getElementById('mediaModal');
-      const modalVideo = document.getElementById('modalVideo');
-
-      // Hide modal
-      modal.classList.remove('visible');
-      
-      // Pause video if playing
-      modalVideo.pause();
-      
-      // Remove ESC key event listener
-      document.removeEventListener('keydown', handleEscKey);
-    }
-
-    function handleEscKey(e) {
-      if (e.key === 'Escape') {
-        closeModal();
-      }
-    }
-    // END MODAL FUNCTIONS
-
-    module.exports = {
-  content: ["./*.html"],
-  theme: {
-    extend: {},
-  },
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-  ],
-}
-  </script>
-  <!-- END SCRIPTS -->
-
+  <!-- Custom JavaScript files -->
+  <script src="js/modal.js"></script>
+  <script src="js/particles-config.js"></script>
+  <script src="js/swiper-config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="projects.js"></script>
 </body>
 </html>
