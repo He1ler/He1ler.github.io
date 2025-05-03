@@ -11,15 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Swiper initialization function not found');
     }
 
-    // Initialize Particles.js
-    if (typeof particlesJS === 'function') {
-        particlesJS.load('particles-js', 'particles-config.json', function() {
-            console.log('Particles.js loaded successfully');
-        });
-    } else {
-        console.error('Particles.js not loaded');
-    }
-
     // Initialize mobile menu
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
