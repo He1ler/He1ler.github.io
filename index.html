@@ -35,6 +35,10 @@
     box-shadow: 0 0 20px #ff003c66, 0 0 40px #ff003c33;
     animation: pulse-glow 2s infinite;
   }
+
+  #mediaModal img, #mediaModal video {
+  transition: opacity 0.3s ease-in-out;
+}
   </style>
 </head>
 <!-- Swiper CSS -->
@@ -45,9 +49,18 @@
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+<!-- Media Modal (supports both image and video) -->
 <div id="mediaModal" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50">
   <span onclick="closeModal()" class="absolute top-5 right-8 text-white text-4xl cursor-pointer hover:text-red-500 transition">&times;</span>
-  <img id="modalImage" class="max-h-[90vh] max-w-[90vw] border border-red-600 shadow-2xl rounded-lg" />
+
+  <!-- Image element -->
+  <img id="modalImage" class="max-h-[90vh] max-w-[90vw] border border-red-600 shadow-2xl rounded-lg hidden" />
+
+  <!-- Video element -->
+  <video id="modalVideo" controls class="max-h-[90vh] max-w-[90vw] border border-red-600 shadow-2xl rounded-lg hidden">
+    <source id="modalVideoSource" src="" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 </div>
 
 <body class="bg-deep text-white">
@@ -155,42 +168,56 @@
 <div class="swiper mySwiper">
   <div class="swiper-wrapper">
 
-    <!-- Slide -->
-    <div class="swiper-slide">
-      <video controls class="rounded-lg w-full border border-red-600 shadow-lg">
-        <source src="videos/cyber-raid-demo.mp4" type="video/mp4" />
-      </video>
+    <!-- Slide: Video -->
+<div class="swiper-slide">
+  <div class="relative cursor-pointer" onclick="openModal('videos/cyber-raid-demo.mp4')">
+    <video class="rounded-lg w-full border border-red-600 shadow-lg opacity-60 pointer-events-none">
+      <source src="videos/cyber-raid-demo.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="bg-red-700 text-white px-4 py-2 rounded-full shadow-lg hover:bg-red-600 transition">▶ Play Video</div>
     </div>
+  </div>
+</div>
 
-    <!-- Slide -->
-    <div class="swiper-slide">
-      <img src="Images/Tram/Tram1.jpg"
-      alt="Screenshot"
-      class="rounded-lg w-full cursor-pointer border border-red-600"
-      onclick="openModal(this.src)" />
-    </div>
+<!-- Slide: Image -->
+<div class="swiper-slide">
+  <img src="Images/Tram/Tram1.jpg"
+       alt="Screenshot"
+       class="rounded-lg w-full cursor-pointer border border-red-600 shadow-lg"
+       onclick="openModal(this.src)" />
+</div>
 
-    <!-- More slides... -->
-    <img src="Images/Tram/Tram2.jpg"
-    alt="Screenshot"
-    class="rounded-lg w-full cursor-pointer border border-red-600"
-    onclick="openModal(this.src)" />
-    <img src="Images/Tram/Tram3.jpg"
-     alt="Screenshot"
-     class="rounded-lg w-full cursor-pointer border border-red-600"
-     onclick="openModal(this.src)" />
-     <img src="Images/Tram/Tram4.jpg"
-     alt="Screenshot"
-     class="rounded-lg w-full cursor-pointer border border-red-600"
-     onclick="openModal(this.src)" />
-     <img src="Images/Tram/Tram5.jpg"
-     alt="Screenshot"
-     class="rounded-lg w-full cursor-pointer border border-red-600"
-     onclick="openModal(this.src)" />
-     <img src="Images/Tram/Tram6.jpg"
-     alt="Screenshot"
-     class="rounded-lg w-full cursor-pointer border border-red-600"
-     onclick="openModal(this.src)" />
+<!-- Slide: More Images -->
+<div class="swiper-slide">
+  <img src="Images/Tram/Tram2.jpg" alt="Screenshot"
+       class="rounded-lg w-full cursor-pointer border border-red-600 shadow-lg"
+       onclick="openModal(this.src)" />
+</div>
+
+<div class="swiper-slide">
+  <img src="Images/Tram/Tram3.jpg" alt="Screenshot"
+       class="rounded-lg w-full cursor-pointer border border-red-600 shadow-lg"
+       onclick="openModal(this.src)" />
+</div>
+
+<div class="swiper-slide">
+  <img src="Images/Tram/Tram4.jpg" alt="Screenshot"
+       class="rounded-lg w-full cursor-pointer border border-red-600 shadow-lg"
+       onclick="openModal(this.src)" />
+</div>
+
+<div class="swiper-slide">
+  <img src="Images/Tram/Tram5.jpg" alt="Screenshot"
+       class="rounded-lg w-full cursor-pointer border border-red-600 shadow-lg"
+       onclick="openModal(this.src)" />
+</div>
+
+<div class="swiper-slide">
+  <img src="Images/Tram/Tram6.jpg" alt="Screenshot"
+       class="rounded-lg w-full cursor-pointer border border-red-600 shadow-lg"
+       onclick="openModal(this.src)" />
+</div>
     <!-- Add more here -->
 
   </div>
@@ -275,31 +302,51 @@
       retina_detect: true
     });
 
-    const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
+    const swiper = new Swiper('.mySwiper', {
+    slidesPerView: 3,
     spaceBetween: 20,
     loop: true,
     autoplay: {
-      delay: 3500,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
+      delay: 4000,
+      disableOnInteraction: false
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    breakpoints: {
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
     }
   });
 
   function openModal(src) {
-    document.getElementById('mediaModal').classList.remove('hidden');
-    document.getElementById('modalImage').src = src;
+    const modal = document.getElementById('mediaModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalVideo = document.getElementById('modalVideo');
+    const videoSource = document.getElementById('modalVideoSource');
+
+    modal.classList.remove('hidden');
+
+    if (src.endsWith('.mp4')) {
+      modalImage.classList.add('hidden');
+      modalVideo.classList.remove('hidden');
+      videoSource.src = src;
+      modalVideo.load();
+    } else {
+      modalVideo.classList.add('hidden');
+      modalImage.classList.remove('hidden');
+      modalImage.src = src;
+    }
   }
 
   function closeModal() {
-    document.getElementById('mediaModal').classList.add('hidden');
+    const modal = document.getElementById('mediaModal');
+    const modalVideo = document.getElementById('modalVideo');
+
+    modal.classList.add('hidden');
+    modalVideo.pause();
   }
   </script>
 </body>
