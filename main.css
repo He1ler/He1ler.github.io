@@ -42,10 +42,10 @@ body::after {
     background: linear-gradient(
         to bottom,
         transparent 0%,
-        rgba(255, 0, 0, 0.01) 20%,
         rgba(255, 0, 0, 0.04) 40%,
-        rgba(255, 0, 0, 0.01) 60%,
-        transparent 60%
+        rgba(255, 0, 0, 0.065) 65%,
+        rgba(255, 0, 0, 0.04) 40%,
+        transparent 65%
     );
     background-size: 100% 300%;
     animation: gradientLine 15s ease-in-out infinite reverse;
