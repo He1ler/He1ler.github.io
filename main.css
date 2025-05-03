@@ -23,7 +23,7 @@ body::before {
         rgba(255, 0, 0, 0.05) 20%,
         rgba(255, 0, 0, 0.1) 50%,
         rgba(255, 0, 0, 0.05) 80%,
-        transparent 100%
+        transparent 50%
     );
     background-size: 100% 300%;
     animation: gradientLine 12s ease-in-out infinite;
