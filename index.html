@@ -50,14 +50,14 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <!-- Media Modal (supports both image and video) -->
-<div id="mediaModal" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50">
+<div id="mediaModal" class="fixed inset-0 bg-black bg-opacity-90 hidden flex items-center justify-center z-50">
   <span onclick="closeModal()" class="absolute top-5 right-8 text-white text-4xl cursor-pointer hover:text-red-500 transition">&times;</span>
 
   <!-- Image element -->
-  <img id="modalImage" class="max-h-[90vh] max-w-[90vw] border border-red-600 shadow-2xl rounded-lg hidden" />
+  <img id="modalImage" class="max-h-[90vh] max-w-[90vw] border border-red-600 shadow-2xl rounded-lg hidden mx-auto" />
 
   <!-- Video element -->
-  <video id="modalVideo" controls class="max-h-[90vh] max-w-[90vw] border border-red-600 shadow-2xl rounded-lg hidden">
+  <video id="modalVideo" controls class="max-h-[90vh] max-w-[90vw] border border-red-600 shadow-2xl rounded-lg hidden mx-auto">
     <source id="modalVideoSource" src="" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
@@ -307,7 +307,7 @@
     spaceBetween: 20,
     loop: true,
     autoplay: {
-      delay: 4000,
+      delay: 2000,
       disableOnInteraction: false
     },
     navigation: {
