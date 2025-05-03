@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Initialize external components
     initializeParticles();
-    initializeSwiper();
+    
+    // Initialize Swiper only if it's available
+    if (typeof initializeSwiper === 'function') {
+      initializeSwiper();
+    }
   });
   
   /**

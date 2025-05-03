@@ -45,12 +45,6 @@ function initializeSwiper() {
   }
   
   /**
-   * When navigating the swiper gallery, we need to keep track of media sources for the modal
-   */
-  let galleryItems = [];
-  let currentGalleryIndex = 0;
-  
-  /**
    * Build a gallery collection from a container's items
    * @param {HTMLElement} container - The gallery container
    * @returns {Array} Array of gallery items with src and type
