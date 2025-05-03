@@ -32,6 +32,7 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       scroll-behavior: smooth;
+      background-color: #080808;
     }
     
     /* Color & Effect Classes */
@@ -39,7 +40,7 @@
       color: #ff003c;
     }
     .bg-deep {
-      background-color: #181818;
+      background-color: #080808;
     }
     .border-glow {
       border: 2px solid rgba(255, 0, 60, 0.33);
@@ -92,6 +93,54 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Card hover effect */
+    .project-card {
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(255, 0, 60, 0.5), 0 0 60px rgba(255, 0, 60, 0.3);
+    }
+
+    /* Media aspect ratio handling */
+    .media-container {
+      position: relative;
+      overflow: hidden;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    }
+    .media-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0d0d0d;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #ff003c;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ff2259;
+    }
+    
+    /* Background grid pattern */
+    .grid-pattern {
+      background-image: 
+        linear-gradient(rgba(255, 0, 60, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 60, 0.05) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
   </style>
 </head>
 
@@ -100,7 +149,7 @@
   <!-- ============================================================== -->
   <!-- MEDIA MODAL - Used for displaying images and videos            -->
   <!-- ============================================================== -->
-  <div id="mediaModal" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50" aria-modal="true" role="dialog">
+  <div id="mediaModal" class="fixed inset-0 bg-black bg-opacity-95 flex items-center justify-center z-50" aria-modal="true" role="dialog">
     <button onclick="closeModal()" class="absolute top-5 right-8 text-white text-4xl cursor-pointer hover:text-red-500 transition" aria-label="Close modal">&times;</button>
 
     <!-- Image element -->
@@ -111,21 +160,69 @@
       <source id="modalVideoSource" src="" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
+    
+    <!-- Navigation controls -->
+    <div class="absolute bottom-8 left-0 right-0 flex justify-center space-x-4">
+      <button id="prevMedia" class="bg-red-900/60 hover:bg-red-700 text-white px-4 py-2 rounded-full">Previous</button>
+      <button id="nextMedia" class="bg-red-900/60 hover:bg-red-700 text-white px-4 py-2 rounded-full">Next</button>
+    </div>
   </div>
   <!-- END MEDIA MODAL -->
 
 
   <!-- ============================================================== -->
+  <!-- NAVIGATION BAR                                                 -->
+  <!-- ============================================================== -->
+  <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-80 backdrop-blur-md z-40 shadow-lg border-b border-red-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="#" class="text-2xl font-bold neon-red">DK</a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-center space-x-8">
+            <a href="#about" class="text-gray-300 hover:text-red-400 px-3 py-2 font-medium transition-colors">About</a>
+            <a href="#projects" class="text-gray-300 hover:text-red-400 px-3 py-2 font-medium transition-colors">Projects</a>
+            <a href="#contact" class="text-gray-300 hover:text-red-400 px-3 py-2 font-medium transition-colors">Contact</a>
+          </div>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black bg-opacity-90 border-b border-red-900/50">
+        <a href="#about" class="text-gray-300 hover:text-red-400 block px-3 py-2 font-medium transition-colors">About</a>
+        <a href="#projects" class="text-gray-300 hover:text-red-400 block px-3 py-2 font-medium transition-colors">Projects</a>
+        <a href="#contact" class="text-gray-300 hover:text-red-400 block px-3 py-2 font-medium transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================== -->
   <!-- HEADER SECTION - Site title and social links                   -->
   <!-- ============================================================== -->
-  <header class="relative text-center py-20 bg-black shadow-lg border-b border-red-700 overflow-hidden">
+  <header class="relative text-center pt-32 pb-24 bg-black shadow-lg border-b border-red-700 overflow-hidden grid-pattern">
     <div id="particles-js" class="absolute inset-0 z-0"></div>
     <div class="absolute bottom-0 left-0 w-full h-1 bg-red-700 shadow-[0_0_20px_5px_#ff0000] animate-pulse"></div>
-    <div class="relative z-10">
-      <h1 class="text-5xl font-bold neon-red">My Game Portfolio</h1>
-      <p class="mt-2 text-gray-400">Crafted with Unity, C#, and passion</p>
-      <div class="mt-6 flex justify-center gap-4 flex-wrap">
-
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-5xl md:text-7xl font-bold neon-red mb-4">My Game Portfolio</h1>
+      <p class="mt-2 text-xl text-gray-400">Crafted with Unity, C#, and passion</p>
+      
+      <div class="mt-10 flex justify-center gap-4 flex-wrap">
         <!-- GitHub -->
         <a href="https://github.com/He1ler" target="_blank" rel="noopener noreferrer"
           class="bg-[#200000] border border-red-500 hover:bg-red-700 hover:text-white hover:shadow-[0_0_10px_#ff0000] px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-white shadow-md"
@@ -156,6 +253,13 @@
           Steam
         </a>
       </div>
+      
+      <!-- Call-to-action button -->
+      <div class="mt-12">
+        <a href="#projects" class="inline-block px-8 py-3 bg-red-600 text-white font-bold rounded-full shadow-lg transform transition hover:bg-red-700 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,0,60,0.5)]">
+          View My Projects
+        </a>
+      </div>
     </div>
   </header>
   <!-- END HEADER SECTION -->
@@ -164,25 +268,80 @@
   <!-- ============================================================== -->
   <!-- ABOUT ME SECTION                                               -->
   <!-- ============================================================== -->
-  <section class="fade-in relative max-w-5xl mx-auto mt-20 px-8 py-12 bg-gradient-to-br from-[#1a0000] via-[#140000] to-[#1a0000] text-white border border-red-700 rounded-2xl shadow-xl overflow-hidden">
+  <section id="about" class="fade-in relative max-w-5xl mx-auto mt-24 px-8 py-16 bg-gradient-to-br from-[#1a0000] via-[#140000] to-[#1a0000] text-white border border-red-700 rounded-2xl shadow-xl overflow-hidden">
     <!-- Glowing Accent Bar -->
     <div class="absolute top-0 left-0 w-full h-1 bg-red-600 shadow-[0_0_15px_3px_#ff0000] animate-pulse"></div>
   
     <!-- Section Header -->
-    <div class="flex items-center gap-4 mb-6">
-      <h2 class="text-4xl font-bold text-red-500 tracking-wide">About Me</h2>
+    <div class="flex items-center gap-4 mb-8">
+      <h2 class="text-4xl md:text-5xl font-bold text-red-500 tracking-wide">About Me</h2>
     </div>
   
     <!-- Bio Text -->
-    <p class="text-gray-300 text-lg leading-relaxed">
-      I'm a passionate <span class="text-red-400 font-semibold">Unity developer</span> focused on crafting smooth gameplay, optimizing performance, and building engaging experiences.
-      My toolkit includes <span class="text-red-400 font-semibold">C#, Zenject, and ECS-style design</span>, and I thrive in both indie teams and solo dev cycles.
-      <br /><br />
-      I'm also experienced in <span class="text-red-400 font-semibold">AI tools</span>, editor extensions, and building scalable systems that help games ship faster and shine brighter.
-    </p>
+    <div class="text-gray-300 text-lg leading-relaxed space-y-6">
+      <p>
+        I'm a passionate <span class="text-red-400 font-semibold">Unity developer</span> focused on crafting smooth gameplay, optimizing performance, and building engaging experiences.
+        My toolkit includes <span class="text-red-400 font-semibold">C#, Zenject, and ECS-style design</span>, and I thrive in both indie teams and solo dev cycles.
+      </p>
+      <p>
+        I'm also experienced in <span class="text-red-400 font-semibold">AI tools</span>, editor extensions, and building scalable systems that help games ship faster and shine brighter.
+      </p>
+    </div>
+    
+    <!-- Skills Section -->
+    <div class="mt-12">
+      <h3 class="text-2xl font-bold text-red-400 mb-6">Technical Skills</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Development -->
+        <div class="bg-black bg-opacity-50 p-6 rounded-lg border border-red-900/30">
+          <h4 class="text-xl font-semibold text-red-300 mb-4">Development</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <span class="mr-2 text-red-500">•</span>
+              Unity Engine (5+ years)
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2 text-red-500">•</span>
+              C# Programming
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2 text-red-500">•</span>
+              ECS Architecture
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2 text-red-500">•</span>
+              Zenject / DI Patterns
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Graphics & Design -->
+        <div class="bg-black bg-opacity-50 p-6 rounded-lg border border-red-900/30">
+          <h4 class="text-xl font-semibold text-red-300 mb-4">Graphics & Design</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <span class="mr-2 text-red-500">•</span>
+              Shader Graph
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2 text-red-500">•</span>
+              URP / HDRP Pipelines
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2 text-red-500">•</span>
+              VFX Graph
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2 text-red-500">•</span>
+              Post-Processing
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
   <!-- END ABOUT ME SECTION -->
-
 
   <!-- ============================================================== -->
   <!-- PROJECTS SEPARATOR                                             -->
@@ -206,100 +365,93 @@
 
 
   <!-- ============================================================== -->
-  <!-- PROJECTS SECTION - Main content area                           -->
+  <!-- PROJECTS SECTION - GRID LAYOUT                                 -->
   <!-- ============================================================== -->
-  <main class="max-w-screen-2xl mx-auto px-6 py-12">
-    
-    <!-- -------------------------------------------- -->
-    <!-- PROJECT 1: Cyber Raid                        -->
-    <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
-      <h2 class="text-3xl font-bold neon-red mb-4">Cyber Raid</h2>
-      <p class="text-gray-300 mb-6 max-w-4xl">
-        Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
-      </p>
-
-      <!-- Gallery Swiper -->
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <!-- Slide: Video --> <!-- 
-          <div class="swiper-slide">
-            <div class="relative rounded-lg w-full aspect-video border border-red-600 shadow-lg overflow-hidden cursor-pointer bg-black" 
-                 onclick="openModal('videos/cyber-raid-demo.mp4', 'video')">
-              <video class="w-full h-full object-cover opacity-60 pointer-events-none" muted autoplay loop>
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      
+      <!-- -------------------------------------------- -->
+      <!-- PROJECT 1: Cyber Raid                        -->
+      <!-- -------------------------------------------- -->
+      <section class="fade-in project-card border-glow rounded-lg overflow-hidden bg-black shadow-2xl">
+        <!-- Project Header -->
+        <div class="p-6 border-b border-red-900/30">
+          <h2 class="text-3xl font-bold neon-red mb-2">Cyber Raid</h2>
+          <p class="text-gray-300">
+            High-speed sci-fi shooter with procedurally generated enemies and AI-controlled squads.
+          </p>
+        </div>
+        
+        <!-- Media Gallery -->
+        <div class="relative">
+          <!-- Featured Media -->
+          <div class="relative media-container">
+            <video class="media-item" muted autoplay loop>
+              <source src="videos/cyber-raid-demo.mp4" type="video/mp4" />
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <button onclick="openProjectGallery('cyber-raid', 0)" class="bg-red-700/80 hover:bg-red-600 text-white px-5 py-3 rounded-full shadow-lg transition transform hover:scale-105">
+                View Gallery
+              </button>
+            </div>
+          </div>
+          
+          <!-- Thumbnail Strip -->
+          <div class="flex overflow-x-auto p-2 bg-black border-t border-red-900/30 scrollbar-thin scrollbar-thumb-red-500">
+            <!-- Video Thumbnail -->
+            <div class="flex-shrink-0 w-24 h-16 mr-2 cursor-pointer rounded overflow-hidden border border-red-900/50 hover:border-red-500 transition"
+                 onclick="openProjectGallery('cyber-raid', 0)">
+              <video class="w-full h-full object-cover" muted>
                 <source src="videos/cyber-raid-demo.mp4" type="video/mp4" />
               </video>
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="bg-red-700 text-white px-4 py-2 rounded-full shadow-lg hover:bg-red-600 transition">▶ Play Video</div>
-              </div>
+            </div>
+            
+            <!-- Image Thumbnails -->
+            <div class="flex-shrink-0 w-24 h-16 mr-2 cursor-pointer rounded overflow-hidden border border-red-900/50 hover:border-red-500 transition"
+                 onclick="openProjectGallery('cyber-raid', 1)">
+              <img src="Images/Tram/Tram1.jpg" alt="Thumbnail" class="w-full h-full object-cover" />
+            </div>
+            
+            <div class="flex-shrink-0 w-24 h-16 mr-2 cursor-pointer rounded overflow-hidden border border-red-900/50 hover:border-red-500 transition"
+                 onclick="openProjectGallery('cyber-raid', 2)">
+              <img src="Images/Tram/Tram2.jpg" alt="Thumbnail" class="w-full h-full object-cover" />
+            </div>
+            
+            <div class="flex-shrink-0 w-24 h-16 mr-2 cursor-pointer rounded overflow-hidden border border-red-900/50 hover:border-red-500 transition"
+                 onclick="openProjectGallery('cyber-raid', 3)">
+              <img src="Images/Tram/Tram3.jpg" alt="Thumbnail" class="w-full h-full object-cover" />
+            </div>
+            
+            <div class="flex-shrink-0 w-24 h-16 cursor-pointer rounded overflow-hidden border border-red-900/50 hover:border-red-500 transition"
+                 onclick="openProjectGallery('cyber-raid', 4)">
+              <img src="Images/Tram/Tram4.jpg" alt="Thumbnail" class="w-full h-full object-cover" />
             </div>
           </div>
--->
-          <!-- Slide: Image -->
-          <div class="swiper-slide">
-            <div class="relative rounded-lg w-full aspect-video border border-red-600 shadow-lg overflow-hidden cursor-pointer bg-black" 
-                 onclick="openModal('Images/Tram/Tram1.jpg', 'image')">
-              <img src="Images/Tram/Tram1.jpg" alt="Screenshot"
-                   class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-            </div>
+        </div>
+        
+        <!-- Project Details -->
+        <div class="p-6">
+          <div class="mb-4">
+            <h3 class="text-xl font-semibold text-red-400 mb-2">Technical Details</h3>
+            <p class="text-gray-300 text-sm">
+              Built using Unity's DOTS architecture with custom rendering pipeline optimizations. 
+              Features dynamic lighting, procedural animations, and advanced AI squad behavior.
+            </p>
           </div>
-
-          <!-- Slide: More Images -->
-          <div class="swiper-slide">
-            <div class="relative rounded-lg w-full aspect-video border border-red-600 shadow-lg overflow-hidden cursor-pointer bg-black" 
-                 onclick="openModal('Images/Tram/Tram1.jpg', 'image')">
-              <img src="Images/Tram/Tram2.jpg" alt="Screenshot"
-                   class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-            </div>
+          
+          <!-- Project Technologies -->
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Unity</span>
+            <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">C#</span>
+            <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">ECS</span>
+            <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Shader Graph</span>
+            <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Zenject</span>
           </div>
-
-          <div class="swiper-slide">
-            <div class="relative rounded-lg w-full aspect-video border border-red-600 shadow-lg overflow-hidden cursor-pointer bg-black" 
-                 onclick="openModal('Images/Tram/Tram1.jpg', 'image')">
-              <img src="Images/Tram/Tram3.jpg" alt="Screenshot"
-                   class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="relative rounded-lg w-full aspect-video border border-red-600 shadow-lg overflow-hidden cursor-pointer bg-black" 
-                 onclick="openModal('Images/Tram/Tram1.jpg', 'image')">
-              <img src="Images/Tram/Tram4.jpg" alt="Screenshot"
-                   class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="relative rounded-lg w-full aspect-video border border-red-600 shadow-lg overflow-hidden cursor-pointer bg-black" 
-                 onclick="openModal('Images/Tram/Tram1.jpg', 'image')">
-              <img src="Images/Tram/Tram5.jpg" alt="Screenshot"
-                   class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="relative rounded-lg w-full aspect-video border border-red-600 shadow-lg overflow-hidden cursor-pointer bg-black" 
-                 onclick="openModal('Images/Tram/Tram1.jpg', 'image')">
-              <img src="Images/Tram/Tram6.jpg" alt="Screenshot"
-                   class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-            </div>
-          </div>
-
-        <!-- Navigation Buttons -->
-        <div class="swiper-button-next text-red-500"></div>
-        <div class="swiper-button-prev text-red-500"></div>
-      </div>
-
-      <!-- Project Technologies -->
-      <div class="mt-6 flex flex-wrap gap-2">
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Unity</span>
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">C#</span>
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">ECS</span>
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Shader Graph</span>
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Zenject</span>
-      </div>
-    </section>
-    <!-- END PROJECT 1 -->
+        </div>
+      </section>
+      <!-- END PROJECT 1 -->
 
     <!-- -------------------------------------------- -->
     <!-- PROJECT 2: Night Stalker                     -->
