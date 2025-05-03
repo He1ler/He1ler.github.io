@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Game Portfolio</title>
+  <meta name="description" content="Game development portfolio for Unity developer Denys Korolchuk">
+  <title>My Game Portfolio | Denys Korolchuk</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
     }
     .neon-red {
       color: #ff003c;
@@ -17,53 +23,66 @@
       background-color: #181818;
     }
     .border-glow {
-    border: 2px solid #ff003c55; /* Slightly visible border */
-    box-shadow: 0 0 20px #ff003c66, 0 0 40px #ff003c33; /* Double glow */
-    transition: box-shadow 0.3s ease;
+      border: 2px solid rgba(255, 0, 60, 0.33);
+      box-shadow: 0 0 20px rgba(255, 0, 60, 0.4), 0 0 40px rgba(255, 0, 60, 0.2);
+      transition: box-shadow 0.3s ease;
     }
     @keyframes pulse-glow {
-    0%, 100% {
-      box-shadow: 0 0 20px #ff003c66, 0 0 40px #ff003c33;
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 0, 60, 0.4), 0 0 40px rgba(255, 0, 60, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(255, 0, 60, 0.67), 0 0 60px rgba(255, 0, 60, 0.27);
+      }
     }
-    50% {
-      box-shadow: 0 0 30px #ff003caa, 0 0 60px #ff003c44;
+    .border-glow {
+      border: 2px solid rgba(255, 0, 60, 0.33);
+      box-shadow: 0 0 20px rgba(255, 0, 60, 0.4), 0 0 40px rgba(255, 0, 60, 0.2);
+      animation: pulse-glow 2s infinite;
     }
-  }
-
-  .border-glow {
-    border: 2px solid #ff003c55;
-    box-shadow: 0 0 20px #ff003c66, 0 0 40px #ff003c33;
-    animation: pulse-glow 2s infinite;
-  }
-
-  #mediaModal img, #mediaModal video {
-  transition: opacity 0.3s ease-in-out;
-}
+    #mediaModal {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+    #mediaModal.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #mediaModal img, #mediaModal video {
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      transform: scale(0.95);
+    }
+    #mediaModal.visible img, #mediaModal.visible video {
+      transform: scale(1);
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    .section-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
-<!-- Swiper CSS -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<!-- Media Modal (supports both image and video) -->
-<div id="mediaModal" class="fixed inset-0 bg-black bg-opacity-90 hidden flex items-center justify-center z-50">
-  <span onclick="closeModal()" class="absolute top-5 right-8 text-white text-4xl cursor-pointer hover:text-red-500 transition">&times;</span>
-
-  <!-- Image element -->
-  <img id="modalImage" class="max-h-[90vh] max-w-[90vw] border border-red-600 shadow-2xl rounded-lg hidden mx-auto" />
-
-  <!-- Video element -->
-  <video id="modalVideo" controls class="max-h-[90vh] max-w-[90vw] border border-red-600 shadow-2xl rounded-lg hidden mx-auto">
-    <source id="modalVideoSource" src="" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-</div>
 
 <body class="bg-deep text-white">
+
+  <!-- Media Modal (supports both image and video) -->
+  <div id="mediaModal" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50" aria-modal="true" role="dialog">
+    <button onclick="closeModal()" class="absolute top-5 right-8 text-white text-4xl cursor-pointer hover:text-red-500 transition" aria-label="Close modal">&times;</button>
+
+    <!-- Image element -->
+    <img id="modalImage" class="max-h-[90vh] max-w-[90vw] border border-red-600 shadow-2xl rounded-lg hidden mx-auto" alt="Enlarged view" />
+
+    <!-- Video element -->
+    <video id="modalVideo" controls class="max-h-[90vh] max-w-[90vw] border border-red-600 shadow-2xl rounded-lg hidden mx-auto">
+      <source id="modalVideoSource" src="" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
   <!-- Header -->
   <header class="relative text-center py-20 bg-black shadow-lg border-b border-red-700 overflow-hidden">
@@ -72,45 +91,43 @@
     <div class="relative z-10">
       <h1 class="text-5xl font-bold neon-red">My Game Portfolio</h1>
       <p class="mt-2 text-gray-400">Crafted with Unity, C#, and passion</p>
-    <div class="mt-6 flex justify-center gap-4 flex-wrap">
+      <div class="mt-6 flex justify-center gap-4 flex-wrap">
 
-    <!-- GitHub -->
-    <a href="https://github.com/He1ler" target="_blank"
-    class="bg-[#200000] border border-red-500 hover:bg-red-700 hover:text-white hover:shadow-[0_0_10px_#ff0000] px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-white shadow-md"
-    style="background-color: #200000; transition: background-color 0.3s;"
-    onmouseover="this.style.backgroundColor='#b91c1c'"
-    onmouseout="this.style.backgroundColor='#200000'">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-5 h-5" />
-    GitHub
-    </a>
+        <!-- GitHub -->
+        <a href="https://github.com/He1ler" target="_blank" rel="noopener noreferrer"
+          class="bg-[#200000] border border-red-500 hover:bg-red-700 hover:text-white hover:shadow-[0_0_10px_#ff0000] px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-white shadow-md"
+          style="background-color: #200000; transition: background-color 0.3s;"
+          onmouseover="this.style.backgroundColor='#b91c1c'"
+          onmouseout="this.style.backgroundColor='#200000'">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-5 h-5" alt="GitHub" />
+          GitHub
+        </a>
 
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/denys-korolchuck-a58bb516b" target="_blank"
-    class="bg-[#200000] border border-red-500 hover:bg-red-700 hover:text-white hover:shadow-[0_0_10px_#ff0000] px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-white shadow-md"
-    style="background-color: #200000; transition: background-color 0.3s;"
-    onmouseover="this.style.backgroundColor='#b91c1c'"
-    onmouseout="this.style.backgroundColor='#200000'">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-5 h-5" />
-    LinkedIn
-    </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/denys-korolchuck-a58bb516b" target="_blank" rel="noopener noreferrer"
+          class="bg-[#200000] border border-red-500 hover:bg-red-700 hover:text-white hover:shadow-[0_0_10px_#ff0000] px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-white shadow-md"
+          style="background-color: #200000; transition: background-color 0.3s;"
+          onmouseover="this.style.backgroundColor='#b91c1c'"
+          onmouseout="this.style.backgroundColor='#200000'">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-5 h-5" alt="LinkedIn" />
+          LinkedIn
+        </a>
 
-    <!-- Steam -->
-    <a href="https://steamcommunity.com/id/danisamo" target="_blank"
-    class="bg-[#200000] border border-red-500 hover:bg-red-700 hover:text-white hover:shadow-[0_0_10px_#ff0000] px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-white shadow-md"
-    style="background-color: #200000; transition: background-color 0.3s;"
-    onmouseover="this.style.backgroundColor='#b91c1c'"
-    onmouseout="this.style.backgroundColor='#200000'">
-    <img src="https://cdn.simpleicons.org/steam/ffffff" class="w-5 h-5" alt="Steam icon" />
-    Steam
-    </a>
-
+        <!-- Steam -->
+        <a href="https://steamcommunity.com/id/danisamo" target="_blank" rel="noopener noreferrer"
+          class="bg-[#200000] border border-red-500 hover:bg-red-700 hover:text-white hover:shadow-[0_0_10px_#ff0000] px-4 py-2 rounded-full transition duration-300 flex items-center gap-2 text-white shadow-md"
+          style="background-color: #200000; transition: background-color 0.3s;"
+          onmouseover="this.style.backgroundColor='#b91c1c'"
+          onmouseout="this.style.backgroundColor='#200000'">
+          <img src="https://cdn.simpleicons.org/steam/ffffff" class="w-5 h-5" alt="Steam icon" />
+          Steam
+        </a>
+      </div>
     </div>
   </header>
-  <!-- Header -->
 
-<!-- About Me Section -->
-<section class="relative max-w-5xl mx-auto mt-20 px-8 py-12 bg-gradient-to-br from-[#1a0000] via-[#140000] to-[#1a0000] text-white border border-red-700 rounded-2xl shadow-xl overflow-hidden animate-fade-in">
-  
+  <!-- About Me Section -->
+  <section class="fade-in relative max-w-5xl mx-auto mt-20 px-8 py-12 bg-gradient-to-br from-[#1a0000] via-[#140000] to-[#1a0000] text-white border border-red-700 rounded-2xl shadow-xl overflow-hidden">
     <!-- Glowing Accent Bar -->
     <div class="absolute top-0 left-0 w-full h-1 bg-red-600 shadow-[0_0_15px_3px_#ff0000] animate-pulse"></div>
   
@@ -124,230 +141,319 @@
   
     <!-- Bio Text -->
     <p class="text-gray-300 text-lg leading-relaxed">
-      I’m a passionate <span class="text-red-400 font-semibold">Unity developer</span> focused on crafting smooth gameplay, optimizing performance, and building engaging experiences.
+      I'm a passionate <span class="text-red-400 font-semibold">Unity developer</span> focused on crafting smooth gameplay, optimizing performance, and building engaging experiences.
       My toolkit includes <span class="text-red-400 font-semibold">C#, Zenject, and ECS-style design</span>, and I thrive in both indie teams and solo dev cycles.
       <br /><br />
-      I’m also experienced in <span class="text-red-400 font-semibold">AI tools</span>, editor extensions, and building scalable systems that help games ship faster and shine brighter.
+      I'm also experienced in <span class="text-red-400 font-semibold">AI tools</span>, editor extensions, and building scalable systems that help games ship faster and shine brighter.
     </p>
-  
   </section>
-<!-- About Me Section -->
 
-<!-- Separator Section -->
-<div class="relative my-24 flex justify-center">
-  <!-- Glowing Frame Container -->
-  <div class="relative w-full py-6 border-4 border-red-600 rounded-xl text-center 
+  <!-- Separator Section -->
+  <div class="fade-in relative my-24 flex justify-center">
+    <!-- Glowing Frame Container -->
+    <div class="relative w-full py-6 border-4 border-red-600 rounded-xl text-center 
               text-3xl font-bold uppercase tracking-widest text-red-400
               shadow-[0_0_25px_5px_#ff000088] animate-pulse">
+      <!-- Background Blur Layer -->
+      <div class="absolute inset-0 bg-red-500/5 backdrop-blur-sm z-0 rounded-xl"></div>
 
- <!-- Background Blur Layer -->
-<div class="absolute inset-0 bg-red-500/5 backdrop-blur-sm z-0 rounded-xl"></div>
+      <!-- Behind Glow Layer -->
+      <div class="absolute inset-0 rounded-xl border-4 border-red-500 opacity-30 blur-md animate-pulse"></div>
 
-    <!-- Behind Glow Layer -->
-    <div class="absolute inset-0 rounded-xl border-4 border-red-500 opacity-30 blur-md animate-pulse"></div>
-
-    <!-- Foreground Text -->
-    <span class="relative z-10">Projects</span>
+      <!-- Foreground Text -->
+      <span class="relative z-10" id="projects">Projects</span>
+    </div>
   </div>
-</div>
-<!-- Separator Section -->
-
-  <!-- Projects -->
 
   <!-- Projects Section -->
   <main class="max-w-screen-2xl mx-auto px-6 py-12">
-    
-    <!-- Project Block -->
-    <section class="mb-16 border-glow rounded-lg p-6 bg-black">
+    <!-- Project Block: Cyber Raid -->
+    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Cyber Raid</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
       </p>
 
-     <!-- Gallery Swiper -->
-<div class="swiper mySwiper">
-  <div class="swiper-wrapper">
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- Slide: Video -->
+          <div class="swiper-slide">
+            <div class="relative cursor-pointer" onclick="openModal('videos/cyber-raid-demo.mp4', 'video')">
+              <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg opacity-60 bg-gray-900 flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="bg-red-700 text-white px-4 py-2 rounded-full shadow-lg hover:bg-red-600 transition">▶ Play Video</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <!-- Slide: Video -->
-<div class="swiper-slide">
-  <div class="relative cursor-pointer" onclick="openModal('videos/cyber-raid-demo.mp4')">
-    <video class="rounded-lg w-full border border-red-600 shadow-lg opacity-60 pointer-events-none">
-      <source src="videos/cyber-raid-demo.mp4" type="video/mp4" />
-    </video>
-    <div class="absolute inset-0 flex items-center justify-center">
-      <div class="bg-red-700 text-white px-4 py-2 rounded-full shadow-lg hover:bg-red-600 transition">▶ Play Video</div>
-    </div>
-  </div>
-</div>
+          <!-- Slide: Image -->
+          <div class="swiper-slide">
+            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
+                 style="background-image: url('Images/Tram/Tram1.jpg')" 
+                 onclick="openModal('Images/Tram/Tram1.jpg', 'image')">
+            </div>
+          </div>
 
-<!-- Slide: Image -->
-<div class="swiper-slide">
-  <img src="Images/Tram/Tram1.jpg"
-       alt="Screenshot"
-       class="rounded-lg w-full cursor-pointer border border-red-600 shadow-lg"
-       onclick="openModal(this.src)" />
-</div>
+          <!-- Slide: More Images -->
+          <div class="swiper-slide">
+            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
+                 style="background-image: url('Images/Tram/Tram2.jpg')" 
+                 onclick="openModal('Images/Tram/Tram2.jpg', 'image')">
+            </div>
+          </div>
 
-<!-- Slide: More Images -->
-<div class="swiper-slide">
-  <img src="Images/Tram/Tram2.jpg" alt="Screenshot"
-       class="rounded-lg w-full cursor-pointer border border-red-600 shadow-lg"
-       onclick="openModal(this.src)" />
-</div>
+          <div class="swiper-slide">
+            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
+                 style="background-image: url('Images/Tram/Tram3.jpg')" 
+                 onclick="openModal('Images/Tram/Tram3.jpg', 'image')">
+            </div>
+          </div>
 
-<div class="swiper-slide">
-  <img src="Images/Tram/Tram3.jpg" alt="Screenshot"
-       class="rounded-lg w-full cursor-pointer border border-red-600 shadow-lg"
-       onclick="openModal(this.src)" />
-</div>
+          <div class="swiper-slide">
+            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
+                 style="background-image: url('Images/Tram/Tram4.jpg')" 
+                 onclick="openModal('Images/Tram/Tram4.jpg', 'image')">
+            </div>
+          </div>
 
-<div class="swiper-slide">
-  <img src="Images/Tram/Tram4.jpg" alt="Screenshot"
-       class="rounded-lg w-full cursor-pointer border border-red-600 shadow-lg"
-       onclick="openModal(this.src)" />
-</div>
+          <div class="swiper-slide">
+            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
+                 style="background-image: url('Images/Tram/Tram5.jpg')" 
+                 onclick="openModal('Images/Tram/Tram5.jpg', 'image')">
+            </div>
+          </div>
 
-<div class="swiper-slide">
-  <img src="Images/Tram/Tram5.jpg" alt="Screenshot"
-       class="rounded-lg w-full cursor-pointer border border-red-600 shadow-lg"
-       onclick="openModal(this.src)" />
-</div>
+          <div class="swiper-slide">
+            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
+                 style="background-image: url('Images/Tram/Tram6.jpg')" 
+                 onclick="openModal('Images/Tram/Tram6.jpg', 'image')">
+            </div>
+          </div>
+        </div>
 
-<div class="swiper-slide">
-  <img src="Images/Tram/Tram6.jpg" alt="Screenshot"
-       class="rounded-lg w-full cursor-pointer border border-red-600 shadow-lg"
-       onclick="openModal(this.src)" />
-</div>
-    <!-- Add more here -->
-
-  </div>
-
-  <!-- Optional: Navigation Buttons -->
-  <div class="swiper-button-next text-red-500"></div>
-  <div class="swiper-button-prev text-red-500"></div>
-
-</div>
-    </section>
-  </main>
-  <!-- Projects Section -->
-    <!-- Duplicate the section above for each new project -->
-
-    <!-- Separator Section -->
-    <div class="relative my-24 flex justify-center">
-      <!-- Glowing Frame Container -->
-      <div class="relative w-full py-6 border-4 border-red-600 rounded-xl text-center 
-                  text-3xl font-bold uppercase tracking-widest text-red-400
-                  shadow-[0_0_25px_5px_#ff000088] animate-pulse">
-    
-     <!-- Background Blur Layer -->
-    <div class="absolute inset-0 bg-red-500/5 backdrop-blur-sm z-0 rounded-xl"></div>
-
-        <!-- Behind Glow Layer -->
-        <div class="absolute inset-0 rounded-xl border-4 border-red-500 opacity-30 blur-md animate-pulse"></div>
-    
-        <!-- Foreground Text -->
-        <span class="relative z-10">Next Chapter</span>
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
       </div>
-    </div>
-    <!-- Separator Section -->
 
-      <!-- Projects Section -->
-  <main class="max-w-screen-2xl mx-auto px-6 py-12">
-    <!-- Project Block -->
-    <section class="mb-16 border-glow rounded-lg p-6 bg-black">
-      <h2 class="text-3xl font-bold neon-red mb-4">Cyber Raid</h2>
+      <!-- Project Technologies -->
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Unity</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">C#</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">ECS</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Shader Graph</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Zenject</span>
+      </div>
+    </section>
+
+    <!-- Project Block: Your Next Project -->
+    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">Night Stalker</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
-        Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
+        A stealth-based horror game where players navigate through a dystopian future city. Features advanced AI behavior systems and dynamic lighting. Built using Unity's URP and custom gameplay systems.
       </p>
 
-     <!-- Media Gallery -->
-     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <video controls class="rounded-lg w-full border border-red-600 shadow-lg">
-          <source src="videos/cyber-raid-demo.mp4" type="video/mp4" />
-        </video>
-        <img src="images/cyber-raid-1.jpg" alt="Screenshot 1" class="rounded-lg w-full border border-red-600 shadow-lg" />
-        <img src="images/cyber-raid-2.jpg" alt="Screenshot 2" class="rounded-lg w-full border border-red-600 shadow-lg" />
-        <!-- Add more <img> or <video> elements here -->
+      <!-- Placeholder for when you have media -->
+      <div class="rounded-lg w-full h-64 md:h-80 border border-red-600 shadow-lg flex items-center justify-center bg-gradient-to-r from-red-900/20 to-black">
+        <p class="text-red-400 text-lg">Media coming soon</p>
+      </div>
+
+      <!-- Project Technologies -->
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Unity</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">URP</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">C#</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">AI Systems</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Procedural Animation</span>
       </div>
     </section>
+
+    <!-- You can add more project blocks here -->
   </main>
-      <!-- Projects Section -->
-    <!-- Duplicate the section above for each new project -->
+
+  <!-- Contact Section -->
+  <section class="fade-in max-w-5xl mx-auto my-24 px-8 py-12 bg-gradient-to-br from-[#1a0000] via-[#140000] to-[#1a0000] text-white border border-red-700 rounded-2xl shadow-xl">
+    <!-- Glowing Accent Bar -->
+    <div class="absolute top-0 left-0 w-full h-1 bg-red-600 shadow-[0_0_15px_3px_#ff0000] animate-pulse"></div>
+  
+    <!-- Section Header -->
+    <div class="flex items-center gap-4 mb-6">
+      <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+      <h2 class="text-4xl font-bold text-red-500 tracking-wide">Contact Me</h2>
+    </div>
+  
+    <!-- Contact Text -->
+    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+      Interested in working together? Let's create something amazing. Feel free to reach out via email or social media.
+    </p>
+
+    <!-- Contact Email -->
+    <a href="mailto:denys.korolchuk@example.com" class="inline-block mt-4 bg-[#200000] border border-red-500 hover:bg-red-700 hover:text-white hover:shadow-[0_0_10px_#ff0000] px-6 py-3 rounded-full transition duration-300 text-white shadow-md">
+      denys.korolchuk@example.com
+    </a>
+  </section>
 
   <!-- Footer -->
-  <footer class="w-full block relative text-center py-12 bg-gradient-to-b from-[#1a0000] to-black text-gray-400 border-t border-red-700 text-sm shadow-inner animate-fade-in">
+  <footer class="w-full block relative text-center py-12 bg-gradient-to-b from-[#1a0000] to-black text-gray-400 border-t border-red-700 text-sm shadow-inner">
     <!-- Glowing Top Bar -->
     <div class="absolute top-0 left-0 w-full h-1 bg-red-700 shadow-[0_0_20px_5px_#ff0000] animate-pulse"></div>
     <p class="z-10 relative">
       &copy; 2025 <strong class="text-red-400">Denys Korolchuk</strong> aka <span class="text-red-500 font-semibold">Heller</span> — Unity & Game Developer
     </p>
+    <!-- Back to top button -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="mt-4 px-4 py-2 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300 hover:bg-red-700 transition">
+      Back to Top ↑
+    </button>
   </footer>
-  <!-- Footer -->
 
   <script>
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 50 },
-        color: { value: '#ff0000' },
-        shape: { type: 'circle' },
-        opacity: { value: 0.3 },
-        size: { value: 3 },
-        move: { speed: 1 }
-      },
-      interactivity: {
-        events: {
-          onhover: { enable: true, mode: 'repulse' }
+    // Initialize particles with optimized settings
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize particles with reduced particle count for better performance
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 30, density: { enable: true, value_area: 800 } },
+          color: { value: '#ff0000' },
+          shape: { type: 'circle' },
+          opacity: { 
+            value: 0.3, 
+            random: true,
+            anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
+          },
+          size: { 
+            value: 3,
+            random: true,
+            anim: { enable: true, speed: 2, size_min: 0.1, sync: false }
+          },
+          move: { 
+            enable: true,
+            speed: 1,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "repulse" },
+            onclick: { enable: true, mode: "push" },
+            resize: true
+          },
+          modes: {
+            repulse: { distance: 100, duration: 0.4 },
+            push: { particles_nb: 4 }
+          }
+        },
+        retina_detect: true
+      });
+
+      // Initialize Swiper with improved options
+      const swiper = new Swiper('.mySwiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        breakpoints: {
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 }
+        },
+        keyboard: {
+          enabled: true
+        },
+        a11y: {
+          prevSlideMessage: 'Previous slide',
+          nextSlideMessage: 'Next slide'
         }
-      },
-      retina_detect: true
+      });
+
+      // Intersection Observer for fade-in animations
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('section-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with fade-in class
+      document.querySelectorAll('.fade-in').forEach(section => {
+        observer.observe(section);
+      });
     });
 
-    const swiper = new Swiper('.mySwiper', {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 2000,
-      disableOnInteraction: false
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    breakpoints: {
-      640: { slidesPerView: 1 },
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 }
+    // Improved modal functions with keyboard support
+    function openModal(src, type) {
+      const modal = document.getElementById('mediaModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalVideo = document.getElementById('modalVideo');
+      const videoSource = document.getElementById('modalVideoSource');
+
+      // Show modal
+      modal.classList.add('visible');
+      
+      // Set focus trap
+      modal.setAttribute('tabindex', '-1');
+      modal.focus();
+
+      if (type === 'video' || src.endsWith('.mp4')) {
+        modalImage.classList.add('hidden');
+        modalVideo.classList.remove('hidden');
+        videoSource.src = src;
+        modalVideo.load();
+        modalVideo.play();
+      } else {
+        modalVideo.classList.add('hidden');
+        modalImage.classList.remove('hidden');
+        modalImage.src = src;
+      }
+
+      // Add event listener for ESC key
+      document.addEventListener('keydown', handleEscKey);
     }
-  });
 
-  function openModal(src) {
-    const modal = document.getElementById('mediaModal');
-    const modalImage = document.getElementById('modalImage');
-    const modalVideo = document.getElementById('modalVideo');
-    const videoSource = document.getElementById('modalVideoSource');
+    function closeModal() {
+      const modal = document.getElementById('mediaModal');
+      const modalVideo = document.getElementById('modalVideo');
 
-    modal.classList.remove('hidden');
-
-    if (src.endsWith('.mp4')) {
-      modalImage.classList.add('hidden');
-      modalVideo.classList.remove('hidden');
-      videoSource.src = src;
-      modalVideo.load();
-    } else {
-      modalVideo.classList.add('hidden');
-      modalImage.classList.remove('hidden');
-      modalImage.src = src;
+      // Hide modal
+      modal.classList.remove('visible');
+      
+      // Pause video if playing
+      modalVideo.pause();
+      
+      // Remove ESC key event listener
+      document.removeEventListener('keydown', handleEscKey);
     }
-  }
 
-  function closeModal() {
-    const modal = document.getElementById('mediaModal');
-    const modalVideo = document.getElementById('modalVideo');
-
-    modal.classList.add('hidden');
-    modalVideo.pause();
-  }
+    function handleEscKey(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    }
   </script>
 </body>
 </html>
