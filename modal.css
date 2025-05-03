@@ -5,7 +5,7 @@
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.95);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: 50;
@@ -45,6 +45,7 @@
     font-size: 2.25rem;
     cursor: pointer;
     transition: color 0.3s ease;
+    z-index: 51;
   }
   
   .modal-close-btn:hover {
@@ -60,6 +61,7 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+    z-index: 51;
   }
   
   .modal-nav-btn {
@@ -72,4 +74,18 @@
   
   .modal-nav-btn:hover {
     background-color: #b91c1c;
+  }
+
+  /* Ensure modal content is visible */
+  #mediaModal.visible img:not(.hidden),
+  #mediaModal.visible video:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Hide elements with .hidden class */
+  .hidden {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
   }

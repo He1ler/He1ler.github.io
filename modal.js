@@ -24,7 +24,10 @@ function openModal(src, type) {
   currentMediaType = type;
   
   // Show modal
-  modal.classList.add('visible');
+  modal.style.display = 'flex';
+  setTimeout(() => {
+    modal.classList.add('visible');
+  }, 10);
   
   // Set focus trap
   modal.setAttribute('tabindex', '-1');
@@ -66,6 +69,9 @@ function closeModal() {
 
   // Hide modal
   modal.classList.remove('visible');
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 500); // Match the transition duration
   
   // Pause video if playing
   modalVideo.pause();
