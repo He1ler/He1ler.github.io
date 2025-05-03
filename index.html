@@ -365,93 +365,94 @@
 
 
   <!-- ============================================================== -->
-  <!-- PROJECTS SECTION - GRID LAYOUT                                 -->
+  <!-- PROJECTS SECTION                               -->
   <!-- ============================================================== -->
   <main class="max-w-7xl mx-auto px-6 py-12">
-    <!-- Projects Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
       
-      <!-- -------------------------------------------- -->
-      <!-- PROJECT 1: Cyber Raid                        -->
-      <!-- -------------------------------------------- -->
-      <section class="fade-in project-card border-glow rounded-lg overflow-hidden bg-black shadow-2xl">
-        <!-- Project Header -->
-        <div class="p-6 border-b border-red-900/30">
-          <h2 class="text-3xl font-bold neon-red mb-2">Cyber Raid</h2>
-          <p class="text-gray-300">
-            High-speed sci-fi shooter with procedurally generated enemies and AI-controlled squads.
-          </p>
-        </div>
-        
-        <!-- Media Gallery -->
-        <div class="relative">
-          <!-- Featured Media -->
-          <div class="relative media-container">
-            <video class="media-item" muted autoplay loop>
-              <source src="videos/cyber-raid-demo.mp4" type="video/mp4" />
-            </video>
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <button onclick="openProjectGallery('cyber-raid', 0)" class="bg-red-700/80 hover:bg-red-600 text-white px-5 py-3 rounded-full shadow-lg transition transform hover:scale-105">
-                View Gallery
-              </button>
+ <!-- -------------------------------------------- -->
+    <!-- PROJECT 1: Cyber Raid                        -->
+    <!-- -------------------------------------------- -->
+    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">Cyber Raid</h2>
+      <p class="text-gray-300 mb-6 max-w-4xl">
+        Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
+      </p>
+
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- Slide: Video -->
+          <div class="swiper-slide">
+            <div class="relative cursor-pointer" onclick="openModal('videos/cyber-raid-demo.mp4', 'video')">
+              <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg opacity-60 bg-gray-900 flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="bg-red-700 text-white px-4 py-2 rounded-full shadow-lg hover:bg-red-600 transition">▶ Play Video</div>
+                </div>
+              </div>
             </div>
           </div>
-          
-          <!-- Thumbnail Strip -->
-          <div class="flex overflow-x-auto p-2 bg-black border-t border-red-900/30 scrollbar-thin scrollbar-thumb-red-500">
-            <!-- Video Thumbnail -->
-            <div class="flex-shrink-0 w-24 h-16 mr-2 cursor-pointer rounded overflow-hidden border border-red-900/50 hover:border-red-500 transition"
-                 onclick="openProjectGallery('cyber-raid', 0)">
-              <video class="w-full h-full object-cover" muted>
-                <source src="videos/cyber-raid-demo.mp4" type="video/mp4" />
-              </video>
-            </div>
-            
-            <!-- Image Thumbnails -->
-            <div class="flex-shrink-0 w-24 h-16 mr-2 cursor-pointer rounded overflow-hidden border border-red-900/50 hover:border-red-500 transition"
-                 onclick="openProjectGallery('cyber-raid', 1)">
-              <img src="Images/Tram/Tram1.jpg" alt="Thumbnail" class="w-full h-full object-cover" />
-            </div>
-            
-            <div class="flex-shrink-0 w-24 h-16 mr-2 cursor-pointer rounded overflow-hidden border border-red-900/50 hover:border-red-500 transition"
-                 onclick="openProjectGallery('cyber-raid', 2)">
-              <img src="Images/Tram/Tram2.jpg" alt="Thumbnail" class="w-full h-full object-cover" />
-            </div>
-            
-            <div class="flex-shrink-0 w-24 h-16 mr-2 cursor-pointer rounded overflow-hidden border border-red-900/50 hover:border-red-500 transition"
-                 onclick="openProjectGallery('cyber-raid', 3)">
-              <img src="Images/Tram/Tram3.jpg" alt="Thumbnail" class="w-full h-full object-cover" />
-            </div>
-            
-            <div class="flex-shrink-0 w-24 h-16 cursor-pointer rounded overflow-hidden border border-red-900/50 hover:border-red-500 transition"
-                 onclick="openProjectGallery('cyber-raid', 4)">
-              <img src="Images/Tram/Tram4.jpg" alt="Thumbnail" class="w-full h-full object-cover" />
+
+          <!-- Slide: Image -->
+          <div class="swiper-slide">
+            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
+                 style="background-image: url('Images/Tram/Tram1.jpg')" 
+                 onclick="openModal('Images/Tram/Tram1.jpg', 'image')">
             </div>
           </div>
-        </div>
-        
-        <!-- Project Details -->
-        <div class="p-6">
-          <div class="mb-4">
-            <h3 class="text-xl font-semibold text-red-400 mb-2">Technical Details</h3>
-            <p class="text-gray-300 text-sm">
-              Built using Unity's DOTS architecture with custom rendering pipeline optimizations. 
-              Features dynamic lighting, procedural animations, and advanced AI squad behavior.
-            </p>
+
+          <!-- Slide: More Images -->
+          <div class="swiper-slide">
+            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
+                 style="background-image: url('Images/Tram/Tram2.jpg')" 
+                 onclick="openModal('Images/Tram/Tram2.jpg', 'image')">
+            </div>
           </div>
-          
-          <!-- Project Technologies -->
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Unity</span>
-            <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">C#</span>
-            <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">ECS</span>
-            <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Shader Graph</span>
-            <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Zenject</span>
+
+          <div class="swiper-slide">
+            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
+                 style="background-image: url('Images/Tram/Tram3.jpg')" 
+                 onclick="openModal('Images/Tram/Tram3.jpg', 'image')">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
+                 style="background-image: url('Images/Tram/Tram4.jpg')" 
+                 onclick="openModal('Images/Tram/Tram4.jpg', 'image')">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
+                 style="background-image: url('Images/Tram/Tram5.jpg')" 
+                 onclick="openModal('Images/Tram/Tram5.jpg', 'image')">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
+                 style="background-image: url('Images/Tram/Tram6.jpg')" 
+                 onclick="openModal('Images/Tram/Tram6.jpg', 'image')">
+            </div>
           </div>
         </div>
-      </section>
-      <!-- END PROJECT 1 -->
+
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
+      </div>
+
+      <!-- Project Technologies -->
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Unity</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">C#</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">ECS</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Shader Graph</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Zenject</span>
+      </div>
+    </section>
+    <!-- END PROJECT 1 -->
 
     <!-- -------------------------------------------- -->
     <!-- PROJECT 2: Night Stalker                     -->
