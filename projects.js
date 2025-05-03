@@ -1,16 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded - Starting projects.js');
+    
     // Fetch the projects JSON file
     fetch('projects.json')
-      .then(response => response.json())
+      .then(response => {
+        console.log('Fetch response:', response);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then(data => {
+        console.log('Projects data loaded:', data);
+        
         // Get the container where projects will be inserted
         const projectsContainer = document.querySelector('main');
-        
-        // Clear any existing content (optional)
-        // projectsContainer.innerHTML = '';
+        console.log('Projects container:', projectsContainer);
         
         // Process each project in the JSON
         data.projects.forEach(project => {
+          console.log('Creating project section for:', project.title);
           // Create project section
           const projectSection = createProjectSection(project);
           
@@ -19,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
           // Initialize Swiper for this project if it has media
           if (project.media && project.media.length > 0) {
+            console.log('Initializing Swiper for:', project.title);
             initSwiper(project.id);
           }
         });
@@ -26,7 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add fade-in animation to all sections
         addFadeInAnimation();
       })
-      .catch(error => console.error('Error loading projects:', error));
+      .catch(error => {
+        console.error('Error loading projects:', error);
+      });
   });
   
   // Create a project section element from project data
