@@ -29,7 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
           // Initialize Swiper for this project if it has media
           if (project.media && project.media.length > 0) {
             console.log('Initializing Swiper for:', project.title);
-            initSwiper(project.id);
+            // Use the global initializeSwiper function
+            if (typeof initializeSwiper === 'function') {
+              initializeSwiper();
+            }
           }
         });
         
@@ -165,29 +168,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     return techContainer;
-  }
-  
-  // Initialize Swiper for a project
-  function initSwiper(projectId) {
-    new Swiper(`#swiper-${projectId}`, {
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      slidesPerView: 1,
-      spaceBetween: 30,
-      breakpoints: {
-        640: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
-      },
-    });
   }
   
   // Add fade-in animation to all sections

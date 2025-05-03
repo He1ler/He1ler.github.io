@@ -15,6 +15,7 @@ function initializeSwiper() {
     const swiperElements = document.querySelectorAll('.swiper');
     
     swiperElements.forEach(element => {
+      const projectId = element.id.replace('swiper-', '');
       new Swiper(element, {
         slidesPerView: 1,
         spaceBetween: 20,
