@@ -1,6 +1,13 @@
 {
     "projects": [
       {
+        "id": "test-project",
+        "title": "Test Project",
+        "description": "This is a test project to verify JSON loading and display.",
+        "technologies": ["Test", "Debug", "Verification"],
+        "media": []
+      },
+      {
         "id": "cyber-raid",
         "title": "Cyber Raid",
         "description": "Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.",

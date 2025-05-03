@@ -7,6 +7,18 @@ body {
     background-color: #080808;
   }
   
+  /* Debug styles - temporary */
+  main {
+    border: 2px solid red;
+    min-height: 200px;
+  }
+  
+  section {
+    border: 2px solid blue;
+    margin: 20px;
+    padding: 20px;
+  }
+  
   /* Color & Effect Classes */
   .neon-red {
     color: #ff003c;

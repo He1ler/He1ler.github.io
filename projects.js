@@ -17,14 +17,24 @@ document.addEventListener('DOMContentLoaded', function() {
         const projectsContainer = document.querySelector('main');
         console.log('Projects container:', projectsContainer);
         
+        if (!projectsContainer) {
+          console.error('Main container not found!');
+          return;
+        }
+        
+        // Clear any existing content
+        projectsContainer.innerHTML = '';
+        
         // Process each project in the JSON
         data.projects.forEach(project => {
           console.log('Creating project section for:', project.title);
           // Create project section
           const projectSection = createProjectSection(project);
+          console.log('Created project section:', projectSection);
           
           // Append to the container
           projectsContainer.appendChild(projectSection);
+          console.log('Appended project section to container');
           
           // Initialize Swiper for this project if it has media
           if (project.media && project.media.length > 0) {
@@ -38,6 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Add fade-in animation to all sections
         addFadeInAnimation();
+        
+        // Log the final state of the container
+        console.log('Final container HTML:', projectsContainer.innerHTML);
       })
       .catch(error => {
         console.error('Error loading projects:', error);
