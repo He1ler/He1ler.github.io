@@ -275,7 +275,7 @@
   </main>
 
   <!-- Contact Section -->
-  <section class="fade-in max-w-5xl mx-auto my-24 px-8 py-12 bg-gradient-to-br from-[#1a0000] via-[#140000] to-[#1a0000] text-white border border-red-700 rounded-2xl shadow-xl">
+  <section class="fade-in relative max-w-5xl mx-auto mt-20 px-8 py-12 bg-gradient-to-br from-[#1a0000] via-[#140000] to-[#1a0000] text-white border border-red-700 rounded-2xl shadow-xl overflow-hidden">
     <!-- Glowing Accent Bar -->
     <div class="absolute top-0 left-0 w-full h-1 bg-red-600 shadow-[0_0_15px_3px_#ff0000] animate-pulse"></div>
   
@@ -317,18 +317,18 @@
       // Initialize particles with reduced particle count for better performance
       particlesJS('particles-js', {
         particles: {
-          number: { value: 30, density: { enable: true, value_area: 800 } },
+          number: { value: 100, density: { enable: true, value_area: 800 } },
           color: { value: '#ff0000' },
           shape: { type: 'circle' },
           opacity: { 
-            value: 0.3, 
+            value: 0.5, 
             random: true,
             anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
           },
           size: { 
-            value: 3,
+            value: 5,
             random: true,
-            anim: { enable: true, speed: 2, size_min: 0.1, sync: false }
+            anim: { enable: true, speed: 3, size_min: 0.1, sync: false }
           },
           move: { 
             enable: true,
@@ -361,7 +361,7 @@
         spaceBetween: 20,
         loop: true,
         autoplay: {
-          delay: 3000,
+          delay: 2000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         },
