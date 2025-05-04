@@ -28,55 +28,38 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /**
- * Initialize media collections from project galleries
+ * Initialize media items from project galleries
  */
 function initializeMediaCollections() {
     // Get all project sections
     const projectSections = document.querySelectorAll('section.fade-in');
     
-    // Create collections for each project
-    projectSections.forEach((section, index) => {
-        const collection = [];
-        
+    // Create array for all media items
+    const allMediaItems = [];
+    
+    projectSections.forEach(section => {
         // Find all media items in the swiper
         const swiperSlides = section.querySelectorAll('.swiper-slide');
         
         swiperSlides.forEach(slide => {
-            // Find the media element (video or image)
-            const mediaElement = slide.querySelector('video, img');
-            if (mediaElement) {
-                // Get the onclick attribute to extract src and type
-                const onclickAttr = slide.getAttribute('onclick');
-                if (onclickAttr) {
-                    const match = onclickAttr.match(/openModal\(['"]([^'"]+)['"],\s*['"]([^'"]+)['"]\)/);
-                    if (match && match.length === 3) {
-                        collection.push({
-                            src: match[1],
-                            type: match[2]
-                        });
-                    }
+            // Get the onclick attribute to extract src and type
+            const onclickAttr = slide.getAttribute('onclick');
+            if (onclickAttr) {
+                const match = onclickAttr.match(/openModal\(['"]([^'"]+)['"],\s*['"]([^'"]+)['"]\)/);
+                if (match && match.length === 3) {
+                    allMediaItems.push({
+                        src: match[1],
+                        type: match[2]
+                    });
                 }
             }
         });
-        
-        // Add the collection to the appropriate collection array
-        if (index % 2 === 0) {
-            // Even index projects go to collection1
-            if (!window.mediaCollections) window.mediaCollections = { collection1: [], collection2: [] };
-            window.mediaCollections.collection1 = [...window.mediaCollections.collection1, ...collection];
-        } else {
-            // Odd index projects go to collection2
-            if (!window.mediaCollections) window.mediaCollections = { collection1: [], collection2: [] };
-            window.mediaCollections.collection2 = [...window.mediaCollections.collection2, ...collection];
-        }
     });
     
-    // Initialize the collections in the modal
-    if (window.setMediaCollections && window.mediaCollections) {
-        window.setMediaCollections(
-            window.mediaCollections.collection1,
-            window.mediaCollections.collection2
-        );
+    // Initialize the media items in the modal
+    if (window.setAllMediaItems) {
+        window.setAllMediaItems(allMediaItems);
+        console.log('Media items initialized:', allMediaItems);
     }
 }
 
