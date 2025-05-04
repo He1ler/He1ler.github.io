@@ -257,6 +257,7 @@
   <!-- ============================================================== -->
   <main class="max-w-7xl mx-auto px-6 py-12">
       
+
     <!-- -------------------------------------------- -->
     <!-- PROJECT 1: Cyber Raid                        -->
     <!-- -------------------------------------------- -->
@@ -269,62 +270,73 @@
       <!-- Gallery Swiper -->
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-          <!-- Slide: Video -->
-          <div class="swiper-slide">
-            <div class="relative cursor-pointer" onclick="openModal('videos/cyber-raid-demo.mp4', 'video')">
-              <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg opacity-60 bg-gray-900 flex items-center justify-center overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-                <div class="absolute inset-0 flex items-center justify-center">
-                  <div class="bg-red-700 text-white px-4 py-2 rounded-full shadow-lg hover:bg-red-600 transition">▶ Play Video</div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <!-- Slide: Image -->
-          <div class="swiper-slide">
-            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
-                 style="background-image: url('Images/Tram/Tram1.jpg')" 
-                 onclick="openModal('Images/Tram/Tram1.jpg', 'image')">
-            </div>
-          </div>
+<!-- Slide: Video -->
+<div class="swiper-slide">
+  <div class="relative w-full max-w-full aspect-video border-[3px] border-red-500 rounded-xl overflow-hidden cursor-pointer shadow-xl"
+       onclick="openModal('videos/cyber-raid-demo.mp4', 'video')">
+    <video class="w-full h-full object-cover opacity-60 pointer-events-none" muted autoplay loop>
+      <source src="videos/cyber-raid-demo.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="bg-red-700 text-white px-4 py-2 rounded-full shadow-lg hover:bg-red-600 transition">▶ Play Video</div>
+    </div>
+  </div>
+</div>
 
-          <!-- Slide: More Images -->
-          <div class="swiper-slide">
-            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
-                 style="background-image: url('Images/Tram/Tram2.jpg')" 
-                 onclick="openModal('Images/Tram/Tram2.jpg', 'image')">
-            </div>
-          </div>
+<!-- Slide: Image -->
+<div class="swiper-slide">
+  <div class="relative w-full max-w-full aspect-video border-[3px] border-red-500 rounded-xl overflow-hidden cursor-pointer shadow-xl"
+       onclick="openModal('Images/Tram/Tram1.jpg', 'image')">
+    <img src="Images/Tram/Tram1.jpg" alt="Screenshot"
+         class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+  </div>
+</div>
 
-          <div class="swiper-slide">
-            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
-                 style="background-image: url('Images/Tram/Tram3.jpg')" 
-                 onclick="openModal('Images/Tram/Tram3.jpg', 'image')">
-            </div>
-          </div>
+<!-- Slide: Image -->
+<div class="swiper-slide">
+  <div class="relative w-full max-w-full aspect-video border-[3px] border-red-500 rounded-xl overflow-hidden cursor-pointer shadow-xl"
+       onclick="openModal('Images/Tram/Tram2.jpg', 'image')">
+    <img src="Images/Tram/Tram2.jpg" alt="Screenshot"
+         class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+  </div>
+</div>
 
-          <div class="swiper-slide">
-            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
-                 style="background-image: url('Images/Tram/Tram4.jpg')" 
-                 onclick="openModal('Images/Tram/Tram4.jpg', 'image')">
-            </div>
-          </div>
+<!-- Slide: Image -->
+<div class="swiper-slide">
+  <div class="relative w-full max-w-full aspect-video border-[3px] border-red-500 rounded-xl overflow-hidden cursor-pointer shadow-xl"
+       onclick="openModal('Images/Tram/Tram3.jpg', 'image')">
+    <img src="Images/Tram/Tram3.jpg" alt="Screenshot"
+         class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+  </div>
+</div>
 
-          <div class="swiper-slide">
-            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
-                 style="background-image: url('Images/Tram/Tram5.jpg')" 
-                 onclick="openModal('Images/Tram/Tram5.jpg', 'image')">
-            </div>
-          </div>
+<!-- Slide: Image -->
+<div class="swiper-slide">
+  <div class="relative w-full max-w-full aspect-video border-[3px] border-red-500 rounded-xl overflow-hidden cursor-pointer shadow-xl"
+       onclick="openModal('Images/Tram/Tram4.jpg', 'image')">
+    <img src="Images/Tram/Tram4.jpg" alt="Screenshot"
+         class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+  </div>
+</div>
 
-          <div class="swiper-slide">
-            <div class="rounded-lg w-full h-48 md:h-64 lg:h-72 border border-red-600 shadow-lg bg-cover bg-center cursor-pointer" 
-                 style="background-image: url('Images/Tram/Tram6.jpg')" 
-                 onclick="openModal('Images/Tram/Tram6.jpg', 'image')">
-            </div>
-          </div>
-        </div>
+<!-- Slide: Image -->
+<div class="swiper-slide">
+  <div class="relative w-full max-w-full aspect-video border-[3px] border-red-500 rounded-xl overflow-hidden cursor-pointer shadow-xl"
+       onclick="openModal('Images/Tram/Tram5.jpg', 'image')">
+    <img src="Images/Tram/Tram5.jpg" alt="Screenshot"
+         class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+  </div>
+</div>
+
+<!-- Slide: Image -->
+<div class="swiper-slide">
+  <div class="relative w-full max-w-full aspect-video border-[3px] border-red-500 rounded-xl overflow-hidden cursor-pointer shadow-xl"
+       onclick="openModal('Images/Tram/Tram6.jpg', 'image')">
+    <img src="Images/Tram/Tram6.jpg" alt="Screenshot"
+         class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+  </div>
+</div>
 
         <!-- Navigation Buttons -->
         <div class="swiper-button-next text-red-500"></div>
