@@ -21,10 +21,13 @@ let currentMedia = {
 };
 
 // Media collections for swapping
-const mediaCollections = {
+let mediaCollections = {
     collection1: [],
     collection2: []
 };
+
+// Current collection index
+let currentCollection = 'collection1';
 
 // Initialize modal
 function initModal() {
@@ -79,19 +82,31 @@ function closeModal() {
 
 // Navigate to previous media
 function prevMedia() {
-    if (window.galleryState.items.length > 0) {
-        window.galleryState.currentIndex = (window.galleryState.currentIndex - 1 + window.galleryState.items.length) % window.galleryState.items.length;
-        const item = window.galleryState.items[window.galleryState.currentIndex];
-        openModal(item.src, item.type);
+    if (mediaCollections[currentCollection].length > 0) {
+        const currentIndex = mediaCollections[currentCollection].findIndex(item => 
+            item.src === currentMedia.src && item.type === currentMedia.type
+        );
+        
+        if (currentIndex !== -1) {
+            const newIndex = (currentIndex - 1 + mediaCollections[currentCollection].length) % mediaCollections[currentCollection].length;
+            const item = mediaCollections[currentCollection][newIndex];
+            openModal(item.src, item.type);
+        }
     }
 }
 
 // Navigate to next media
 function nextMedia() {
-    if (window.galleryState.items.length > 0) {
-        window.galleryState.currentIndex = (window.galleryState.currentIndex + 1) % window.galleryState.items.length;
-        const item = window.galleryState.items[window.galleryState.currentIndex];
-        openModal(item.src, item.type);
+    if (mediaCollections[currentCollection].length > 0) {
+        const currentIndex = mediaCollections[currentCollection].findIndex(item => 
+            item.src === currentMedia.src && item.type === currentMedia.type
+        );
+        
+        if (currentIndex !== -1) {
+            const newIndex = (currentIndex + 1) % mediaCollections[currentCollection].length;
+            const item = mediaCollections[currentCollection][newIndex];
+            openModal(item.src, item.type);
+        }
     }
 }
 
@@ -120,31 +135,26 @@ function handleKeyPress(event) {
 
 // Update navigation buttons visibility
 function updateNavigationButtons() {
-    const hasMultipleItems = window.galleryState.items.length > 1;
+    const hasMultipleItems = mediaCollections[currentCollection].length > 1;
     prevButton.style.display = hasMultipleItems ? 'block' : 'none';
     nextButton.style.display = hasMultipleItems ? 'block' : 'none';
-}
-
-// Initialize media collections
-function initMediaCollections(collection1Items, collection2Items) {
-    mediaCollections.collection1 = collection1Items || [];
-    mediaCollections.collection2 = collection2Items || [];
 }
 
 // Swap media collection
 function swapMediaCollection(collectionName) {
     if (mediaCollections[collectionName] && mediaCollections[collectionName].length > 0) {
-        // Save current index before swapping
-        const currentIndex = window.galleryState.currentIndex;
+        currentCollection = collectionName;
         
-        // Swap the items in the gallery state
-        window.galleryState.items = [...mediaCollections[collectionName]];
+        // Find the current media in the new collection
+        const currentIndex = mediaCollections[collectionName].findIndex(item => 
+            item.src === currentMedia.src && item.type === currentMedia.type
+        );
         
-        // Reset index or try to match it
-        window.galleryState.currentIndex = Math.min(currentIndex, window.galleryState.items.length - 1);
+        // If current media not found in new collection, start from first item
+        const newIndex = currentIndex !== -1 ? currentIndex : 0;
+        const item = mediaCollections[collectionName][newIndex];
         
-        // Load the current item from the new collection
-        const item = window.galleryState.items[window.galleryState.currentIndex];
+        // Load the item
         openModal(item.src, item.type);
         
         // Update active button states
@@ -160,7 +170,14 @@ function updateSwapButtonStates(activeCollection) {
 
 // Add a function to populate the media collections
 function setMediaCollections(collection1Items, collection2Items) {
-    initMediaCollections(collection1Items, collection2Items);
+    mediaCollections.collection1 = collection1Items || [];
+    mediaCollections.collection2 = collection2Items || [];
+    
+    // Initialize the first collection if it has items
+    if (mediaCollections.collection1.length > 0) {
+        currentCollection = 'collection1';
+        updateSwapButtonStates('collection1');
+    }
 }
 
 // Initialize modal when DOM is loaded
@@ -168,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initModal();
     
     // Example: Initialize with empty collections
-    initMediaCollections([], []);
+    setMediaCollections([], []);
     
     // Export the collections setter to window for external use
     window.setMediaCollections = setMediaCollections;
