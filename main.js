@@ -31,35 +31,63 @@ document.addEventListener('DOMContentLoaded', function() {
  * Initialize media items from project galleries
  */
 function initializeMediaCollections() {
+    console.log('Starting media collection initialization...');
+    
     // Get all project sections
     const projectSections = document.querySelectorAll('section.fade-in');
+    console.log('Found project sections:', projectSections.length);
     
     // Create array for all media items
     const allMediaItems = [];
     
-    projectSections.forEach(section => {
-        // Find all media items in the swiper
-        const swiperSlides = section.querySelectorAll('.swiper-slide');
+    projectSections.forEach((section, sectionIndex) => {
+        console.log(`Processing section ${sectionIndex + 1}`);
         
-        swiperSlides.forEach(slide => {
-            // Get the onclick attribute to extract src and type
-            const onclickAttr = slide.getAttribute('onclick');
-            if (onclickAttr) {
-                const match = onclickAttr.match(/openModal\(['"]([^'"]+)['"],\s*['"]([^'"]+)['"]\)/);
-                if (match && match.length === 3) {
-                    allMediaItems.push({
-                        src: match[1],
-                        type: match[2]
-                    });
+        // Find the swiper wrapper
+        const swiperWrapper = section.querySelector('.swiper-wrapper');
+        if (!swiperWrapper) {
+            console.log('No swiper wrapper found in section', sectionIndex + 1);
+            return;
+        }
+        
+        // Find all swiper slides
+        const swiperSlides = swiperWrapper.querySelectorAll('.swiper-slide');
+        console.log(`Found ${swiperSlides.length} slides in section ${sectionIndex + 1}`);
+        
+        swiperSlides.forEach((slide, slideIndex) => {
+            // Find the media container div with onclick attribute
+            const mediaContainer = slide.querySelector('div[onclick*="openModal"]');
+            if (mediaContainer) {
+                // Get the onclick attribute
+                const onclickAttr = mediaContainer.getAttribute('onclick');
+                if (onclickAttr) {
+                    // Extract src and type from the onclick attribute
+                    const match = onclickAttr.match(/openModal\(['"]([^'"]+)['"],\s*['"]([^'"]+)['"]\)/);
+                    if (match && match.length === 3) {
+                        const src = match[1];
+                        const type = match[2];
+                        
+                        // Add to the collection
+                        allMediaItems.push({
+                            src: src,
+                            type: type
+                        });
+                        
+                        console.log(`Added media item from section ${sectionIndex + 1}, slide ${slideIndex + 1}:`, { src, type });
+                    }
                 }
             }
         });
     });
     
+    console.log('Total media items collected:', allMediaItems.length);
+    
     // Initialize the media items in the modal
     if (window.setAllMediaItems) {
         window.setAllMediaItems(allMediaItems);
         console.log('Media items initialized:', allMediaItems);
+    } else {
+        console.error('setAllMediaItems function not found on window');
     }
 }
 

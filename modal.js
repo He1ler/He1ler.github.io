@@ -24,6 +24,8 @@ let currentMediaIndex = 0;
 
 // Initialize modal
 function initModal() {
+    console.log('Initializing modal...');
+    
     // Add event listeners
     prevButton.addEventListener('click', prevMedia);
     nextButton.addEventListener('click', nextMedia);
@@ -32,6 +34,8 @@ function initModal() {
 
 // Open modal with media
 function openModal(src, type) {
+    console.log('Opening modal with:', { src, type });
+    
     // Update current media
     currentMedia = { src, type };
     
@@ -39,6 +43,8 @@ function openModal(src, type) {
     currentMediaIndex = allMediaItems.findIndex(item => 
         item.src === src && item.type === type
     );
+    
+    console.log('Current media index:', currentMediaIndex);
     
     // Show modal
     modal.style.display = 'flex';
@@ -76,18 +82,26 @@ function closeModal() {
 
 // Navigate to previous media
 function prevMedia() {
+    console.log('Navigating to previous media');
+    console.log('Current items:', allMediaItems);
+    
     if (allMediaItems.length > 0) {
         currentMediaIndex = (currentMediaIndex - 1 + allMediaItems.length) % allMediaItems.length;
         const item = allMediaItems[currentMediaIndex];
+        console.log('Loading previous item:', item);
         openModal(item.src, item.type);
     }
 }
 
 // Navigate to next media
 function nextMedia() {
+    console.log('Navigating to next media');
+    console.log('Current items:', allMediaItems);
+    
     if (allMediaItems.length > 0) {
         currentMediaIndex = (currentMediaIndex + 1) % allMediaItems.length;
         const item = allMediaItems[currentMediaIndex];
+        console.log('Loading next item:', item);
         openModal(item.src, item.type);
     }
 }
@@ -112,18 +126,21 @@ function handleKeyPress(event) {
 // Update navigation buttons visibility
 function updateNavigationButtons() {
     const hasMultipleItems = allMediaItems.length > 1;
+    console.log('Updating navigation buttons. Has multiple items:', hasMultipleItems);
     prevButton.style.display = hasMultipleItems ? 'block' : 'none';
     nextButton.style.display = hasMultipleItems ? 'block' : 'none';
 }
 
 // Add a function to populate all media items
 function setAllMediaItems(items) {
+    console.log('Setting media items:', items);
     allMediaItems = items || [];
     console.log('Media items set:', allMediaItems);
 }
 
 // Initialize modal when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, initializing modal...');
     initModal();
     
     // Example: Initialize with empty items
