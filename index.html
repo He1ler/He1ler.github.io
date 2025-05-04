@@ -37,22 +37,27 @@
   <!-- ============================================================== -->
   <!-- MEDIA MODAL - Used for displaying images and videos            -->
   <!-- ============================================================== -->
-  <div id="mediaModal" class="fixed inset-0 bg-black bg-opacity-95 flex items-center justify-center z-50" aria-modal="true" role="dialog">
-    <button onclick="closeModal()" class="absolute top-5 right-8 text-white text-4xl cursor-pointer hover:text-red-500 transition" aria-label="Close modal">&times;</button>
-
-    <!-- Image element -->
-    <img id="modalImage" class="max-h-[90vh] max-w-[90vw] border border-red-600 shadow-2xl rounded-lg hidden mx-auto" alt="Enlarged view" />
-
-    <!-- Video element -->
-    <video id="modalVideo" controls class="max-h-[90vh] max-w-[90vw] border border-red-600 shadow-2xl rounded-lg hidden mx-auto">
-      <source id="modalVideoSource" src="" type="video/mp4" />
+  <div id="mediaModal">
+    <!-- Media swap buttons at the top -->
+    <div class="media-swap-container">
+      <button id="swapMedia1" class="media-swap-btn active">Collection 1</button>
+      <button id="swapMedia2" class="media-swap-btn">Collection 2</button>
+    </div>
+    
+    <!-- Close button -->
+    <div class="modal-close-btn" onclick="closeModal()">&times;</div>
+    
+    <!-- Media content -->
+    <img id="modalImage" class="hidden" alt="Modal Content">
+    <video id="modalVideo" class="hidden" controls>
+      <source id="modalVideoSource" src="" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     
-    <!-- Navigation controls -->
-    <div class="absolute bottom-8 left-0 right-0 flex justify-center space-x-4">
-      <button id="prevMedia" class="bg-red-900/60 hover:bg-red-700 text-white px-4 py-2 rounded-full">Previous</button>
-      <button id="nextMedia" class="bg-red-900/60 hover:bg-red-700 text-white px-4 py-2 rounded-full">Next</button>
+    <!-- Navigation buttons -->
+    <div class="modal-nav-container">
+      <button id="prevMedia" class="modal-nav-btn">Previous</button>
+      <button id="nextMedia" class="modal-nav-btn">Next</button>
     </div>
   </div>
   <!-- END MEDIA MODAL -->
