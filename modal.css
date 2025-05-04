@@ -29,6 +29,7 @@
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   transform: scale(0.95);
   margin: 0 auto;
+  padding: 0 4rem; /* Add padding to prevent overlap with buttons */
 }
 
 #mediaModal.visible img,
@@ -77,30 +78,36 @@
 /* Media Swap Buttons */
 .media-swap-container {
   position: absolute;
-  top: 1.25rem;
+  top: 50%;
   left: 0;
   right: 0;
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 2rem;
+  pointer-events: none;
 }
 
 .media-swap-btn {
   background-color: rgba(127, 29, 29, 0.6);
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
   border-radius: 9999px;
   transition: all 0.3s ease;
   font-weight: 500;
   cursor: pointer;
+  pointer-events: auto;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 0, 0, 0.3);
 }
 
 .media-swap-btn:hover {
   background-color: #b91c1c;
   transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
 }
 
 .media-swap-btn.active {
   background-color: #dc2626;
-  box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+  box-shadow: 0 0 15px rgba(220, 38, 38, 0.7);
 }

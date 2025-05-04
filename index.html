@@ -38,21 +38,24 @@
   <!-- MEDIA MODAL - Used for displaying images and videos            -->
   <!-- ============================================================== -->
   <div id="mediaModal">
-    <!-- Media swap buttons at the top -->
-    <div class="media-swap-container">
-      <button id="swapMedia1" class="media-swap-btn active">Collection 1</button>
-      <button id="swapMedia2" class="media-swap-btn">Collection 2</button>
+    <!-- Media content container -->
+    <div class="relative w-full h-full flex items-center justify-center">
+      <!-- Media swap buttons -->
+      <div class="media-swap-container">
+        <button id="swapMedia1" class="media-swap-btn">Previous Collection</button>
+        <button id="swapMedia2" class="media-swap-btn">Next Collection</button>
+      </div>
+      
+      <!-- Media content -->
+      <img id="modalImage" class="hidden" alt="Modal Content">
+      <video id="modalVideo" class="hidden" controls>
+        <source id="modalVideoSource" src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
     
     <!-- Close button -->
     <div class="modal-close-btn" onclick="closeModal()">&times;</div>
-    
-    <!-- Media content -->
-    <img id="modalImage" class="hidden" alt="Modal Content">
-    <video id="modalVideo" class="hidden" controls>
-      <source id="modalVideoSource" src="" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
     
     <!-- Navigation buttons -->
     <div class="modal-nav-container">
