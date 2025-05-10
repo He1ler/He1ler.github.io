@@ -58,10 +58,16 @@ function openModal(src, type) {
         modalImage.classList.remove('hidden');
         modalVideo.classList.add('hidden');
     } else if (type === 'video') {
+        modalVideo.pause(); // pause just in case
         modalVideoSource.src = src;
-        modalVideo.load();
+        modalVideo.load(); // load new source
         modalVideo.classList.remove('hidden');
         modalImage.classList.add('hidden');
+    
+        // Ensure it plays after source is loaded
+        modalVideo.oncanplay = () => {
+            modalVideo.play();
+        };
     }
     
     // Update navigation buttons
