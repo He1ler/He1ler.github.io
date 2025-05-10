@@ -138,13 +138,26 @@ function setAllMediaItems(items) {
     console.log('Media items set:', allMediaItems);
 }
 
+// Add a function to gather all media items dynamically
+function gatherMediaItems() {
+    const items = [...document.querySelectorAll('.swiper-slide')]
+      .map(slide => {
+        const img = slide.querySelector('img');
+        const video = slide.querySelector('video');
+        if (img) return { src: img.src, type: 'image' };
+        if (video) return { src: video.querySelector('source').src, type: 'video' };
+        return null;
+      })
+      .filter(Boolean);
+    setAllMediaItems(items);
+  }
+
 // Initialize modal when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, initializing modal...');
     initModal();
     
-    // Example: Initialize with empty items
-    setAllMediaItems([]);
+    gatherMediaItems();
     
     // Export the media items setter to window for external use
     window.setAllMediaItems = setAllMediaItems;
