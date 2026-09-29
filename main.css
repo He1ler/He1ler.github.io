@@ -293,3 +293,22 @@ footer {
 .back-to-top:hover {
     background-color: #b91c1c;
 }
+
+/* Anchor targets sit below the fixed 4rem nav */
+#about,
+#projects,
+#contact {
+    scroll-margin-top: 5rem;
+}
+
+/* Phones: drop the full-screen animated overlays and the endless glow repaint */
+@media (max-width: 767px) {
+    body::before,
+    body::after {
+        display: none;
+    }
+
+    .border-glow {
+        animation: none;
+    }
+}

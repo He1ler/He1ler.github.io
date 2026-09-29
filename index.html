@@ -6,8 +6,18 @@
   <!-- ============================================================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Game development portfolio for Unity developer Denys Korolchuk">
-  <title>My Game Portfolio | Denys Korolchuk</title>
+  <meta name="description" content="Portfolio of Denys Korolchuk, Unity and C# game developer: gameplay videos and screenshots from mobile, casual and mid-core projects.">
+  <title>Denys Korolchuk | Unity Game Developer Portfolio</title>
+  <meta name="theme-color" content="#080808">
+  <link rel="canonical" href="https://he1ler.github.io/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2712%27 fill=%27%23080808%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Arial,sans-serif%27 font-size=%2732%27 font-weight=%27bold%27 text-anchor=%27middle%27 fill=%27%23ff003c%27%3EDK%3C/text%3E%3C/svg%3E">
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Denys Korolchuk | Unity Game Developer Portfolio">
+  <meta property="og:description" content="Unity and C# game developer: gameplay videos and screenshots from mobile, casual and mid-core projects.">
+  <meta property="og:url" content="https://he1ler.github.io/">
+  <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
   <!-- ============================================================== -->
   <!-- EXTERNAL RESOURCES & STYLESHEETS                               -->
@@ -63,11 +73,11 @@
   <!-- ============================================================== -->
   <!-- NAVIGATION BAR                                                 -->
   <!-- ============================================================== -->
-  <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-80 backdrop-blur-md z-40 shadow-lg border-b border-red-900/50">
+  <nav class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-md z-40 shadow-lg border-b border-red-900/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
-        <div class="flex-shrink-0">
+        <div class="shrink-0">
           <a href="#" class="text-2xl font-bold neon-red">DK</a>
         </div>
         
@@ -82,7 +92,7 @@
         
         <!-- Mobile menu button -->
         <div class="md:hidden">
-          <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none">
+          <button id="mobile-menu-button" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none">
             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
@@ -93,7 +103,7 @@
 
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden">
-      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black bg-opacity-90 border-b border-red-900/50">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/90 border-b border-red-900/50">
         <a href="#about" class="text-gray-300 hover:text-red-400 block px-3 py-2 font-medium transition-colors">About</a>
         <a href="#projects" class="text-gray-300 hover:text-red-400 block px-3 py-2 font-medium transition-colors">Projects</a>
         <a href="#contact" class="text-gray-300 hover:text-red-400 block px-3 py-2 font-medium transition-colors">Contact</a>
@@ -109,7 +119,7 @@
     <div id="particles-js" class="absolute inset-0 z-0"></div>
     <div class="absolute bottom-0 left-0 w-full h-1 bg-red-700 shadow-[0_0_20px_5px_#ff0000] animate-pulse"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-5xl md:text-7xl font-bold neon-red mb-4">My Game Portfolio</h1>
+      <h1 class="text-5xl md:text-7xl font-bold neon-red mb-4">Denys Korolchuk</h1>
       <p class="mt-2 text-xl text-gray-400">Crafted with Unity, C#, and passion</p>
       
       <div class="mt-10 flex justify-center gap-4 flex-wrap">
@@ -184,7 +194,7 @@
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Development -->
-        <div class="bg-black bg-opacity-50 p-6 rounded-lg border border-red-900/30">
+        <div class="bg-black/50 p-6 rounded-lg border border-red-900/30">
           <h4 class="text-xl font-semibold text-red-300 mb-4">Development</h4>
           <ul class="space-y-2">
             <li class="flex items-center">
@@ -207,7 +217,7 @@
         </div>
         
         <!-- Graphics & Design -->
-        <div class="bg-black bg-opacity-50 p-6 rounded-lg border border-red-900/30">
+        <div class="bg-black/50 p-6 rounded-lg border border-red-900/30">
           <h4 class="text-xl font-semibold text-red-300 mb-4">Graphics & Design</h4>
           <ul class="space-y-2">
             <li class="flex items-center">
@@ -275,7 +285,7 @@
       <div class="absolute inset-0 rounded-xl border-4 border-red-500 opacity-30 blur-md animate-pulse"></div>
 
       <!-- Foreground Text -->
-      <span class="relative z-10" id="projects">Puzzles</span>
+      <span class="relative z-10">Puzzles</span>
     </div>
   </div>
   <!-- END PROJECTS SEPARATOR -->
@@ -292,58 +302,58 @@
 
       <!-- Gallery Swiper -->
       <div class="swiper mySwiper">
-        <div class="swiper-wrapper">\
+        <div class="swiper-wrapper">
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Tram Puzzle screenshot 1 full size"
        onclick="openModal('Images/Tram/Tram1.jpg', 'image')">
-    <img loading="lazy" src="Images/Tram/Tram1.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/Tram/Tram1.jpg" alt="Tram Puzzle screenshot 1"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Tram Puzzle screenshot 2 full size"
        onclick="openModal('Images/Tram/Tram2.jpg', 'image')">
-    <img loading="lazy" src="Images/Tram/Tram2.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/Tram/Tram2.jpg" alt="Tram Puzzle screenshot 2"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Tram Puzzle screenshot 3 full size"
        onclick="openModal('Images/Tram/Tram3.jpg', 'image')">
-    <img loading="lazy" src="Images/Tram/Tram3.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/Tram/Tram3.jpg" alt="Tram Puzzle screenshot 3"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Tram Puzzle screenshot 4 full size"
        onclick="openModal('Images/Tram/Tram4.jpg', 'image')">
-    <img loading="lazy" src="Images/Tram/Tram4.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/Tram/Tram4.jpg" alt="Tram Puzzle screenshot 4"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Tram Puzzle screenshot 5 full size"
        onclick="openModal('Images/Tram/Tram5.jpg', 'image')">
-    <img loading="lazy" src="Images/Tram/Tram5.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/Tram/Tram5.jpg" alt="Tram Puzzle screenshot 5"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Tram Puzzle screenshot 6 full size"
        onclick="openModal('Images/Tram/Tram6.jpg', 'image')">
-    <img loading="lazy" src="Images/Tram/Tram6.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/Tram/Tram6.jpg" alt="Tram Puzzle screenshot 6"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
@@ -376,85 +386,85 @@
 
       <!-- Gallery Swiper -->
       <div class="swiper mySwiper">
-        <div class="swiper-wrapper">\
+        <div class="swiper-wrapper">
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Builder screenshot 1 full size"
        onclick="openModal('Images/Builder/Builder1.jpg', 'image')">
-    <img loading="lazy" src="Images/Builder/Builder1.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/Builder/Builder1.jpg" alt="Builder screenshot 1"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Builder screenshot 2 full size"
        onclick="openModal('Images/Builder/Builder2.jpg', 'image')">
-    <img loading="lazy" src="Images/Builder/Builder2.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/Builder/Builder2.jpg" alt="Builder screenshot 2"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Builder screenshot 3 full size"
        onclick="openModal('Images/Builder/Builder3.jpg', 'image')">
-    <img loading="lazy" src="Images/Builder/Builder3.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/Builder/Builder3.jpg" alt="Builder screenshot 3"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Builder screenshot 4 full size"
        onclick="openModal('Images/Builder/Builder4.jpg', 'image')">
-    <img loading="lazy" src="Images/Builder/Builder4.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/Builder/Builder4.jpg" alt="Builder screenshot 4"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Builder screenshot 5 full size"
        onclick="openModal('Images/Builder/Builder5.jpg', 'image')">
-    <img loading="lazy" src="Images/Builder/Builder5.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/Builder/Builder5.jpg" alt="Builder screenshot 5"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Builder screenshot 6 full size"
        onclick="openModal('Images/Builder/Builder6.jpg', 'image')">
-    <img loading="lazy" src="Images/Builder/Builder6.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/Builder/Builder6.jpg" alt="Builder screenshot 6"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Builder screenshot 7 full size"
        onclick="openModal('Images/Builder/Builder7.jpg', 'image')">
-    <img loading="lazy" src="Images/Builder/Builder7.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/Builder/Builder7.jpg" alt="Builder screenshot 7"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Builder screenshot 8 full size"
        onclick="openModal('Images/Builder/Builder8.jpg', 'image')">
-    <img loading="lazy" src="Images/Builder/Builder8.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/Builder/Builder8.jpg" alt="Builder screenshot 8"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Builder screenshot 9 full size"
        onclick="openModal('Images/Builder/Builder9.jpg', 'image')">
-    <img loading="lazy" src="Images/Builder/Builder9.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/Builder/Builder9.jpg" alt="Builder screenshot 9"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
@@ -478,7 +488,7 @@
 
 
      <!-- -------------------------------------------- -->
-    <!-- PROJECT 1.3\: Cocktails                       -->
+    <!-- PROJECT 1.3: Cocktails                       -->
     <!-- -------------------------------------------- -->
     <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Cocktails</h2>
@@ -492,40 +502,40 @@
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Cocktails gameplay clip 1 full size"
        onclick="openModal('Videos/Coctails/Coctails.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Coctails/Coctails.mp4" id="modalVideoSource" type="video/mp4" />
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Coctails/Coctails.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Coctails/Coctails.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Cocktails gameplay clip 2 full size"
        onclick="openModal('Videos/Coctails/Coctails1.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Coctails/Coctails1.mp4" id="modalVideoSource" type="video/mp4" />
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Coctails/Coctails1.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Coctails/Coctails1.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Cocktails gameplay clip 3 full size"
        onclick="openModal('Videos/Coctails/Coctails2.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Coctails/Coctails2.mp4" id="modalVideoSource" type="video/mp4" />
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Coctails/Coctails2.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Coctails/Coctails2.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Cocktails gameplay clip 4 full size"
        onclick="openModal('Videos/Coctails/Coctails3.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Coctails/Coctails3.mp4" id="modalVideoSource" type="video/mp4" />
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Coctails/Coctails3.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Coctails/Coctails3.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
@@ -563,14 +573,14 @@
       <div class="absolute inset-0 rounded-xl border-4 border-red-500 opacity-30 blur-md animate-pulse"></div>
 
       <!-- Foreground Text -->
-      <span class="relative z-10" id="projects">Hyper-Casual</span>
+      <span class="relative z-10">Hyper-Casual</span>
     </div>
   </div>
   <!-- END PROJECTS SEPARATOR -->
 
 
      <!-- -------------------------------------------- -->
-    <!-- PROJECT 2.1\: SynchUp                       -->
+    <!-- PROJECT 2.1: SynchUp                       -->
     <!-- -------------------------------------------- -->
     <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">SynchUp</h2>
@@ -584,30 +594,30 @@
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play SynchUp gameplay clip 1 full size"
        onclick="openModal('Videos/SynchUp/SynchUp.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/SynchUp/SynchUp.mp4" id="modalVideoSource" type="video/mp4" />
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/SynchUp/SynchUp.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/SynchUp/SynchUp.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play SynchUp gameplay clip 2 full size"
        onclick="openModal('Videos/SynchUp/SynchUp1.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/SynchUp/SynchUp1.mp4" id="modalVideoSource" type="video/mp4" />
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/SynchUp/SynchUp1.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/SynchUp/SynchUp1.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play SynchUp gameplay clip 3 full size"
        onclick="openModal('Videos/SynchUp/SynchUp2.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/SynchUp/SynchUp2.mp4" id="modalVideoSource" type="video/mp4" />
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/SynchUp/SynchUp2.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/SynchUp/SynchUp2.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
@@ -630,7 +640,7 @@
     <!-- END PROJECT 2.1 -->
 
         <!-- -------------------------------------------- -->
-    <!-- PROJECT 2.2\: JellyGuns                       -->
+    <!-- PROJECT 2.2: JellyGuns                       -->
     <!-- -------------------------------------------- -->
     <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">JellyGuns</h2>
@@ -644,20 +654,20 @@
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play JellyGuns gameplay clip 1 full size"
        onclick="openModal('Videos/JellyGuns/JellyGuns.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/JellyGuns/JellyGuns.mp4" id="modalVideoSource" type="video/mp4" />
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/JellyGuns/JellyGuns.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/JellyGuns/JellyGuns.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play JellyGuns gameplay clip 2 full size"
        onclick="openModal('Videos/JellyGuns/JellyGuns1.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/JellyGuns/JellyGuns1.mp4" id="modalVideoSource" type="video/mp4" />
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/JellyGuns/JellyGuns1.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/JellyGuns/JellyGuns1.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
@@ -694,14 +704,14 @@
       <div class="absolute inset-0 rounded-xl border-4 border-red-500 opacity-30 blur-md animate-pulse"></div>
 
       <!-- Foreground Text -->
-      <span class="relative z-10" id="projects">Mid-Core Casuals</span>
+      <span class="relative z-10">Mid-Core Casuals</span>
     </div>
   </div>
   <!-- END PROJECTS SEPARATOR -->
 
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 3\: Pet Cafe                        -->
+    <!-- PROJECT 3: Pet Cafe                        -->
     <!-- -------------------------------------------- -->
     <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Pet Cafe</h2>
@@ -715,40 +725,40 @@
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Pet Cafe gameplay clip 1 full size"
        onclick="openModal('Videos/Pet/Pet.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Pet/Pet.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Pet/Pet.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Pet/Pet.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Pet Cafe gameplay clip 2 full size"
        onclick="openModal('Videos/Pet/Pet1.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Pet/Pet1.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Pet/Pet1.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Pet/Pet1.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Pet Cafe gameplay clip 3 full size"
        onclick="openModal('Videos/Pet/Pet2.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Pet/Pet2.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Pet/Pet2.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Pet/Pet2.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Pet Cafe gameplay clip 4 full size"
        onclick="openModal('Videos/Pet/Pet3.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Pet/Pet3.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Pet/Pet3.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Pet/Pet3.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
@@ -786,14 +796,14 @@
       <div class="absolute inset-0 rounded-xl border-4 border-red-500 opacity-30 blur-md animate-pulse"></div>
 
       <!-- Foreground Text -->
-      <span class="relative z-10" id="projects">Military Casuals</span>
+      <span class="relative z-10">Military Casuals</span>
     </div>
   </div>
   <!-- END PROJECTS SEPARATOR -->
 
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 4.1\: Ship Hunter                        -->
+    <!-- PROJECT 4.1: Ship Hunter                        -->
     <!-- -------------------------------------------- -->
     <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Ship Hunter</h2>
@@ -807,50 +817,50 @@
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Ship Hunter gameplay clip 1 full size"
        onclick="openModal('Videos/Ship/Ship.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Ship/Ship.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Ship/Ship.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Ship/Ship.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Ship Hunter gameplay clip 2 full size"
        onclick="openModal('Videos/Ship/Ship1.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Ship/Ship1.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Ship/Ship1.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Ship/Ship1.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Ship Hunter gameplay clip 3 full size"
        onclick="openModal('Videos/Ship/Ship2.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Ship/Ship2.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Ship/Ship2.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Ship/Ship2.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Ship Hunter gameplay clip 4 full size"
        onclick="openModal('Videos/Ship/Ship3.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Ship/Ship3.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Ship/Ship3.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Ship/Ship3.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Ship Hunter gameplay clip 5 full size"
        onclick="openModal('Videos/Ship/Ship4.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Ship/Ship4.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Ship/Ship4.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Ship/Ship4.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
@@ -873,7 +883,7 @@
     <!-- END PROJECT 4.1 -->
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 4.2\: Tank Hunter                        -->
+    <!-- PROJECT 4.2: Tank Hunter                        -->
     <!-- -------------------------------------------- -->
     <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Tank Hunter</h2>
@@ -887,50 +897,50 @@
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Tank Hunter gameplay clip 1 full size"
        onclick="openModal('Videos/Tank/Tank.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Tank/Tank.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Tank/Tank.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Tank/Tank.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Tank Hunter gameplay clip 2 full size"
        onclick="openModal('Videos/Tank/Tank1.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Tank/Tank1.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Tank/Tank1.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Tank/Tank1.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Tank Hunter gameplay clip 3 full size"
        onclick="openModal('Videos/Tank/Tank2.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Tank/Tank2.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Tank/Tank2.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Tank/Tank2.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Tank Hunter gameplay clip 4 full size"
        onclick="openModal('Videos/Tank/Tank3.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Tank/Tank3.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Tank/Tank3.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Tank/Tank3.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Tank Hunter gameplay clip 5 full size"
        onclick="openModal('Videos/Tank/Tank4.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Tank/Tank4.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Tank/Tank4.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Tank/Tank4.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
@@ -954,7 +964,7 @@
 
 
      <!-- -------------------------------------------- -->
-    <!-- PROJECT 4.3\: Invasion                        -->
+    <!-- PROJECT 4.3: Invasion                        -->
     <!-- -------------------------------------------- -->
     <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Invasion</h2>
@@ -968,30 +978,30 @@
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Invasion gameplay clip 1 full size"
        onclick="openModal('Videos/Invasion/Invasion.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Invasion/Invasion.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Invasion/Invasion.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Invasion/Invasion.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Invasion gameplay clip 2 full size"
        onclick="openModal('Videos/Invasion/Invasion1.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Invasion/Invasion1.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Invasion/Invasion1.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Invasion/Invasion1.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Invasion gameplay clip 3 full size"
        onclick="openModal('Videos/Invasion/Invasion2.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Invasion/Invasion2.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Invasion/Invasion2.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Invasion/Invasion2.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
@@ -1029,14 +1039,14 @@
       <div class="absolute inset-0 rounded-xl border-4 border-red-500 opacity-30 blur-md animate-pulse"></div>
 
       <!-- Foreground Text -->
-      <span class="relative z-10" id="projects">Casual-Survivals</span>
+      <span class="relative z-10">Casual-Survivals</span>
     </div>
   </div>
   <!-- END PROJECTS SEPARATOR -->
 
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 5.1\: Floating Islands                        -->
+    <!-- PROJECT 5.1: Floating Islands                        -->
     <!-- -------------------------------------------- -->
     <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Floating Islands</h2>
@@ -1050,20 +1060,20 @@
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Floating Islands gameplay clip 1 full size"
        onclick="openModal('Videos/FloatingIslands/FloatingIslands.mp4', 'video')">
-       <video class="max-h-[500px] max-w-full object-contain pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/FloatingIslands/FloatingIslands.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/FloatingIslands/FloatingIslands.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/FloatingIslands/FloatingIslands.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Floating Islands gameplay clip 2 full size"
        onclick="openModal('Videos/FloatingIslands/FloatingIslands1.mp4', 'video')">
-       <video class="max-h-[500px] max-w-full object-contain pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/FloatingIslands/FloatingIslands1.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/FloatingIslands/FloatingIslands1.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/FloatingIslands/FloatingIslands1.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
@@ -1086,7 +1096,7 @@
     <!-- END PROJECT 5.1 -->
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 5.2\: Survival Raft                        -->
+    <!-- PROJECT 5.2: Survival Raft                        -->
     <!-- -------------------------------------------- -->
     <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Survival Raft</h2>
@@ -1100,10 +1110,10 @@
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Survival Raft gameplay clip 1 full size"
        onclick="openModal('Videos/SurvivalRaft/SurvivalRaft.mp4', 'video')">
-       <video class="max-h-[500px] max-w-full object-contain pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/SurvivalRaft/SurvivalRaft.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/SurvivalRaft/SurvivalRaft.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/SurvivalRaft/SurvivalRaft.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
@@ -1141,14 +1151,14 @@
       <div class="absolute inset-0 rounded-xl border-4 border-red-500 opacity-30 blur-md animate-pulse"></div>
 
       <!-- Foreground Text -->
-      <span class="relative z-10" id="projects">Idlers</span>
+      <span class="relative z-10">Idlers</span>
     </div>
   </div>
   <!-- END PROJECTS SEPARATOR -->
 
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 6.1\: Idler Project                        -->
+    <!-- PROJECT 6.1: Idler Project                        -->
     <!-- -------------------------------------------- -->
     <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Idler Project</h2>
@@ -1162,40 +1172,40 @@
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Idler Project gameplay clip 1 full size"
        onclick="openModal('Videos/Idler/Idler.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Idler/Idler.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Idler/Idler.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Idler/Idler.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Idler Project gameplay clip 2 full size"
        onclick="openModal('Videos/Idler/Idler1.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Idler/Idler1.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Idler/Idler1.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Idler/Idler1.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Idler Project gameplay clip 3 full size"
        onclick="openModal('Videos/Idler/Idler2.mp4', 'video')">
-       <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Idler/Idler2.mp4" id="modalVideoSource" type="video/mp4" />
+       <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Idler/Idler2.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Idler/Idler2.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="aspect-[3/4] w-[380px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Idler Project gameplay clip 4 full size"
        onclick="openModal('Videos/Idler/Idler3.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/Idler/Idler3.mp4" id="modalVideoSource" type="video/mp4" />
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Idler/Idler3.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Idler/Idler3.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
@@ -1218,7 +1228,7 @@
     <!-- END PROJECT 6.1 -->
 
  <!-- -------------------------------------------- -->
-    <!-- PROJECT 6.2\: Road Maker                       -->
+    <!-- PROJECT 6.2: Road Maker                       -->
     <!-- -------------------------------------------- -->
     <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Road Maker</h2>
@@ -1232,30 +1242,30 @@
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Road Maker gameplay clip 1 full size"
        onclick="openModal('Videos/RoadMaker/RoadMaker.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/RoadMaker/RoadMaker.mp4" id="modalVideoSource" type="video/mp4" />
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/RoadMaker/RoadMaker.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/RoadMaker/RoadMaker.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Road Maker gameplay clip 2 full size"
        onclick="openModal('Videos/RoadMaker/RoadMaker1.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/RoadMaker/RoadMaker1.mp4" id="modalVideoSource" type="video/mp4" />
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/RoadMaker/RoadMaker1.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/RoadMaker/RoadMaker1.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
 
 <!-- Slide: Video (auto-size) -->
 <div class="swiper-slide flex justify-center">
-  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="w-[280px] h-[500px] border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Road Maker gameplay clip 3 full size"
        onclick="openModal('Videos/RoadMaker/RoadMaker2.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" controls autoplay muted loop playsinline class="hidden">
-      <source src="Videos/RoadMaker/RoadMaker2.mp4" id="modalVideoSource" type="video/mp4" />
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/RoadMaker/RoadMaker2.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/RoadMaker/RoadMaker2.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
@@ -1293,14 +1303,14 @@
       <div class="absolute inset-0 rounded-xl border-4 border-red-500 opacity-30 blur-md animate-pulse"></div>
 
       <!-- Foreground Text -->
-      <span class="relative z-10" id="projects">First Project</span>
+      <span class="relative z-10">First Project</span>
     </div>
   </div>
   <!-- END PROJECTS SEPARATOR -->
 
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 7\: Fall of Winterwall                        -->
+    <!-- PROJECT 7: Fall of Winterwall                        -->
     <!-- -------------------------------------------- -->
     <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Fall of Winterwall</h2>
@@ -1314,72 +1324,72 @@
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Fall of Winterwall screenshot 1 full size"
        onclick="openModal('Images/First/2.jpg', 'image')">
-    <img loading="lazy" src="Images/First/2.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/First/2.jpg" alt="Fall of Winterwall screenshot 1"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Fall of Winterwall screenshot 2 full size"
        onclick="openModal('Images/First/3.jpg', 'image')">
-    <img loading="lazy" src="Images/First/3.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/First/3.jpg" alt="Fall of Winterwall screenshot 2"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Fall of Winterwall screenshot 3 full size"
        onclick="openModal('Images/First/4.jpg', 'image')">
-    <img loading="lazy" src="Images/First/4.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/First/4.jpg" alt="Fall of Winterwall screenshot 3"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Fall of Winterwall screenshot 4 full size"
        onclick="openModal('Images/First/5.jpg', 'image')">
-    <img loading="lazy" src="Images/First/5.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/First/5.jpg" alt="Fall of Winterwall screenshot 4"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Fall of Winterwall screenshot 5 full size"
        onclick="openModal('Images/First/6.jpg', 'image')">
-    <img loading="lazy" src="Images/First/6.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/First/6.jpg" alt="Fall of Winterwall screenshot 5"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Fall of Winterwall screenshot 6 full size"
        onclick="openModal('Images/First/7.jpg', 'image')">
-    <img loading="lazy" src="Images/First/7.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/First/7.jpg" alt="Fall of Winterwall screenshot 6"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Fall of Winterwall screenshot 7 full size"
        onclick="openModal('Images/First/8.jpg', 'image')">
-    <img loading="lazy" src="Images/First/8.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/First/8.jpg" alt="Fall of Winterwall screenshot 7"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
 
 <!-- Slide: Image (auto-size based on real dimensions) -->
 <div class="swiper-slide flex justify-center">
-  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer"
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Fall of Winterwall screenshot 8 full size"
        onclick="openModal('Images/First/9.jpg', 'image')">
-    <img loading="lazy" src="Images/First/9.jpg" alt="Screenshot"
+    <img loading="lazy" decoding="async" src="Images/First/9.jpg" alt="Fall of Winterwall screenshot 8"
          class="max-h-[500px] max-w-full object-contain" />
   </div>
 </div>
@@ -1402,6 +1412,854 @@
     <!-- END PROJECT 7 -->
 
     
+
+  <!-- ============================================================== -->
+  <!-- PROJECTS SEPARATOR                                             -->
+  <!-- ============================================================== -->
+  <div class="fade-in relative my-24 flex justify-center">
+    <!-- Glowing Frame Container -->
+    <div class="relative w-full py-6 border-4 border-red-600 rounded-xl text-center
+              text-3xl font-bold uppercase tracking-widest text-red-400
+              shadow-[0_0_25px_5px_#ff000088] animate-pulse">
+      <!-- Background Blur Layer -->
+      <div class="absolute inset-0 bg-red-500/5 backdrop-blur-sm z-0 rounded-xl"></div>
+
+      <!-- Behind Glow Layer -->
+      <div class="absolute inset-0 rounded-xl border-4 border-red-500 opacity-30 blur-md animate-pulse"></div>
+
+      <!-- Foreground Text -->
+      <span class="relative z-10">More Projects</span>
+    </div>
+  </div>
+  <!-- END PROJECTS SEPARATOR -->
+
+
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 8.1: Outpost                        -->
+    <!-- -------------------------------------------- -->
+    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">Outpost</h2>
+      <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
+
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+<!-- Slide: Video (auto-size) -->
+<div class="swiper-slide flex justify-center">
+  <div class="aspect-video w-[480px] max-w-full border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Outpost gameplay clip 1 full size"
+       onclick="openModal('Videos/Outpost/Outpost.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Outpost/Outpost.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Outpost/Outpost.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video (auto-size) -->
+<div class="swiper-slide flex justify-center">
+  <div class="aspect-video w-[480px] max-w-full border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Outpost gameplay clip 2 full size"
+       onclick="openModal('Videos/Outpost/Outpost1.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Outpost/Outpost1.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Outpost/Outpost1.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video (auto-size) -->
+<div class="swiper-slide flex justify-center">
+  <div class="aspect-video w-[480px] max-w-full border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play Outpost gameplay clip 3 full size"
+       onclick="openModal('Videos/Outpost/Outpost2.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Outpost/Outpost2.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/Outpost/Outpost2.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Outpost screenshot 1 full size"
+       onclick="openModal('Images/Outpost/Outpost3.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Outpost/Outpost3.jpg" alt="Outpost screenshot 1"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Outpost screenshot 2 full size"
+       onclick="openModal('Images/Outpost/Outpost4.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Outpost/Outpost4.jpg" alt="Outpost screenshot 2"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Outpost screenshot 3 full size"
+       onclick="openModal('Images/Outpost/Outpost5.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Outpost/Outpost5.jpg" alt="Outpost screenshot 3"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+</div>
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
+      </div>
+
+      <!-- TODO: add project technology tags (see other sections for the span markup) -->
+    </section>
+    <!-- END PROJECT 8.1 -->
+
+
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 8.2: RR                        -->
+    <!-- -------------------------------------------- -->
+    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">RR</h2>
+      <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
+
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+<!-- Slide: Video (auto-size) -->
+<div class="swiper-slide flex justify-center">
+  <div class="aspect-video w-[480px] max-w-full border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Play RR gameplay clip 1 full size"
+       onclick="openModal('Videos/RR/RR.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/RR/RR.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/RR/RR.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+</div>
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
+      </div>
+
+      <!-- TODO: add project technology tags (see other sections for the span markup) -->
+    </section>
+    <!-- END PROJECT 8.2 -->
+
+
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 8.3: Crush &amp; Create                        -->
+    <!-- -------------------------------------------- -->
+    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">Crush &amp; Create</h2>
+      <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
+
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Crush &amp; Create screenshot 1 full size"
+       onclick="openModal('Images/Crush_Create/Crush_Create.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Crush_Create/Crush_Create.jpg" alt="Crush &amp; Create screenshot 1"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Crush &amp; Create screenshot 2 full size"
+       onclick="openModal('Images/Crush_Create/Crush_Create1.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Crush_Create/Crush_Create1.jpg" alt="Crush &amp; Create screenshot 2"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Crush &amp; Create screenshot 3 full size"
+       onclick="openModal('Images/Crush_Create/Crush_Create2.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Crush_Create/Crush_Create2.jpg" alt="Crush &amp; Create screenshot 3"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Crush &amp; Create screenshot 4 full size"
+       onclick="openModal('Images/Crush_Create/Crush_Create3.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Crush_Create/Crush_Create3.jpg" alt="Crush &amp; Create screenshot 4"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Crush &amp; Create screenshot 5 full size"
+       onclick="openModal('Images/Crush_Create/Crush_Create4.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Crush_Create/Crush_Create4.jpg" alt="Crush &amp; Create screenshot 5"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Crush &amp; Create screenshot 6 full size"
+       onclick="openModal('Images/Crush_Create/Crush_Create5.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Crush_Create/Crush_Create5.jpg" alt="Crush &amp; Create screenshot 6"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Crush &amp; Create screenshot 7 full size"
+       onclick="openModal('Images/Crush_Create/Crush_Create6.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Crush_Create/Crush_Create6.jpg" alt="Crush &amp; Create screenshot 7"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Crush &amp; Create screenshot 8 full size"
+       onclick="openModal('Images/Crush_Create/Crush_Create7.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Crush_Create/Crush_Create7.jpg" alt="Crush &amp; Create screenshot 8"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Crush &amp; Create screenshot 9 full size"
+       onclick="openModal('Images/Crush_Create/Crush_Create8.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Crush_Create/Crush_Create8.jpg" alt="Crush &amp; Create screenshot 9"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Crush &amp; Create screenshot 10 full size"
+       onclick="openModal('Images/Crush_Create/Crush_Create9.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Crush_Create/Crush_Create9.jpg" alt="Crush &amp; Create screenshot 10"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+</div>
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
+      </div>
+
+      <!-- TODO: add project technology tags (see other sections for the span markup) -->
+    </section>
+    <!-- END PROJECT 8.3 -->
+
+
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 8.4: Gas Station                        -->
+    <!-- -------------------------------------------- -->
+    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">Gas Station</h2>
+      <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
+
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Gas Station screenshot 1 full size"
+       onclick="openModal('Images/GasStation/GasStation.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/GasStation/GasStation.jpg" alt="Gas Station screenshot 1"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Gas Station screenshot 2 full size"
+       onclick="openModal('Images/GasStation/GasStation1.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/GasStation/GasStation1.jpg" alt="Gas Station screenshot 2"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Gas Station screenshot 3 full size"
+       onclick="openModal('Images/GasStation/GasStation2.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/GasStation/GasStation2.jpg" alt="Gas Station screenshot 3"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Gas Station screenshot 4 full size"
+       onclick="openModal('Images/GasStation/GasStation3.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/GasStation/GasStation3.jpg" alt="Gas Station screenshot 4"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Gas Station screenshot 5 full size"
+       onclick="openModal('Images/GasStation/GasStation4.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/GasStation/GasStation4.jpg" alt="Gas Station screenshot 5"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Gas Station screenshot 6 full size"
+       onclick="openModal('Images/GasStation/GasStation5.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/GasStation/GasStation5.jpg" alt="Gas Station screenshot 6"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Gas Station screenshot 7 full size"
+       onclick="openModal('Images/GasStation/GasStation6.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/GasStation/GasStation6.jpg" alt="Gas Station screenshot 7"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+</div>
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
+      </div>
+
+      <!-- TODO: add project technology tags (see other sections for the span markup) -->
+    </section>
+    <!-- END PROJECT 8.4 -->
+
+
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 8.5: Game Jam                        -->
+    <!-- -------------------------------------------- -->
+    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">Game Jam</h2>
+      <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
+
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Game Jam screenshot 1 full size"
+       onclick="openModal('Images/Jam/jam1.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Jam/jam1.jpg" alt="Game Jam screenshot 1"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Game Jam screenshot 2 full size"
+       onclick="openModal('Images/Jam/jam2.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Jam/jam2.jpg" alt="Game Jam screenshot 2"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Game Jam screenshot 3 full size"
+       onclick="openModal('Images/Jam/jam3.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Jam/jam3.jpg" alt="Game Jam screenshot 3"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Game Jam screenshot 4 full size"
+       onclick="openModal('Images/Jam/jam4.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Jam/jam4.jpg" alt="Game Jam screenshot 4"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Game Jam screenshot 5 full size"
+       onclick="openModal('Images/Jam/jam5.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Jam/jam5.jpg" alt="Game Jam screenshot 5"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+</div>
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
+      </div>
+
+      <!-- TODO: add project technology tags (see other sections for the span markup) -->
+    </section>
+    <!-- END PROJECT 8.5 -->
+
+
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 8.6: Jump Slash                        -->
+    <!-- -------------------------------------------- -->
+    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">Jump Slash</h2>
+      <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
+
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Jump Slash screenshot 1 full size"
+       onclick="openModal('Images/Jump_Slash/Jump_Slash1.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Jump_Slash/Jump_Slash1.jpg" alt="Jump Slash screenshot 1"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Jump Slash screenshot 2 full size"
+       onclick="openModal('Images/Jump_Slash/Jump_Slash2.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Jump_Slash/Jump_Slash2.jpg" alt="Jump Slash screenshot 2"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Jump Slash screenshot 3 full size"
+       onclick="openModal('Images/Jump_Slash/Jump_Slash3.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Jump_Slash/Jump_Slash3.jpg" alt="Jump Slash screenshot 3"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Jump Slash screenshot 4 full size"
+       onclick="openModal('Images/Jump_Slash/Jump_Slash4.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Jump_Slash/Jump_Slash4.jpg" alt="Jump Slash screenshot 4"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Jump Slash screenshot 5 full size"
+       onclick="openModal('Images/Jump_Slash/Jump_Slash5.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Jump_Slash/Jump_Slash5.jpg" alt="Jump Slash screenshot 5"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Jump Slash screenshot 6 full size"
+       onclick="openModal('Images/Jump_Slash/Jump_Slash6.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Jump_Slash/Jump_Slash6.jpg" alt="Jump Slash screenshot 6"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Jump Slash screenshot 7 full size"
+       onclick="openModal('Images/Jump_Slash/Jump_Slash7.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Jump_Slash/Jump_Slash7.jpg" alt="Jump Slash screenshot 7"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Jump Slash screenshot 8 full size"
+       onclick="openModal('Images/Jump_Slash/Jump_Slash8.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Jump_Slash/Jump_Slash8.jpg" alt="Jump Slash screenshot 8"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+</div>
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
+      </div>
+
+      <!-- TODO: add project technology tags (see other sections for the span markup) -->
+    </section>
+    <!-- END PROJECT 8.6 -->
+
+
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 8.7: Kids                        -->
+    <!-- -------------------------------------------- -->
+    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">Kids</h2>
+      <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
+
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Kids screenshot 1 full size"
+       onclick="openModal('Images/Kids/Kids1.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Kids/Kids1.jpg" alt="Kids screenshot 1"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Kids screenshot 2 full size"
+       onclick="openModal('Images/Kids/Kids2.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Kids/Kids2.jpg" alt="Kids screenshot 2"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Kids screenshot 3 full size"
+       onclick="openModal('Images/Kids/Kids3.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Kids/Kids3.jpg" alt="Kids screenshot 3"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Kids screenshot 4 full size"
+       onclick="openModal('Images/Kids/Kids4.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Kids/Kids4.jpg" alt="Kids screenshot 4"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Kids screenshot 5 full size"
+       onclick="openModal('Images/Kids/Kids5.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Kids/Kids5.jpg" alt="Kids screenshot 5"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Kids screenshot 6 full size"
+       onclick="openModal('Images/Kids/Kids6.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/Kids/Kids6.jpg" alt="Kids screenshot 6"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+</div>
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
+      </div>
+
+      <!-- TODO: add project technology tags (see other sections for the span markup) -->
+    </section>
+    <!-- END PROJECT 8.7 -->
+
+
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 8.8: Phunky Pharmacy                        -->
+    <!-- -------------------------------------------- -->
+    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">Phunky Pharmacy</h2>
+      <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
+
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Phunky Pharmacy screenshot 1 full size"
+       onclick="openModal('Images/PhunkyPharmacy/PhunkyPharmacy1.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/PhunkyPharmacy/PhunkyPharmacy1.jpg" alt="Phunky Pharmacy screenshot 1"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Phunky Pharmacy screenshot 2 full size"
+       onclick="openModal('Images/PhunkyPharmacy/PhunkyPharmacy2.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/PhunkyPharmacy/PhunkyPharmacy2.jpg" alt="Phunky Pharmacy screenshot 2"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Phunky Pharmacy screenshot 3 full size"
+       onclick="openModal('Images/PhunkyPharmacy/PhunkyPharmacy3.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/PhunkyPharmacy/PhunkyPharmacy3.jpg" alt="Phunky Pharmacy screenshot 3"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Phunky Pharmacy screenshot 4 full size"
+       onclick="openModal('Images/PhunkyPharmacy/PhunkyPharmacy4.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/PhunkyPharmacy/PhunkyPharmacy4.jpg" alt="Phunky Pharmacy screenshot 4"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Phunky Pharmacy screenshot 5 full size"
+       onclick="openModal('Images/PhunkyPharmacy/PhunkyPharmacy5.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/PhunkyPharmacy/PhunkyPharmacy5.jpg" alt="Phunky Pharmacy screenshot 5"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Phunky Pharmacy screenshot 6 full size"
+       onclick="openModal('Images/PhunkyPharmacy/PhunkyPharmacy6.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/PhunkyPharmacy/PhunkyPharmacy6.jpg" alt="Phunky Pharmacy screenshot 6"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Phunky Pharmacy screenshot 7 full size"
+       onclick="openModal('Images/PhunkyPharmacy/PhunkyPharmacy7.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/PhunkyPharmacy/PhunkyPharmacy7.jpg" alt="Phunky Pharmacy screenshot 7"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Phunky Pharmacy screenshot 8 full size"
+       onclick="openModal('Images/PhunkyPharmacy/PhunkyPharmacy8.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/PhunkyPharmacy/PhunkyPharmacy8.jpg" alt="Phunky Pharmacy screenshot 8"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Phunky Pharmacy screenshot 9 full size"
+       onclick="openModal('Images/PhunkyPharmacy/PhunkyPharmacy9.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/PhunkyPharmacy/PhunkyPharmacy9.jpg" alt="Phunky Pharmacy screenshot 9"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Phunky Pharmacy screenshot 10 full size"
+       onclick="openModal('Images/PhunkyPharmacy/PhunkyPharmacy10.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/PhunkyPharmacy/PhunkyPharmacy10.jpg" alt="Phunky Pharmacy screenshot 10"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Phunky Pharmacy screenshot 11 full size"
+       onclick="openModal('Images/PhunkyPharmacy/PhunkyPharmacy11.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/PhunkyPharmacy/PhunkyPharmacy11.jpg" alt="Phunky Pharmacy screenshot 11"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+</div>
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
+      </div>
+
+      <!-- TODO: add project technology tags (see other sections for the span markup) -->
+    </section>
+    <!-- END PROJECT 8.8 -->
+
+
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 8.9: Scale Master                        -->
+    <!-- -------------------------------------------- -->
+    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">Scale Master</h2>
+      <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
+
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Scale Master screenshot 1 full size"
+       onclick="openModal('Images/ScaleMaster/ScaleMaster1.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/ScaleMaster/ScaleMaster1.jpg" alt="Scale Master screenshot 1"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Scale Master screenshot 2 full size"
+       onclick="openModal('Images/ScaleMaster/ScaleMaster2.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/ScaleMaster/ScaleMaster2.jpg" alt="Scale Master screenshot 2"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Scale Master screenshot 3 full size"
+       onclick="openModal('Images/ScaleMaster/ScaleMaster3.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/ScaleMaster/ScaleMaster3.jpg" alt="Scale Master screenshot 3"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Scale Master screenshot 4 full size"
+       onclick="openModal('Images/ScaleMaster/ScaleMaster4.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/ScaleMaster/ScaleMaster4.jpg" alt="Scale Master screenshot 4"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Scale Master screenshot 5 full size"
+       onclick="openModal('Images/ScaleMaster/ScaleMaster5.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/ScaleMaster/ScaleMaster5.jpg" alt="Scale Master screenshot 5"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Scale Master screenshot 6 full size"
+       onclick="openModal('Images/ScaleMaster/ScaleMaster6.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/ScaleMaster/ScaleMaster6.jpg" alt="Scale Master screenshot 6"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Scale Master screenshot 7 full size"
+       onclick="openModal('Images/ScaleMaster/ScaleMaster7.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/ScaleMaster/ScaleMaster7.jpg" alt="Scale Master screenshot 7"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+</div>
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
+      </div>
+
+      <!-- TODO: add project technology tags (see other sections for the span markup) -->
+    </section>
+    <!-- END PROJECT 8.9 -->
+
+
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 8.10: Unbolt Me                        -->
+    <!-- -------------------------------------------- -->
+    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">Unbolt Me</h2>
+      <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
+
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Unbolt Me screenshot 1 full size"
+       onclick="openModal('Images/UnboltMe/UnboltMe1.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/UnboltMe/UnboltMe1.jpg" alt="Unbolt Me screenshot 1"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Unbolt Me screenshot 2 full size"
+       onclick="openModal('Images/UnboltMe/UnboltMe2.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/UnboltMe/UnboltMe2.jpg" alt="Unbolt Me screenshot 2"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Unbolt Me screenshot 3 full size"
+       onclick="openModal('Images/UnboltMe/UnboltMe3.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/UnboltMe/UnboltMe3.jpg" alt="Unbolt Me screenshot 3"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Unbolt Me screenshot 4 full size"
+       onclick="openModal('Images/UnboltMe/UnboltMe4.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/UnboltMe/UnboltMe4.jpg" alt="Unbolt Me screenshot 4"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Unbolt Me screenshot 5 full size"
+       onclick="openModal('Images/UnboltMe/UnboltMe5.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/UnboltMe/UnboltMe5.jpg" alt="Unbolt Me screenshot 5"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+<!-- Slide: Image (auto-size based on real dimensions) -->
+<div class="swiper-slide flex justify-center">
+  <div class="border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" role="button" tabindex="0" aria-label="Open Unbolt Me screenshot 6 full size"
+       onclick="openModal('Images/UnboltMe/UnboltMe6.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/UnboltMe/UnboltMe6.jpg" alt="Unbolt Me screenshot 6"
+         class="max-h-[500px] max-w-full object-contain" />
+  </div>
+</div>
+
+</div>
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
+      </div>
+
+      <!-- TODO: add project technology tags (see other sections for the span markup) -->
+    </section>
+    <!-- END PROJECT 8.10 -->
+
   </main>
   <!-- END PROJECTS SECTION -->
 
@@ -1444,7 +2302,7 @@
     <!-- Glowing Top Bar -->
     <div class="absolute top-0 left-0 w-full h-1 bg-red-700 shadow-[0_0_20px_5px_#ff0000] animate-pulse"></div>
     <p class="z-10 relative">
-      &copy; 2025 <strong class="text-red-400">Denys Korolchuk</strong> aka <span class="text-red-500 font-semibold">Heller</span> — Unity & Game Developer
+      &copy; <span id="current-year">2026</span> <strong class="text-red-400">Denys Korolchuk</strong> aka <span class="text-red-500 font-semibold">Heller</span> — Unity & Game Developer
     </p>
     <!-- Back to top button -->
     <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="mt-4 px-4 py-2 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300 hover:bg-red-700 transition">

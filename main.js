@@ -2,90 +2,48 @@
  * main.js - General JavaScript functionality for the portfolio website
  */
 
-// Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Swiper
     if (typeof window.initializeSwiper === 'function') {
         window.initializeSwiper();
     } else {
         console.error('Swiper initialization function not found');
     }
 
-    // Initialize mobile menu
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
-
-    // Initialize all components
     initMobileMenu();
     setupIntersectionObserver();
+    initGalleryVideos();
     initializeMediaCollections();
+    initGalleryKeyboardAccess();
+    initBackToTop();
+
+    const year = document.getElementById('current-year');
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
 });
 
 /**
  * Initialize media items from project galleries
  */
 function initializeMediaCollections() {
-    console.log('Starting media collection initialization...');
-    
-    // Get all project sections
-    const projectSections = document.querySelectorAll('section.fade-in');
-    console.log('Found project sections:', projectSections.length);
-    
-    // Create array for all media items
     const allMediaItems = [];
-    
-    projectSections.forEach((section, sectionIndex) => {
-        console.log(`Processing section ${sectionIndex + 1}`);
-        
-        // Find the swiper wrapper
-        const swiperWrapper = section.querySelector('.swiper-wrapper');
-        if (!swiperWrapper) {
-            console.log('No swiper wrapper found in section', sectionIndex + 1);
-            return;
-        }
-        
-        // Find all swiper slides
-        const swiperSlides = swiperWrapper.querySelectorAll('.swiper-slide');
-        console.log(`Found ${swiperSlides.length} slides in section ${sectionIndex + 1}`);
-        
-        swiperSlides.forEach((slide, slideIndex) => {
-            // Find the media container div with onclick attribute
+
+    document.querySelectorAll('section.fade-in .swiper-wrapper').forEach(swiperWrapper => {
+        swiperWrapper.querySelectorAll('.swiper-slide').forEach(slide => {
             const mediaContainer = slide.querySelector('div[onclick*="openModal"]');
-            if (mediaContainer) {
-                // Get the onclick attribute
-                const onclickAttr = mediaContainer.getAttribute('onclick');
-                if (onclickAttr) {
-                    // Extract src and type from the onclick attribute
-                    const match = onclickAttr.match(/openModal\(['"]([^'"]+)['"],\s*['"]([^'"]+)['"]\)/);
-                    if (match && match.length === 3) {
-                        const src = match[1];
-                        const type = match[2];
-                        
-                        // Add to the collection
-                        allMediaItems.push({
-                            src: src,
-                            type: type
-                        });
-                        
-                        console.log(`Added media item from section ${sectionIndex + 1}, slide ${slideIndex + 1}:`, { src, type });
-                    }
-                }
+            if (!mediaContainer) return;
+
+            // Extract src and type from the onclick attribute
+            const match = (mediaContainer.getAttribute('onclick') || '')
+                .match(/openModal\(['"]([^'"]+)['"],\s*['"]([^'"]+)['"]\)/);
+            if (match && match.length === 3) {
+                allMediaItems.push({ src: match[1], type: match[2] });
             }
         });
     });
-    
-    console.log('Total media items collected:', allMediaItems.length);
-    
-    // Initialize the media items in the modal
+
     if (window.setAllMediaItems) {
         window.setAllMediaItems(allMediaItems);
-        console.log('Media items initialized:', allMediaItems);
     } else {
         console.error('setAllMediaItems function not found on window');
     }
@@ -97,20 +55,60 @@ function initializeMediaCollections() {
 function initMobileMenu() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
+    if (!mobileMenuButton || !mobileMenu) return;
+
+    const setOpen = (open) => {
+        mobileMenu.classList.toggle('hidden', !open);
+        mobileMenuButton.setAttribute('aria-expanded', String(open));
+    };
+
+    mobileMenuButton.addEventListener('click', function() {
+        setOpen(mobileMenu.classList.contains('hidden'));
+    });
+
+    // Close menu when clicking menu items
+    mobileMenu.querySelectorAll('a').forEach(item => {
+        item.addEventListener('click', () => setOpen(false));
+    });
+}
+
+/**
+ * Gallery videos ship with preload="none" and a poster. They only start
+ * downloading and playing once they scroll into view, and pause when they leave.
+ * With reduced motion or Save-Data the poster stays; a click opens the full clip.
+ */
+function initGalleryVideos() {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const saveData = navigator.connection && navigator.connection.saveData;
+    if (reduceMotion || saveData) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+                const playing = video.play();
+                if (playing) playing.catch(() => {});
+            } else {
+                video.pause();
+            }
         });
-        
-        // Close menu when clicking menu items
-        const menuItems = mobileMenu.querySelectorAll('a');
-        menuItems.forEach(item => {
-            item.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-            });
+    }, { threshold: 0.25 });
+
+    document.querySelectorAll('.swiper video').forEach(video => observer.observe(video));
+}
+
+/**
+ * Gallery tiles are clickable divs; let keyboard users open them too
+ */
+function initGalleryKeyboardAccess() {
+    document.querySelectorAll('div[onclick*="openModal"]').forEach(tile => {
+        tile.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                tile.click();
+            }
         });
-    }
+    });
 }
 
 /**
@@ -148,10 +146,8 @@ function scrollToTop() {
     });
 }
 
-// Add event listeners to all back-to-top buttons
-document.addEventListener('DOMContentLoaded', function() {
-    const backToTopButtons = document.querySelectorAll('.back-to-top');
-    backToTopButtons.forEach(button => {
+function initBackToTop() {
+    document.querySelectorAll('.back-to-top').forEach(button => {
         button.addEventListener('click', scrollToTop);
     });
-});
+}

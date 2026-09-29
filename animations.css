@@ -57,3 +57,19 @@
     filter: blur(4px);
     animation: pulse 2s infinite;
   }
+
+/* Respect reduced-motion preference: no ambient animation, sections visible immediately */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
+}

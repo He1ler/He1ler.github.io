@@ -16,7 +16,7 @@ let currentMedia = {
     type: ''
 };
 
-// All media items from all projects
+// All media items from all projects (populated by main.js from the gallery markup)
 let allMediaItems = [];
 
 // Current media index
@@ -24,9 +24,6 @@ let currentMediaIndex = 0;
 
 // Initialize modal
 function initModal() {
-    console.log('Initializing modal...');
-    
-    // Add event listeners
     prevButton.addEventListener('click', prevMedia);
     nextButton.addEventListener('click', nextMedia);
     document.addEventListener('keydown', handleKeyPress);
@@ -34,26 +31,23 @@ function initModal() {
 
 // Open modal with media
 function openModal(src, type) {
-    console.log('Opening modal with:', { src, type });
-    
     // Update current media
     currentMedia = { src, type };
-    
+
     // Find the current media index
-    currentMediaIndex = allMediaItems.findIndex(item => 
+    currentMediaIndex = allMediaItems.findIndex(item =>
         item.src === src && item.type === type
     );
-    
-    console.log('Current media index:', currentMediaIndex);
-    
+
     // Show modal
     modal.style.display = 'flex';
     setTimeout(() => {
         modal.classList.add('visible');
     }, 10);
-    
+
     // Load media
     if (type === 'image') {
+        modalVideo.pause();
         modalImage.src = src;
         modalImage.classList.remove('hidden');
         modalVideo.classList.add('hidden');
@@ -63,13 +57,14 @@ function openModal(src, type) {
         modalVideo.load(); // load new source
         modalVideo.classList.remove('hidden');
         modalImage.classList.add('hidden');
-    
+
         // Ensure it plays after source is loaded
         modalVideo.oncanplay = () => {
-            modalVideo.play();
+            const playing = modalVideo.play();
+            if (playing) playing.catch(() => {});
         };
     }
-    
+
     // Update navigation buttons
     updateNavigationButtons();
 }
@@ -88,26 +83,18 @@ function closeModal() {
 
 // Navigate to previous media
 function prevMedia() {
-    console.log('Navigating to previous media');
-    console.log('Current items:', allMediaItems);
-    
     if (allMediaItems.length > 0) {
         currentMediaIndex = (currentMediaIndex - 1 + allMediaItems.length) % allMediaItems.length;
         const item = allMediaItems[currentMediaIndex];
-        console.log('Loading previous item:', item);
         openModal(item.src, item.type);
     }
 }
 
 // Navigate to next media
 function nextMedia() {
-    console.log('Navigating to next media');
-    console.log('Current items:', allMediaItems);
-    
     if (allMediaItems.length > 0) {
         currentMediaIndex = (currentMediaIndex + 1) % allMediaItems.length;
         const item = allMediaItems[currentMediaIndex];
-        console.log('Loading next item:', item);
         openModal(item.src, item.type);
     }
 }
@@ -132,39 +119,19 @@ function handleKeyPress(event) {
 // Update navigation buttons visibility
 function updateNavigationButtons() {
     const hasMultipleItems = allMediaItems.length > 1;
-    console.log('Updating navigation buttons. Has multiple items:', hasMultipleItems);
     prevButton.style.display = hasMultipleItems ? 'block' : 'none';
     nextButton.style.display = hasMultipleItems ? 'block' : 'none';
 }
 
-// Add a function to populate all media items
+// Populate all media items
 function setAllMediaItems(items) {
-    console.log('Setting media items:', items);
     allMediaItems = items || [];
-    console.log('Media items set:', allMediaItems);
 }
-
-// Add a function to gather all media items dynamically
-function gatherMediaItems() {
-    const items = [...document.querySelectorAll('.swiper-slide')]
-      .map(slide => {
-        const img = slide.querySelector('img');
-        const video = slide.querySelector('video');
-        if (img) return { src: img.src, type: 'image' };
-        if (video) return { src: video.querySelector('source').src, type: 'video' };
-        return null;
-      })
-      .filter(Boolean);
-    setAllMediaItems(items);
-  }
 
 // Initialize modal when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded, initializing modal...');
     initModal();
-    
-    gatherMediaItems();
-    
-    // Export the media items setter to window for external use
+
+    // Export the media items setter to window for main.js
     window.setAllMediaItems = setAllMediaItems;
 });

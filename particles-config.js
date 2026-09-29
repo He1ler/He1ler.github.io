@@ -4,13 +4,19 @@
 
 // Initialize particles with optimized settings
 document.addEventListener('DOMContentLoaded', function() {
-    // -------------------------------------------- 
+    // Skip the effect entirely for users who asked for reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    // Fewer particles and no retina scaling on phones
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+    // --------------------------------------------
     // PARTICLES.JS INITIALIZATION
-    // -------------------------------------------- 
+    // --------------------------------------------
     particlesJS('particles-js', {
         particles: {
-            number: { 
-                value: 100, 
+            number: {
+                value: isMobile ? 35 : 100,
                 density: { 
                     enable: true, 
                     value_area: 800 
@@ -75,6 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         },
-        retina_detect: true
+        retina_detect: !isMobile
     });
 });
