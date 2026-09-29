@@ -1,0 +1,7 @@
+/* Source for tailwind.css. Regenerate after adding or changing utility classes in index.html:
+ *   ~/.local/bin/tailwindcss -i tailwind.input.css -o tailwind.css --minify
+ * Standalone Tailwind CLI v3.4.17 (no npm): https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.4.17
+ * Commit the generated tailwind.css. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
