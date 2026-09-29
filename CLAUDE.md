@@ -44,8 +44,9 @@ prev/next list, so the `openModal('…', '…')` form is load-bearing.
   raise CRF (26, 29, …) until the file is ≤ 6 MB. Test in a scratch folder and commit once — every
   committed encode stays in history.
 - Screenshots: keep ≤ ~1600 px on the long side, JPEG quality ~70–80.
-- Working tree: ~14 MB images, ~450 MB videos (largest ~42 MB). `.git` is ~3 GB because every past
-  re-encode of the videos is still in history.
+- Working tree: ~8 MB images, ~77 MB videos + posters (40 clips, all ≤ 6 MB). `.git` is ~100 MB since
+  the history was rewritten on 2026-09-29 to drop every old video encode (one-off, force-pushed; don't
+  let it grow back — encode right before committing).
 
 ## Constraints
 - GitHub Pages: published site ≤ 1 GB, soft bandwidth limit 100 GB/month, pushes reject files
@@ -65,6 +66,6 @@ prev/next list, so the `openModal('…', '…')` form is load-bearing.
 
 ## Git
 - Work directly on `main` (no `develop`). Commit messages: `P-<N> <what was done>`, continuing the
-  existing counter (last used: P-53). Commit/push only when asked (the owner has OK'd periodic local
+  existing counter (last used: P-56). Commit/push only when asked (the owner has OK'd periodic local
   commits to save progress during multi-step work; pushing still needs an explicit ask).
 - Preview locally: `python3 -m http.server 8000` from this folder (see `.claude/launch.json`).

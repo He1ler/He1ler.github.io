@@ -99,8 +99,8 @@ if it's inconsistent, order new code correctly without a drive-by reformat of un
 - Static GitHub Pages site served from `main` of `He1ler/He1ler.github.io`; **no build step** — what is
   committed is what ships. Don't introduce npm/bundlers/frameworks unless the user decides to.
 - GitHub Pages limits: published site ≤ 1 GB, soft 100 GB/month bandwidth, files > 100 MiB rejected
-  (warn > 50 MiB). `.git` is already ~3 GB from repeated video re-encodes — every committed media byte is
-  permanent.
+  (warn > 50 MiB). `.git` is ~100 MB after the 2026-09-29 history cleanup — every committed media byte is
+  permanent, so don't let it grow back.
 - Audience: recruiters/clients, frequently on phones. First-load weight, a working mobile layout and
   truthful content outrank decorative effects. Never invent facts about the user's games — ask.
 - Git: work on `main`, commits are `P-<N> <sentence>` continuing the user's own counter (P-49 at setup);

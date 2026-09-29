@@ -99,8 +99,8 @@ if it's inconsistent, order new code correctly without a drive-by reformat of un
 - Static GitHub Pages site served from `main` of `He1ler/He1ler.github.io`; **no build step** — what is
   committed is what ships. Don't introduce npm/bundlers/frameworks unless the user decides to.
 - GitHub Pages limits: published site ≤ 1 GB, soft 100 GB/month bandwidth, files > 100 MiB rejected
-  (warn > 50 MiB). `.git` is already ~3 GB from repeated video re-encodes — every committed media byte is
-  permanent.
+  (warn > 50 MiB). `.git` is ~100 MB after the 2026-09-29 history cleanup — every committed media byte is
+  permanent, so don't let it grow back.
 - Audience: recruiters/clients, frequently on phones. First-load weight, a working mobile layout and
   truthful content outrank decorative effects. Never invent facts about the user's games — ask.
 - Git: work on `main`, commits are `P-<N> <sentence>` continuing the user's own counter (P-49 at setup);
@@ -109,8 +109,8 @@ if it's inconsistent, order new code correctly without a drive-by reformat of un
   then check in the browser pane at 375 px and desktop widths.
 
 ## How this codebase is built (match it — don't reinvent)
-- **Layout.** `Images/<Project>/<Project>N.jpg` (86 JPGs, ~14 MB) and `Videos/<Project>/<Project>N.mp4`
-  (40 MP4s, ~450 MB; largest `RoadMaker/RoadMaker.mp4` ~42 MB, several at 24–32 MB). File names are
+- **Layout.** `Images/<Project>/<Project>N.jpg` (~130 JPGs, ~8 MB) and `Videos/<Project>/<Project>N.mp4`
+  (40 MP4s + 40 posters, ~77 MB; all clips ≤ 6 MB). File names are
   referenced verbatim from `index.html` (including misspellings like `Coctails` and lowercase
   `Pet/pet.mp4`) — renaming a file means handing `web-developer` the exact old→new path list.
 - **How media is displayed.** Gallery slides cap media at `max-h-[500px]`, 1–3 slides per row, so a
