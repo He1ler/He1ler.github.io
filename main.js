@@ -28,12 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /**
- * Initialize media items from project galleries
+ * Collect each project gallery as its own media group for the modal
  */
 function initializeMediaCollections() {
-    const allMediaItems = [];
+    const groups = [];
 
     document.querySelectorAll('section.fade-in .swiper-wrapper').forEach(swiperWrapper => {
+        const items = [];
         swiperWrapper.querySelectorAll('.swiper-slide').forEach(slide => {
             const mediaContainer = slide.querySelector('div[onclick*="openModal"]');
             if (!mediaContainer) return;
@@ -42,15 +43,16 @@ function initializeMediaCollections() {
             const match = (mediaContainer.getAttribute('onclick') || '')
                 .match(/openModal\(['"]([^'"]+)['"],\s*['"]([^'"]+)['"]\)/);
             if (match && match.length === 3) {
-                allMediaItems.push({ src: match[1], type: match[2] });
+                items.push({ src: match[1], type: match[2] });
             }
         });
+        if (items.length > 0) groups.push(items);
     });
 
-    if (window.setAllMediaItems) {
-        window.setAllMediaItems(allMediaItems);
+    if (window.setMediaGroups) {
+        window.setMediaGroups(groups);
     } else {
-        console.error('setAllMediaItems function not found on window');
+        console.error('setMediaGroups function not found on window');
     }
 }
 

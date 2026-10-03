@@ -16,7 +16,9 @@ let currentMedia = {
     type: ''
 };
 
-// All media items from all projects (populated by main.js from the gallery markup)
+// Media items grouped per project (populated by main.js from the gallery markup);
+// prev/next cycle inside the group of the opened item, never into another project
+let mediaGroups = [];
 let allMediaItems = [];
 
 // Current media index
@@ -34,10 +36,11 @@ function openModal(src, type) {
     // Update current media
     currentMedia = { src, type };
 
-    // Find the current media index
-    currentMediaIndex = allMediaItems.findIndex(item =>
-        item.src === src && item.type === type
-    );
+    // Find the project group and index of this item
+    const isCurrent = item => item.src === src && item.type === type;
+    const group = mediaGroups.find(items => items.some(isCurrent));
+    if (group) allMediaItems = group;
+    currentMediaIndex = allMediaItems.findIndex(isCurrent);
 
     // Show modal
     modal.style.display = 'flex';
@@ -123,15 +126,16 @@ function updateNavigationButtons() {
     nextButton.style.display = hasMultipleItems ? 'block' : 'none';
 }
 
-// Populate all media items
-function setAllMediaItems(items) {
-    allMediaItems = items || [];
+// Populate per-project media groups
+function setMediaGroups(groups) {
+    mediaGroups = groups || [];
+    allMediaItems = [];
 }
 
 // Initialize modal when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initModal();
 
-    // Export the media items setter to window for main.js
-    window.setAllMediaItems = setAllMediaItems;
+    // Export the media groups setter to window for main.js
+    window.setMediaGroups = setMediaGroups;
 });

@@ -8,7 +8,7 @@ window.galleryState = {
     currentIndex: 0
 };
 
-window.GALLERY_GAP = 20;
+window.GALLERY_GAP = 32;
 
 /**
  * Galleries whose media does not fill the row are scaled up (--gallery-scale, read by .gallery-tile)

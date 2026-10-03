@@ -16,7 +16,7 @@ Personal game-dev portfolio of Denys Korolchuk (Unity developer), served by GitH
 - CDN libs: Swiper 11 (`swiper-bundle`), particles.js 2.0.0, devicon/simpleicons for social icons.
 - Local scripts, loaded at the end of `<body>` in this order: `modal.js`, `swiper-config.js`,
   `particles-config.js`, `main.js`. They communicate through `window.*` globals
-  (`window.initializeSwiper`, `window.setAllMediaItems`) and inline `onclick="openModal(src, type)"`.
+  (`window.initializeSwiper`, `window.setMediaGroups`) and inline `onclick="openModal(src, type)"`.
 
 ## Page structure (`index.html`)
 Media modal (`#mediaModal`) → nav (+ `#mobile-menu`) → hero → `#about` → "Projects" separator →
