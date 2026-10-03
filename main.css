@@ -63,6 +63,12 @@ body::after {
 }
 
 
+/* Second accent (cyan) that pairs with the neon red */
+:root {
+    --accent: #22d3ee;
+    --accent-rgb: 34, 211, 238;
+}
+
 /* Color & Effect Classes */
 .neon-red {
     color: #ff003c;
@@ -294,11 +300,240 @@ footer {
     background-color: #b91c1c;
 }
 
+/* Hero "Email Me" button, cyan outline against the red CTA */
+.btn-accent {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--accent);
+    border-radius: 9999px;
+    background-color: rgba(var(--accent-rgb), 0.08);
+    color: var(--accent);
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.btn-accent:hover,
+.btn-accent:focus-visible {
+    background-color: var(--accent);
+    color: #031317;
+    box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.55);
+    transform: scale(1.05);
+}
+
+/* Skills in About: cyan sub-headings and bullets */
+#about h4,
+#about li > span:first-child {
+    color: var(--accent);
+}
+
+/* Tech tags light up cyan on hover */
+.border-glow span.rounded-full {
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.border-glow span.rounded-full:hover {
+    color: var(--accent);
+    border-color: rgba(var(--accent-rgb), 0.7);
+    background-color: rgba(var(--accent-rgb), 0.1);
+}
+
+/* Featured strip */
+.featured {
+    margin-bottom: 5rem;
+}
+
+.featured-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.featured-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border: 2px solid rgba(var(--accent-rgb), 0.35);
+    border-radius: 0.75rem;
+    background: #0d0d0d;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-card:hover,
+.featured-card:focus-visible {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 0 24px rgba(var(--accent-rgb), 0.35);
+}
+
+.featured-media {
+    aspect-ratio: 3 / 4;
+    background: linear-gradient(100deg, #120000 30%, #2a0508 50%, #120000 70%) 0 0 / 200% 100%;
+    animation: media-shimmer 1.4s linear infinite;
+}
+
+.featured-media img,
+.featured-media video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-info {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 3rem 1rem 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 40%, rgba(0, 0, 0, 0.6) 75%, transparent);
+}
+
+.featured-info h3 {
+    margin-top: 0.4rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.featured-cat {
+    display: inline-block;
+    padding: 0.1rem 0.6rem;
+    border: 1px solid rgba(var(--accent-rgb), 0.6);
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    color: var(--accent);
+    background: rgba(0, 0, 0, 0.65);
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .featured-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Phones: swipeable row of cards instead of a grid */
+@media (max-width: 767px) {
+    .featured-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+        margin: 0 -1.5rem;
+        padding: 0.5rem 1.5rem 1rem;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .featured-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .featured-card {
+        flex: 0 0 68%;
+        scroll-snap-align: center;
+    }
+}
+
+/* Sticky category bar, slides in under the main nav once the project list starts */
+.category-nav {
+    position: fixed;
+    top: calc(4rem + 1px);
+    left: 0;
+    width: 100%;
+    z-index: 39;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    overflow-x: auto;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(var(--accent-rgb), 0.25);
+    transform: translateY(-120%);
+    visibility: hidden;
+    transition: transform 0.3s ease, visibility 0.3s;
+    scrollbar-width: none;
+}
+
+.category-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.category-nav.is-visible {
+    transform: translateY(0);
+    visibility: visible;
+}
+
+@media (min-width: 768px) {
+    .category-nav {
+        justify-content: center;
+    }
+}
+
+.category-nav a {
+    flex: 0 0 auto;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid transparent;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    color: #9ca3af;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.category-nav a:hover {
+    color: #fff;
+}
+
+.category-nav a.is-active {
+    color: var(--accent);
+    border-color: rgba(var(--accent-rgb), 0.7);
+    background: rgba(var(--accent-rgb), 0.12);
+}
+
+/* Gallery image placeholders: a shimmering box instead of a blank gap while a lazy image loads */
+.swiper-slide img {
+    transition: opacity 0.4s ease;
+}
+
+.media-loading {
+    min-width: 180px;
+    min-height: 320px;
+    background: linear-gradient(100deg, #120000 30%, #2a0508 50%, #120000 70%) 0 0 / 200% 100%;
+    animation: media-shimmer 1.4s linear infinite;
+}
+
+.media-loading img {
+    opacity: 0;
+}
+
+@keyframes media-shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
 /* Anchor targets sit below the fixed 4rem nav */
 #about,
 #projects,
 #contact {
     scroll-margin-top: 5rem;
+}
+
+/* Section jumps also clear the sticky category bar */
+#featured,
+[data-category],
+main > section[id] {
+    scroll-margin-top: 8rem;
 }
 
 /* Phones: drop the full-screen animated overlays and the endless glow repaint */

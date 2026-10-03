@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeMediaCollections();
     initGalleryKeyboardAccess();
     initBackToTop();
+    initMediaSkeletons();
+    initCategoryNav();
 
     const year = document.getElementById('current-year');
     if (year) {
@@ -94,7 +96,7 @@ function initGalleryVideos() {
         });
     }, { threshold: 0.25 });
 
-    document.querySelectorAll('.swiper video').forEach(video => observer.observe(video));
+    document.querySelectorAll('.swiper video, .featured video').forEach(video => observer.observe(video));
 }
 
 /**
@@ -150,4 +152,83 @@ function initBackToTop() {
     document.querySelectorAll('.back-to-top').forEach(button => {
         button.addEventListener('click', scrollToTop);
     });
+}
+
+/**
+ * Lazy gallery images start with no size; show a shimmering box until they load so the
+ * layout does not leave a blank gap. Runs after Swiper has cloned its loop slides.
+ */
+function initMediaSkeletons() {
+    document.querySelectorAll('.swiper-slide img').forEach(img => {
+        if (img.complete && img.naturalWidth) return;
+
+        const tile = img.parentElement;
+        const done = () => tile.classList.remove('media-loading');
+        tile.classList.add('media-loading');
+        img.addEventListener('load', done, { once: true });
+        img.addEventListener('error', done, { once: true });
+    });
+}
+
+/**
+ * Sticky category bar: built from the [data-category] separators, appears once the project
+ * list starts and highlights the category currently on screen.
+ */
+function initCategoryNav() {
+    const projects = document.getElementById('projects');
+    const featured = document.getElementById('featured');
+    const categories = Array.from(document.querySelectorAll('[data-category]'));
+    if (!projects || categories.length === 0) return;
+
+    const targets = featured ? [{ id: 'featured', label: 'Featured', el: featured }] : [];
+    categories.forEach(el => targets.push({ id: el.id, label: el.dataset.category, el }));
+
+    const bar = document.createElement('div');
+    bar.className = 'category-nav';
+    bar.setAttribute('role', 'navigation');
+    bar.setAttribute('aria-label', 'Project categories');
+
+    const links = targets.map(target => {
+        const link = document.createElement('a');
+        link.href = '#' + target.id;
+        link.textContent = target.label;
+        bar.appendChild(link);
+        return link;
+    });
+    document.body.appendChild(bar);
+
+    const spyOffset = 140;
+    let activeIndex = -1;
+    let ticking = false;
+
+    const update = () => {
+        ticking = false;
+        bar.classList.toggle('is-visible', projects.getBoundingClientRect().top < spyOffset);
+
+        let index = -1;
+        targets.forEach((target, i) => {
+            if (target.el.getBoundingClientRect().top <= spyOffset) index = i;
+        });
+        if (index === activeIndex) return;
+
+        activeIndex = index;
+        links.forEach((link, i) => {
+            link.classList.toggle('is-active', i === index);
+            if (i === index) link.setAttribute('aria-current', 'true');
+            else link.removeAttribute('aria-current');
+        });
+        if (index >= 0) {
+            const link = links[index];
+            bar.scrollTo({ left: link.offsetLeft - (bar.clientWidth - link.offsetWidth) / 2, behavior: 'smooth' });
+        }
+    };
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(update);
+        }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
 }

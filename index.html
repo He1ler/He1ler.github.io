@@ -16,7 +16,13 @@
   <meta property="og:title" content="Denys Korolchuk | Unity Game Developer Portfolio">
   <meta property="og:description" content="Unity and C# game developer: gameplay videos and screenshots from mobile, casual and mid-core projects.">
   <meta property="og:url" content="https://he1ler.github.io/">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="Denys Korolchuk">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://he1ler.github.io/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Denys Korolchuk, Unity game developer, with screenshots of his mobile games">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
   <!-- ============================================================== -->
@@ -157,9 +163,15 @@
       </div>
       
       <!-- Call-to-action button -->
-      <div class="mt-12">
+      <div class="mt-12 flex justify-center gap-4 flex-wrap">
         <a href="#projects" class="inline-block px-8 py-3 bg-red-600 text-white font-bold rounded-full shadow-lg transform transition hover:bg-red-700 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,0,60,0.5)]">
           View My Projects
+        </a>
+        <a href="mailto:hellerkorol@gmail.com" class="btn-accent">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Email Me
         </a>
       </div>
     </div>
@@ -270,12 +282,54 @@
   <!-- PROJECTS SECTION                                              -->
   <!-- ============================================================== -->
   <main class="max-w-7xl mx-auto px-6 py-12">
-      
+
+    <!-- ============================================================== -->
+    <!-- FEATURED - hand-picked projects; each card jumps to its section -->
+    <!-- ============================================================== -->
+    <section id="featured" class="featured fade-in" aria-labelledby="featured-title">
+      <h2 id="featured-title" class="featured-title">Featured</h2>
+      <div class="featured-grid">
+
+        <a class="featured-card" href="#tram-puzzle" aria-label="Tram Puzzle, jump to project">
+          <div class="featured-media">
+            <img loading="lazy" decoding="async" src="Images/Tram/Tram1.jpg" alt="" />
+          </div>
+          <div class="featured-info"><span class="featured-cat">Puzzles</span><h3>Tram Puzzle</h3></div>
+        </a>
+
+        <a class="featured-card" href="#pet-cafe" aria-label="Pet Cafe, jump to project">
+          <div class="featured-media">
+            <video poster="Videos/Pet/Pet.jpg" muted loop playsinline preload="none" aria-hidden="true">
+              <source src="Videos/Pet/Pet.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="featured-info"><span class="featured-cat">Mid-Core Casuals</span><h3>Pet Cafe</h3></div>
+        </a>
+
+        <a class="featured-card" href="#ship-hunter" aria-label="Ship Hunter, jump to project">
+          <div class="featured-media">
+            <video poster="Videos/Ship/Ship.jpg" muted loop playsinline preload="none" aria-hidden="true">
+              <source src="Videos/Ship/Ship.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="featured-info"><span class="featured-cat">Military Casuals</span><h3>Ship Hunter</h3></div>
+        </a>
+
+        <a class="featured-card" href="#fall-of-winterwall" aria-label="Fall of Winterwall, jump to project">
+          <div class="featured-media">
+            <img loading="lazy" decoding="async" src="Images/First/2.jpg" alt="" />
+          </div>
+          <div class="featured-info"><span class="featured-cat">First Project</span><h3>Fall of Winterwall</h3></div>
+        </a>
+
+      </div>
+    </section>
+    <!-- END FEATURED -->
 
      <!-- ============================================================== -->
   <!-- PROJECTS SEPARATOR                                             -->
   <!-- ============================================================== -->
-  <div class="fade-in relative my-24 flex justify-center">
+  <div id="cat-puzzles" data-category="Puzzles" class="fade-in relative my-24 flex justify-center">
     <!-- Glowing Frame Container -->
     <div class="relative w-full py-6 border-4 border-red-600 rounded-xl text-center 
               text-3xl font-bold uppercase tracking-widest text-red-400
@@ -296,7 +350,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 1.1: Tram Puzzle                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="tram-puzzle" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Tram Puzzle</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
@@ -380,7 +434,7 @@
  <!-- -------------------------------------------- -->
     <!-- PROJECT 1.2: Builder                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="builder" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Builder</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
@@ -492,7 +546,7 @@
      <!-- -------------------------------------------- -->
     <!-- PROJECT 1.3: Cocktails                       -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="cocktails" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Cocktails</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
@@ -563,7 +617,7 @@
      <!-- ============================================================== -->
   <!-- PROJECTS SEPARATOR                                             -->
   <!-- ============================================================== -->
-  <div class="fade-in relative my-24 flex justify-center">
+  <div id="cat-hyper-casual" data-category="Hyper-Casual" class="fade-in relative my-24 flex justify-center">
     <!-- Glowing Frame Container -->
     <div class="relative w-full py-6 border-4 border-red-600 rounded-xl text-center 
               text-3xl font-bold uppercase tracking-widest text-red-400
@@ -584,7 +638,7 @@
      <!-- -------------------------------------------- -->
     <!-- PROJECT 2.1: SynchUp                       -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="synchup" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">SynchUp</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
@@ -644,7 +698,7 @@
         <!-- -------------------------------------------- -->
     <!-- PROJECT 2.2: JellyGuns                       -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="jellyguns" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">JellyGuns</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
@@ -694,7 +748,7 @@
      <!-- ============================================================== -->
   <!-- PROJECTS SEPARATOR                                             -->
   <!-- ============================================================== -->
-  <div class="fade-in relative my-24 flex justify-center">
+  <div id="cat-mid-core-casuals" data-category="Mid-Core Casuals" class="fade-in relative my-24 flex justify-center">
     <!-- Glowing Frame Container -->
     <div class="relative w-full py-6 border-4 border-red-600 rounded-xl text-center 
               text-3xl font-bold uppercase tracking-widest text-red-400
@@ -715,7 +769,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 3: Pet Cafe                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="pet-cafe" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Pet Cafe</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
@@ -786,7 +840,7 @@
          <!-- ============================================================== -->
   <!-- PROJECTS SEPARATOR                                             -->
   <!-- ============================================================== -->
-  <div class="fade-in relative my-24 flex justify-center">
+  <div id="cat-military-casuals" data-category="Military Casuals" class="fade-in relative my-24 flex justify-center">
     <!-- Glowing Frame Container -->
     <div class="relative w-full py-6 border-4 border-red-600 rounded-xl text-center 
               text-3xl font-bold uppercase tracking-widest text-red-400
@@ -807,7 +861,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 4.1: Ship Hunter                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="ship-hunter" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Ship Hunter</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
@@ -887,7 +941,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 4.2: Tank Hunter                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="tank-hunter" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Tank Hunter</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
@@ -968,7 +1022,7 @@
      <!-- -------------------------------------------- -->
     <!-- PROJECT 4.3: Invasion                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="invasion" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Invasion</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
@@ -1029,7 +1083,7 @@
              <!-- ============================================================== -->
   <!-- PROJECTS SEPARATOR                                             -->
   <!-- ============================================================== -->
-  <div class="fade-in relative my-24 flex justify-center">
+  <div id="cat-casual-survivals" data-category="Casual-Survivals" class="fade-in relative my-24 flex justify-center">
     <!-- Glowing Frame Container -->
     <div class="relative w-full py-6 border-4 border-red-600 rounded-xl text-center 
               text-3xl font-bold uppercase tracking-widest text-red-400
@@ -1050,7 +1104,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 5.1: Floating Islands                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="floating-islands" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Floating Islands</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
@@ -1100,7 +1154,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 5.2: Survival Raft                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="survival-raft" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Survival Raft</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
@@ -1141,7 +1195,7 @@
   <!-- ============================================================== -->
   <!-- PROJECTS SEPARATOR                                             -->
   <!-- ============================================================== -->
-  <div class="fade-in relative my-24 flex justify-center">
+  <div id="cat-idlers" data-category="Idlers" class="fade-in relative my-24 flex justify-center">
     <!-- Glowing Frame Container -->
     <div class="relative w-full py-6 border-4 border-red-600 rounded-xl text-center 
               text-3xl font-bold uppercase tracking-widest text-red-400
@@ -1162,7 +1216,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 6.1: Idler Project                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="idler-project" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Idler Project</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
@@ -1232,7 +1286,7 @@
  <!-- -------------------------------------------- -->
     <!-- PROJECT 6.2: Road Maker                       -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="road-maker" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Road Maker</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
@@ -1293,7 +1347,7 @@
                      <!-- ============================================================== -->
   <!-- PROJECTS SEPARATOR                                             -->
   <!-- ============================================================== -->
-  <div class="fade-in relative my-24 flex justify-center">
+  <div id="cat-first-project" data-category="First Project" class="fade-in relative my-24 flex justify-center">
     <!-- Glowing Frame Container -->
     <div class="relative w-full py-6 border-4 border-red-600 rounded-xl text-center 
               text-3xl font-bold uppercase tracking-widest text-red-400
@@ -1314,7 +1368,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 7: Fall of Winterwall                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="fall-of-winterwall" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Fall of Winterwall</h2>
       <p class="text-gray-300 mb-6 max-w-4xl">
         Cyber Raid is a high-speed sci-fi shooter with procedurally generated enemies, AI-controlled squads, and dynamic effects. Built in Unity using ECS, Shader Graph, and Zenject.
@@ -1418,7 +1472,7 @@
   <!-- ============================================================== -->
   <!-- PROJECTS SEPARATOR                                             -->
   <!-- ============================================================== -->
-  <div class="fade-in relative my-24 flex justify-center">
+  <div id="cat-more-projects" data-category="More Projects" class="fade-in relative my-24 flex justify-center">
     <!-- Glowing Frame Container -->
     <div class="relative w-full py-6 border-4 border-red-600 rounded-xl text-center
               text-3xl font-bold uppercase tracking-widest text-red-400
@@ -1439,7 +1493,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 8.1: Outpost                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="outpost" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Outpost</h2>
       <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
 
@@ -1518,7 +1572,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 8.2: RR                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="rr" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">RR</h2>
       <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
 
@@ -1550,7 +1604,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 8.3: Crush &amp; Create                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="crush-and-create" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Crush &amp; Create</h2>
       <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
 
@@ -1662,7 +1716,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 8.4: Gas Station                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="gas-station" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Gas Station</h2>
       <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
 
@@ -1747,7 +1801,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 8.5: Game Jam                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="game-jam" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Game Jam</h2>
       <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
 
@@ -1814,7 +1868,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 8.6: Jump Slash                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="jump-slash" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Jump Slash</h2>
       <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
 
@@ -1908,7 +1962,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 8.7: Kids                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="kids" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Kids</h2>
       <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
 
@@ -1984,7 +2038,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 8.8: Phunky Pharmacy                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="phunky-pharmacy" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Phunky Pharmacy</h2>
       <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
 
@@ -2105,7 +2159,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 8.9: Scale Master                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="scale-master" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Scale Master</h2>
       <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
 
@@ -2190,7 +2244,7 @@
     <!-- -------------------------------------------- -->
     <!-- PROJECT 8.10: Unbolt Me                        -->
     <!-- -------------------------------------------- -->
-    <section class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+    <section id="unbolt-me" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Unbolt Me</h2>
       <!-- TODO: add description paragraph (<p class="text-gray-300 mb-6 max-w-4xl">) above the gallery -->
 
