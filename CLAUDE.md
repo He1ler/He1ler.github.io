@@ -34,6 +34,24 @@ stay on the poster. Every video needs its poster (see Media).
 (`initializeMediaCollections`) scrapes the `onclick` strings with a regex to build the modal's
 prev/next list, so the `openModal('…', '…')` form is load-bearing.
 
+## Added 2026-10-03 (UI pass)
+- Second accent: cyan `--accent` (`:root` in `main.css`) next to the neon red. Used by the sticky category
+  bar, the Featured cards, the hero "Email Me" button (`.btn-accent`), About sub-headings and tag hover.
+  All new styles live in `main.css` (no new Tailwind utilities, so `tailwind.css` needs no regeneration).
+- **Featured strip** (`<section id="featured">`, first child of `<main>`): 4 hand-picked cards, each an
+  `<a href="#<project-id>">` with an image or a poster+muted-loop video (`initGalleryVideos` also plays
+  `.featured video`). To change the picks, edit the four `.featured-card` blocks.
+- **Sticky category bar**: built at runtime by `initCategoryNav()` (`main.js`) from the `[data-category]`
+  separators (+ Featured); appears once `#projects` scrolls past the top, scroll-spy highlights the
+  current category. A new category separator needs `id="cat-<slug>" data-category="<Name>"` on its outer
+  `div.fade-in`. Every project `<section>` has an `id` (slug of its title) for deep links.
+- **Image placeholders**: `initMediaSkeletons()` adds `.media-loading` (shimmer, min 180×320) to a gallery
+  tile until its lazy `<img>` loads.
+- **Optional role line** (not used yet; add under the project `<h2>`, style it in `main.css` first):
+  one sentence like "Gameplay programmer, team of 3: ECS combat, Zenject DI".
+- Social preview: `og-image.jpg` (1200×630) referenced by `og:image`; no Twitter tags on purpose.
+  Regenerate if the name/tagline/screenshots change.
+
 ## Media
 - `Images/<Project>/<Project>N.jpg`, `Videos/<Project>/<Project>N.mp4` (H.264 MP4) plus a poster
   `Videos/<Project>/<Project>N.jpg` next to every clip (long side ≤ 960 px, ~10–60 KB; a frame at 15 %
