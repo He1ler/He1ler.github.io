@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.error('Swiper initialization function not found');
     }
+    if (typeof window.initGalleryFit === 'function') {
+        window.initGalleryFit();
+    }
 
     initMobileMenu();
     setupIntersectionObserver();

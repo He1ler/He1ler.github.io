@@ -8,6 +8,43 @@ window.galleryState = {
     currentIndex: 0
 };
 
+window.GALLERY_GAP = 20;
+
+/**
+ * Sections whose media all fits on one row shrink to hug it (class .gallery-fits, sized from
+ * --gallery-w); longer galleries keep the full width and scroll. Re-checked on resize.
+ */
+window.initGalleryFit = function() {
+    const galleries = Array.from(document.querySelectorAll('.mySwiper'));
+
+    const measure = () => {
+        galleries.forEach(gallery => {
+            const section = gallery.closest('section');
+            const slides = gallery.querySelectorAll('.swiper-slide');
+            if (!section || slides.length === 0) return;
+
+            section.classList.remove('gallery-fits');
+            let total = (slides.length - 1) * window.GALLERY_GAP;
+            slides.forEach(slide => { total += slide.offsetWidth; });
+
+            if (total <= gallery.clientWidth) {
+                section.style.setProperty('--gallery-w', total + 'px');
+                section.classList.add('gallery-fits');
+            } else {
+                section.style.removeProperty('--gallery-w');
+            }
+            if (gallery.swiper) gallery.swiper.update();
+        });
+    };
+
+    let timer = null;
+    window.addEventListener('resize', () => {
+        clearTimeout(timer);
+        timer = setTimeout(measure, 150);
+    });
+    measure();
+};
+
 /**
  * Initialize Swiper for project galleries
  */
@@ -22,17 +59,13 @@ window.initializeSwiper = function() {
     
     swiperElements.forEach(element => {
         new Swiper(element, {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
+            slidesPerView: 'auto',
+            spaceBetween: window.GALLERY_GAP,
+            centerInsufficientSlides: true,
+            rewind: true,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev'
-            },
-            breakpoints: {
-                640: { slidesPerView: 1 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 }
             },
             keyboard: {
                 enabled: true

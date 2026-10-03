@@ -47,6 +47,15 @@ prev/next list, so the `openModal('…', '…')` form is load-bearing.
   `div.fade-in`. Every project `<section>` has an `id` (slug of its title) for deep links.
 - **Image placeholders**: `initMediaSkeletons()` adds `.media-loading` (shimmer, min 180×320) to a gallery
   tile until its lazy `<img>` loads.
+- **Gallery layout** (auto): every slide tile is `div.gallery-tile` with an inline `style="--ar: <w/h>"`
+  (images: the file's real ratio; video tiles keep the crop chosen per game: `0.56`, `0.75` or `1.7778`);
+  add `is-landscape` when `--ar` > 1 (500 px tall portrait, 300 px landscape; 440/240 on phones). Swiper
+  runs `slidesPerView: 'auto'`, `centerInsufficientSlides`, `rewind` (no loop, so no cloned slides).
+  `initGalleryFit()` (`swiper-config.js`) adds `.gallery-fits` to a section whose media all fit on one
+  row, so it shrinks to the media (min 34rem) and centers; longer galleries stay full width and scroll.
+  Don't size tiles with Tailwind `w-[..]`/`aspect-[..]` any more; set `--ar` instead.
+- **Cache busting**: local CSS/JS links carry `?v=YYYYMMDD` (GitHub Pages caches 10 min, so a stale
+  `main.css` next to a fresh `index.html` shows unstyled new blocks). Bump the value on every change.
 - **Optional role line** (not used yet; add under the project `<h2>`, style it in `main.css` first):
   one sentence like "Gameplay programmer, team of 3: ECS combat, Zenject DI".
 - Social preview: `og-image.jpg` (1200×630) referenced by `og:image`; no Twitter tags on purpose.

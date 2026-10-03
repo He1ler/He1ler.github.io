@@ -497,14 +497,56 @@ footer {
     background: rgba(var(--accent-rgb), 0.12);
 }
 
+/* Gallery layout: a tile's shape comes from its --ar (width / height) and the slide hugs the tile,
+   so Swiper centers short galleries and the section can shrink to fit them (.gallery-fits) */
+.mySwiper .swiper-slide {
+    width: auto;
+    height: auto;
+}
+
+.mySwiper .swiper-wrapper {
+    align-items: center;
+}
+
+.gallery-tile {
+    --tile-h: 500px;
+    position: relative;
+    width: min(calc(var(--tile-h) * var(--ar)), calc(100vw - 6.5rem));
+    aspect-ratio: var(--ar);
+}
+
+.gallery-tile.is-landscape {
+    --tile-h: 300px;
+}
+
+.gallery-tile > img,
+.gallery-tile > video {
+    position: absolute;
+    inset: 0;
+}
+
+@media (max-width: 639px) {
+    .gallery-tile {
+        --tile-h: 440px;
+    }
+
+    .gallery-tile.is-landscape {
+        --tile-h: 240px;
+    }
+}
+
+/* Set by initGalleryFit(): every slide fits without scrolling, so the section hugs its media */
+.gallery-fits {
+    width: min(100%, max(34rem, calc(var(--gallery-w) + 3.25rem)));
+    margin-inline: auto;
+}
+
 /* Gallery image placeholders: a shimmering box instead of a blank gap while a lazy image loads */
 .swiper-slide img {
     transition: opacity 0.4s ease;
 }
 
 .media-loading {
-    min-width: 180px;
-    min-height: 320px;
     background: linear-gradient(100deg, #120000 30%, #2a0508 50%, #120000 70%) 0 0 / 200% 100%;
     animation: media-shimmer 1.4s linear infinite;
 }
