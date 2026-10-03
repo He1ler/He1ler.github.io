@@ -11,28 +11,28 @@ window.galleryState = {
 window.GALLERY_GAP = 20;
 
 /**
- * Sections whose media all fits on one row shrink to hug it (class .gallery-fits, sized from
- * --gallery-w); longer galleries keep the full width and scroll. Re-checked on resize.
+ * Galleries whose media does not fill the row are scaled up (--gallery-scale, read by .gallery-tile)
+ * so short galleries do not look smaller than long ones. Portrait tiles stop at 1.24x (620 px tall),
+ * landscape-only galleries at 1.4x. Re-measured on resize.
  */
 window.initGalleryFit = function() {
     const galleries = Array.from(document.querySelectorAll('.mySwiper'));
 
     const measure = () => {
         galleries.forEach(gallery => {
-            const section = gallery.closest('section');
             const slides = gallery.querySelectorAll('.swiper-slide');
-            if (!section || slides.length === 0) return;
+            if (slides.length === 0) return;
 
-            section.classList.remove('gallery-fits');
-            let total = (slides.length - 1) * window.GALLERY_GAP;
-            slides.forEach(slide => { total += slide.offsetWidth; });
+            gallery.style.setProperty('--gallery-scale', '1');
+            const gaps = (slides.length - 1) * window.GALLERY_GAP;
+            let tiles = 0;
+            slides.forEach(slide => { tiles += slide.offsetWidth; });
 
-            if (total <= gallery.clientWidth) {
-                section.style.setProperty('--gallery-w', total + 'px');
-                section.classList.add('gallery-fits');
-            } else {
-                section.style.removeProperty('--gallery-w');
-            }
+            const hasPortrait = gallery.querySelector('.gallery-tile:not(.is-landscape)') !== null;
+            const maxScale = hasPortrait ? 1.24 : 1.4;
+            const scale = Math.min(maxScale, Math.max(1, (gallery.clientWidth - gaps) / tiles));
+
+            gallery.style.setProperty('--gallery-scale', scale.toFixed(3));
             if (gallery.swiper) gallery.swiper.update();
         });
     };

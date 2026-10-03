@@ -51,8 +51,9 @@ prev/next list, so the `openModal('…', '…')` form is load-bearing.
   (images: the file's real ratio; video tiles keep the crop chosen per game: `0.56`, `0.75` or `1.7778`);
   add `is-landscape` when `--ar` > 1 (500 px tall portrait, 300 px landscape; 440/240 on phones). Swiper
   runs `slidesPerView: 'auto'`, `centerInsufficientSlides`, `rewind` (no loop, so no cloned slides).
-  `initGalleryFit()` (`swiper-config.js`) adds `.gallery-fits` to a section whose media all fit on one
-  row, so it shrinks to the media (min 34rem) and centers; longer galleries stay full width and scroll.
+  All sections stay full width. `initGalleryFit()` (`swiper-config.js`) sets `--gallery-scale` on a
+  gallery whose media do not fill the row, scaling tiles up (max 1.24x for portrait, 1.4x for
+  landscape-only) so short galleries match long ones; Swiper centers them.
   Don't size tiles with Tailwind `w-[..]`/`aspect-[..]` any more; set `--ar` instead.
 - **Cache busting**: local CSS/JS links carry `?v=YYYYMMDD` (GitHub Pages caches 10 min, so a stale
   `main.css` next to a fresh `index.html` shows unstyled new blocks). Bump the value on every change.
