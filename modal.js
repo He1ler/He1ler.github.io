@@ -9,6 +9,7 @@ const modalVideo = document.getElementById('modalVideo');
 const modalVideoSource = document.getElementById('modalVideoSource');
 const prevButton = document.getElementById('prevMedia');
 const nextButton = document.getElementById('nextMedia');
+const mediaCounter = document.getElementById('mediaCounter');
 
 // Current media state
 let currentMedia = {
@@ -124,6 +125,8 @@ function updateNavigationButtons() {
     const hasMultipleItems = allMediaItems.length > 1;
     prevButton.style.display = hasMultipleItems ? 'block' : 'none';
     nextButton.style.display = hasMultipleItems ? 'block' : 'none';
+    mediaCounter.style.display = hasMultipleItems ? 'block' : 'none';
+    mediaCounter.textContent = (currentMediaIndex + 1) + ' / ' + allMediaItems.length;
 }
 
 // Populate per-project media groups
