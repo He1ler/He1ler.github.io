@@ -93,19 +93,18 @@ prev/next list, so the `openModal('…', '…')` form is load-bearing.
 - Source of truth for text: the owner's `Projects-Overview-All.md` (kept local, listed in `.git/info/exclude`,
   never published). Each section shows the title, role / team / platform chips, description, the gallery,
   a collapsible "Features & tech" list (`<details class="project-details">`) and 6 tech tags.
-- 31 project sections in 4 tiers, biggest / newest first and older / smaller last: Flagship Projects
+- 32 project sections in 4 tiers, biggest / newest first and older / smaller last: Flagship Projects
   (Throne Siege, Countryballs Steam, its Secret Technologies DLC, Countryballs Mobile, NWO, Math Solitaire, KidsProject,
   The Last Outpost), Mobile Games, Hyper-Casual & Puzzles (includes Crush and Create and the published
   Global Game Jam entry), Prototypes & Early Work (Void Island, Fall of Winnterwall). A red genre chip
   (Puzzle, Idle Tycoon, ...) on each card replaces the old genre categories. The DLC section's text is a
   short neutral blurb (the briefs have no separate DLC entry): replace it with real copy.
-  Media folders: `Images|Videos/Countryballs`, `CountryballsDLC`, `CountryballsMobile`, `ThroneSiege`, `MathSolitaire`, `NWO`,
+  Media folders: `Images|Videos/Countryballs`, `CountryballsDLC`, `CountryballsMobile`, `ThroneSiege`, `MathSolitaire`, `GridGuardians`, `NWO`,
   `Kids`, `HouseBuilder`.
 - Featured strip: 2x2 cards (Throne Siege, Countryballs, NWO, Ship Hunter), each with genre chip, title,
   the brief's one-liner and "View project"; portrait games use `.is-portrait` (contain on a dark stage).
   On phones it becomes a swipeable row.
-- Briefs without media on the site yet: Grid Guardians,
-  EpicUkraine. Add a section (copy a block) once they have screenshots/clips.
+- Briefs without media on the site yet: EpicUkraine. Add a section (copy a block) once they have screenshots/clips.
 - Landscape clips in the Ship Hunter / Tank Hunter / Invasion sections are shown cropped to 3:4 and several
   clips are portrait games pillarboxed inside a landscape frame (the tile `--ar` hides the bars).
 - Long source videos are split by length (<= 45 s: one clip, <= 120 s: two, longer: four), re-encoded per
@@ -114,6 +113,6 @@ prev/next list, so the `openModal('…', '…')` form is load-bearing.
 
 ## Git
 - Work directly on `main` (no `develop`). Commit messages: `P-<N> <what was done>`, continuing the
-  existing counter (last used: P-69). Commit/push only when asked (the owner has OK'd periodic local
+  existing counter (last used: P-70). Commit/push only when asked (the owner has OK'd periodic local
   commits to save progress during multi-step work; pushing still needs an explicit ask).
 - Preview locally: `python3 -m http.server 8000` from this folder (see `.claude/launch.json`).
