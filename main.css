@@ -339,7 +339,7 @@ footer {
     background-color: rgba(var(--accent-rgb), 0.1);
 }
 
-/* Featured strip */
+/* Featured strip: 2x2 landscape cards with a one-liner and a "View project" cue */
 .featured {
     margin-bottom: 5rem;
 }
@@ -354,8 +354,8 @@ footer {
 
 .featured-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 1.25rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
 }
 
 .featured-card {
@@ -376,7 +376,7 @@ footer {
 }
 
 .featured-media {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 16 / 9;
     background: linear-gradient(100deg, #120000 30%, #2a0508 50%, #120000 70%) 0 0 / 200% 100%;
     animation: media-shimmer 1.4s linear infinite;
 }
@@ -387,20 +387,42 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.featured-card:hover .featured-media video,
+.featured-card:hover .featured-media img {
+    transform: scale(1.04);
+}
+
+/* Portrait games: show the whole phone screen on a dark stage instead of cropping it */
+.featured-media.is-portrait {
+    background: radial-gradient(circle at 50% 40%, #2a0a12, #0a0a0a 70%);
+    animation: none;
+}
+
+.featured-media.is-portrait img,
+.featured-media.is-portrait video {
+    object-fit: contain;
 }
 
 .featured-info {
-    position: absolute;
-    inset: auto 0 0 0;
-    padding: 3rem 1rem 1rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 40%, rgba(0, 0, 0, 0.6) 75%, transparent);
+    padding: 1rem 1.25rem 1.25rem;
+    background: #0d0d0d;
 }
 
 .featured-info h3 {
     margin-top: 0.4rem;
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: #fff;
+}
+
+.featured-info p {
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #d1d5db;
 }
 
 .featured-cat {
@@ -410,7 +432,21 @@ footer {
     border-radius: 9999px;
     font-size: 0.75rem;
     color: var(--accent);
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(var(--accent-rgb), 0.08);
+}
+
+.featured-cta {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    transition: transform 0.3s ease;
+}
+
+.featured-card:hover .featured-cta,
+.featured-card:focus-visible .featured-cta {
+    transform: translateX(6px);
 }
 
 /* Phones: swipeable row of cards instead of a grid */
@@ -430,8 +466,16 @@ footer {
     }
 
     .featured-card {
-        flex: 0 0 68%;
+        flex: 0 0 82%;
         scroll-snap-align: center;
+    }
+
+    .featured-media {
+        aspect-ratio: 4 / 3;
+    }
+
+    .featured-info p {
+        display: none;
     }
 }
 

@@ -40,14 +40,14 @@
   <!-- ============================================================== -->
   <!-- CUSTOM STYLES                                                  -->
   <!-- ============================================================== -->
-  <link rel="stylesheet" href="main.css?v=20261005c">
-  <link rel="stylesheet" href="animations.css?v=20261005c">
-  <link rel="stylesheet" href="modal.css?v=20261005c">
+  <link rel="stylesheet" href="main.css?v=20261005d">
+  <link rel="stylesheet" href="animations.css?v=20261005d">
+  <link rel="stylesheet" href="modal.css?v=20261005d">
 
   <!-- Tailwind, precompiled from tailwind.input.css. Keep it the last stylesheet: its utilities must beat
        equal-specificity Swiper/custom rules (.swiper-slide display, arrow color) and its `pulse` keyframes
        must override the ones in animations.css, exactly as the former Play CDN's end-of-head <style> did. -->
-  <link rel="stylesheet" href="tailwind.css?v=20261005c">
+  <link rel="stylesheet" href="tailwind.css?v=20261005d">
 </head>
 
 <body class="bg-deep text-white">
@@ -293,13 +293,20 @@
       <h2 id="featured-title" class="featured-title">Featured</h2>
       <div class="featured-grid">
 
+        <a class="featured-card" href="#throne-siege-rts-strategy" aria-label="Throne Siege, jump to project">
+          <div class="featured-media is-portrait">
+            <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege4.jpg" alt="" />
+          </div>
+          <div class="featured-info"><span class="featured-cat">Tactics Card Game</span><h3>Throne Siege</h3><p>Mobile 2D tactics card game: draft cards, place armies on a grid, watch battles auto-resolve.</p><span class="featured-cta">View project &rarr;</span></div>
+        </a>
+
         <a class="featured-card" href="#countryballs-power-protocol-steam" aria-label="Countryballs: Power Protocol, jump to project">
           <div class="featured-media">
             <video poster="Videos/Countryballs/Countryballs1.jpg" muted loop playsinline preload="none" aria-hidden="true">
               <source src="Videos/Countryballs/Countryballs1.mp4" type="video/mp4" />
             </video>
           </div>
-          <div class="featured-info"><span class="featured-cat">PC Grand Strategy</span><h3>Countryballs: Power Protocol</h3></div>
+          <div class="featured-info"><span class="featured-cat">Grand Strategy</span><h3>Countryballs: Power Protocol</h3><p>PC/Mac 2D grand-strategy: lead one of ~166 country-ball nations across a real-world map.</p><span class="featured-cta">View project &rarr;</span></div>
         </a>
 
         <a class="featured-card" href="#nwo" aria-label="NWO, jump to project">
@@ -308,7 +315,7 @@
               <source src="Videos/NWO/NWO1.mp4" type="video/mp4" />
             </video>
           </div>
-          <div class="featured-info"><span class="featured-cat">PC Grand Strategy</span><h3>NWO</h3></div>
+          <div class="featured-info"><span class="featured-cat">Grand Strategy</span><h3>NWO</h3><p>2D grand-strategy on a real-world map.</p><span class="featured-cta">View project &rarr;</span></div>
         </a>
 
         <a class="featured-card" href="#ship-hunter" aria-label="Ship Hunter, jump to project">
@@ -317,9 +324,8 @@
               <source src="Videos/Ship/Ship.mp4" type="video/mp4" />
             </video>
           </div>
-          <div class="featured-info"><span class="featured-cat">Military Casual</span><h3>Ship Hunter</h3></div>
+          <div class="featured-info"><span class="featured-cat">Military Casual</span><h3>Ship Hunter</h3><p>Mobile 3D air-strike game: bomb and shoot down enemy fleets and upgrade your arsenal.</p><span class="featured-cta">View project &rarr;</span></div>
         </a>
-
       </div>
     </section>
     <!-- END FEATURED -->
@@ -336,7 +342,197 @@
   </div>
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 1.1: Countryballs: Power Protocol (Steam) -->
+    <!-- PROJECT 1.1: Throne Siege: RTS Strategy -->
+    <!-- -------------------------------------------- -->
+    <section id="throne-siege-rts-strategy" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">Throne Siege: RTS Strategy</h2>
+      <p class="project-meta"><span class="genre">Tactics Card Game</span><span>Lead Unity developer, gameplay + UI + release builds</span><span>Team of 10</span><span>Android, iOS, Web</span></p>
+      <p class="text-gray-300 mb-6 max-w-4xl">
+        A full mobile strategy product with its own meta game. Every round the player drafts cards to deploy units, buildings and buffs on a tile grid, then a deterministic auto-battle plays out against an AI opponent that drafts and picks boosters like a player. Twelve arenas, each with its own faction, units and card pool, are wrapped in a progression loop of card upgrades, chests, boosters, cups and a shop, all drawn in Spine skeletal animation.
+      </p>
+
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 1 full size"
+       onclick="openModal('Videos/ThroneSiege/ThroneSiege1.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege1.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/ThroneSiege/ThroneSiege1.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 2 full size"
+       onclick="openModal('Videos/ThroneSiege/ThroneSiege2.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege2.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/ThroneSiege/ThroneSiege2.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 3 full size"
+       onclick="openModal('Videos/ThroneSiege/ThroneSiege3.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege3.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/ThroneSiege/ThroneSiege3.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 4 full size"
+       onclick="openModal('Videos/ThroneSiege/ThroneSiege4.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege4.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/ThroneSiege/ThroneSiege4.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 5 full size"
+       onclick="openModal('Videos/ThroneSiege/ThroneSiege5.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege5.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/ThroneSiege/ThroneSiege5.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 6 full size"
+       onclick="openModal('Videos/ThroneSiege/ThroneSiege6.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege6.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/ThroneSiege/ThroneSiege6.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 7 full size"
+       onclick="openModal('Videos/ThroneSiege/ThroneSiege7.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege7.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/ThroneSiege/ThroneSiege7.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 8 full size"
+       onclick="openModal('Videos/ThroneSiege/ThroneSiege8.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege8.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/ThroneSiege/ThroneSiege8.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 9 full size"
+       onclick="openModal('Videos/ThroneSiege/ThroneSiege9.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege9.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/ThroneSiege/ThroneSiege9.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Image -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Open Throne Siege: RTS Strategy screenshot 1 full size"
+       onclick="openModal('Images/ThroneSiege/ThroneSiege1.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege1.jpg" alt="Throne Siege: RTS Strategy screenshot 1"
+         class="w-full h-full object-cover" />
+  </div>
+</div>
+
+<!-- Slide: Image -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Open Throne Siege: RTS Strategy screenshot 2 full size"
+       onclick="openModal('Images/ThroneSiege/ThroneSiege2.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege2.jpg" alt="Throne Siege: RTS Strategy screenshot 2"
+         class="w-full h-full object-cover" />
+  </div>
+</div>
+
+<!-- Slide: Image -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Open Throne Siege: RTS Strategy screenshot 3 full size"
+       onclick="openModal('Images/ThroneSiege/ThroneSiege3.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege3.jpg" alt="Throne Siege: RTS Strategy screenshot 3"
+         class="w-full h-full object-cover" />
+  </div>
+</div>
+
+<!-- Slide: Image -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Open Throne Siege: RTS Strategy screenshot 4 full size"
+       onclick="openModal('Images/ThroneSiege/ThroneSiege4.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege4.jpg" alt="Throne Siege: RTS Strategy screenshot 4"
+         class="w-full h-full object-cover" />
+  </div>
+</div>
+
+<!-- Slide: Image -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Open Throne Siege: RTS Strategy screenshot 5 full size"
+       onclick="openModal('Images/ThroneSiege/ThroneSiege5.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege5.jpg" alt="Throne Siege: RTS Strategy screenshot 5"
+         class="w-full h-full object-cover" />
+  </div>
+</div>
+
+<!-- Slide: Image -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Open Throne Siege: RTS Strategy screenshot 6 full size"
+       onclick="openModal('Images/ThroneSiege/ThroneSiege6.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege6.jpg" alt="Throne Siege: RTS Strategy screenshot 6"
+         class="w-full h-full object-cover" />
+  </div>
+</div>
+
+<!-- Slide: Image -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Open Throne Siege: RTS Strategy screenshot 7 full size"
+       onclick="openModal('Images/ThroneSiege/ThroneSiege7.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege7.jpg" alt="Throne Siege: RTS Strategy screenshot 7"
+         class="w-full h-full object-cover" />
+  </div>
+</div>
+
+        </div>
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
+      </div>
+
+      <details class="project-details">
+        <summary>Features &amp; tech</summary>
+        <ul><li><strong>Stack:</strong> Unity 6 (URP), Zenject DI, UniTask, DOTween, Spine; LevelPlay ads, IAP, Firebase Remote Config, AppMetrica, AppsFlyer</li><li><strong>Mechanics:</strong> card drafting with drag-and-place and a placement ghost, per-phase state machines (building / battle / booster / shop), auto-battle with up to 7 units per cell, enemy AI that drafts cards and picks boosters</li><li><strong>Content:</strong> 12 arenas with separate factions, units, buildings and buffs; card upgrades, chests and boosters</li><li><strong>Milestones:</strong> a responsive battle simulation and UI on mobile, balance configs kept in sync with the GDD, an in-house analytics dashboard and event system, Firebase dependency resolution on Android, production builds shipped through a Unity 6 upgrade</li></ul>
+      </details>
+
+      <!-- Project Technologies -->
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Unity</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">C#</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Zenject</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">UniTask</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Spine</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">DOTween</span>
+      </div>
+    </section>
+    <!-- END PROJECT 1.1 -->
+
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 1.2: Countryballs: Power Protocol (Steam) -->
     <!-- -------------------------------------------- -->
     <section id="countryballs-power-protocol-steam" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Countryballs: Power Protocol (Steam)</h2>
@@ -425,26 +621,6 @@
        onclick="openModal('Videos/Countryballs/Countryballs8.mp4', 'video')">
     <video class="w-full h-full object-cover pointer-events-none" poster="Videos/Countryballs/Countryballs8.jpg" muted loop playsinline preload="none" aria-hidden="true">
       <source src="Videos/Countryballs/Countryballs8.mp4" type="video/mp4" />
-    </video>
-  </div>
-</div>
-
-<!-- Slide: Video -->
-<div class="swiper-slide flex justify-center">
-  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Play Countryballs: Power Protocol (Steam) gameplay clip 9 full size"
-       onclick="openModal('Videos/CountryballsDLC/CountryballsDLC1.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/CountryballsDLC/CountryballsDLC1.jpg" muted loop playsinline preload="none" aria-hidden="true">
-      <source src="Videos/CountryballsDLC/CountryballsDLC1.mp4" type="video/mp4" />
-    </video>
-  </div>
-</div>
-
-<!-- Slide: Video -->
-<div class="swiper-slide flex justify-center">
-  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Play Countryballs: Power Protocol (Steam) gameplay clip 10 full size"
-       onclick="openModal('Videos/CountryballsDLC/CountryballsDLC2.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/CountryballsDLC/CountryballsDLC2.jpg" muted loop playsinline preload="none" aria-hidden="true">
-      <source src="Videos/CountryballsDLC/CountryballsDLC2.mp4" type="video/mp4" />
     </video>
   </div>
 </div>
@@ -638,42 +814,6 @@
   </div>
 </div>
 
-<!-- Slide: Image -->
-<div class="swiper-slide flex justify-center">
-  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Open Countryballs: Power Protocol (Steam) screenshot 22 full size"
-       onclick="openModal('Images/CountryballsDLC/CountryballsDLC1.jpg', 'image')">
-    <img loading="lazy" decoding="async" src="Images/CountryballsDLC/CountryballsDLC1.jpg" alt="Countryballs: Power Protocol (Steam) screenshot 22"
-         class="w-full h-full object-cover" />
-  </div>
-</div>
-
-<!-- Slide: Image -->
-<div class="swiper-slide flex justify-center">
-  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Open Countryballs: Power Protocol (Steam) screenshot 23 full size"
-       onclick="openModal('Images/CountryballsDLC/CountryballsDLC2.jpg', 'image')">
-    <img loading="lazy" decoding="async" src="Images/CountryballsDLC/CountryballsDLC2.jpg" alt="Countryballs: Power Protocol (Steam) screenshot 23"
-         class="w-full h-full object-cover" />
-  </div>
-</div>
-
-<!-- Slide: Image -->
-<div class="swiper-slide flex justify-center">
-  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Open Countryballs: Power Protocol (Steam) screenshot 24 full size"
-       onclick="openModal('Images/CountryballsDLC/CountryballsDLC3.jpg', 'image')">
-    <img loading="lazy" decoding="async" src="Images/CountryballsDLC/CountryballsDLC3.jpg" alt="Countryballs: Power Protocol (Steam) screenshot 24"
-         class="w-full h-full object-cover" />
-  </div>
-</div>
-
-<!-- Slide: Image -->
-<div class="swiper-slide flex justify-center">
-  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Open Countryballs: Power Protocol (Steam) screenshot 25 full size"
-       onclick="openModal('Images/CountryballsDLC/CountryballsDLC4.jpg', 'image')">
-    <img loading="lazy" decoding="async" src="Images/CountryballsDLC/CountryballsDLC4.jpg" alt="Countryballs: Power Protocol (Steam) screenshot 25"
-         class="w-full h-full object-cover" />
-  </div>
-</div>
-
         </div>
         <!-- Navigation Buttons -->
         <div class="swiper-button-next text-red-500"></div>
@@ -695,10 +835,98 @@
         <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">WorldMapStrategyKit</span>
       </div>
     </section>
-    <!-- END PROJECT 1.1 -->
+    <!-- END PROJECT 1.2 -->
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 1.2: Countryballs: Power Protocol (Mobile) -->
+    <!-- PROJECT 1.3: Countryballs: Secret Technologies DLC -->
+    <!-- -------------------------------------------- -->
+    <section id="countryballs-secret-technologies-dlc" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">Countryballs: Secret Technologies DLC</h2>
+      <p class="project-meta"><span class="genre">Grand Strategy DLC</span><span>Lead Unity developer, gameplay + UI + docs</span><span>Team of 9</span><span>Steam</span></p>
+      <p class="text-gray-300 mb-6 max-w-4xl">
+        Downloadable content for Countryballs: Power Protocol on Steam, built on the same grand-strategy engine and shipped as an add-on to the base game. See the trailer and screenshots below.
+      </p>
+
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Play Countryballs: Secret Technologies DLC gameplay clip 1 full size"
+       onclick="openModal('Videos/CountryballsDLC/CountryballsDLC1.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/CountryballsDLC/CountryballsDLC1.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/CountryballsDLC/CountryballsDLC1.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Play Countryballs: Secret Technologies DLC gameplay clip 2 full size"
+       onclick="openModal('Videos/CountryballsDLC/CountryballsDLC2.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/CountryballsDLC/CountryballsDLC2.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/CountryballsDLC/CountryballsDLC2.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Image -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Open Countryballs: Secret Technologies DLC screenshot 1 full size"
+       onclick="openModal('Images/CountryballsDLC/CountryballsDLC1.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/CountryballsDLC/CountryballsDLC1.jpg" alt="Countryballs: Secret Technologies DLC screenshot 1"
+         class="w-full h-full object-cover" />
+  </div>
+</div>
+
+<!-- Slide: Image -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Open Countryballs: Secret Technologies DLC screenshot 2 full size"
+       onclick="openModal('Images/CountryballsDLC/CountryballsDLC2.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/CountryballsDLC/CountryballsDLC2.jpg" alt="Countryballs: Secret Technologies DLC screenshot 2"
+         class="w-full h-full object-cover" />
+  </div>
+</div>
+
+<!-- Slide: Image -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Open Countryballs: Secret Technologies DLC screenshot 3 full size"
+       onclick="openModal('Images/CountryballsDLC/CountryballsDLC3.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/CountryballsDLC/CountryballsDLC3.jpg" alt="Countryballs: Secret Technologies DLC screenshot 3"
+         class="w-full h-full object-cover" />
+  </div>
+</div>
+
+<!-- Slide: Image -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Open Countryballs: Secret Technologies DLC screenshot 4 full size"
+       onclick="openModal('Images/CountryballsDLC/CountryballsDLC4.jpg', 'image')">
+    <img loading="lazy" decoding="async" src="Images/CountryballsDLC/CountryballsDLC4.jpg" alt="Countryballs: Secret Technologies DLC screenshot 4"
+         class="w-full h-full object-cover" />
+  </div>
+</div>
+
+        </div>
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
+      </div>
+
+      <!-- Project Technologies -->
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Unity</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">C#</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">URP (2D)</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Zenject</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">UniTask</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">WorldMapStrategyKit</span>
+      </div>
+    </section>
+    <!-- END PROJECT 1.3 -->
+
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 1.4: Countryballs: Power Protocol (Mobile) -->
     <!-- -------------------------------------------- -->
     <section id="countryballs-power-protocol-mobile" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Countryballs: Power Protocol (Mobile)</h2>
@@ -833,10 +1061,10 @@
         <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">LevelPlay</span>
       </div>
     </section>
-    <!-- END PROJECT 1.2 -->
+    <!-- END PROJECT 1.4 -->
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 1.3: NWO -->
+    <!-- PROJECT 1.5: NWO -->
     <!-- -------------------------------------------- -->
     <section id="nwo" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">NWO</h2>
@@ -1057,10 +1285,10 @@
         <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">I2 Localization</span>
       </div>
     </section>
-    <!-- END PROJECT 1.3 -->
+    <!-- END PROJECT 1.5 -->
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 1.4: KidsProject (WalkSafe) -->
+    <!-- PROJECT 1.6: KidsProject (WalkSafe) -->
     <!-- -------------------------------------------- -->
     <section id="kidsproject-walksafe" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">KidsProject (WalkSafe)</h2>
@@ -1204,10 +1432,10 @@
         <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">A* Pathfinding</span>
       </div>
     </section>
-    <!-- END PROJECT 1.4 -->
+    <!-- END PROJECT 1.6 -->
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 1.5: The Last Outpost -->
+    <!-- PROJECT 1.7: The Last Outpost -->
     <!-- -------------------------------------------- -->
     <section id="the-last-outpost" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">The Last Outpost</h2>
@@ -1298,7 +1526,7 @@
         <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">IAP</span>
       </div>
     </section>
-    <!-- END PROJECT 1.5 -->
+    <!-- END PROJECT 1.7 -->
 
   <!-- CATEGORY: Mobile Games -->
   <div id="cat-mobile-games" data-category="Mobile Games" class="fade-in relative my-24 flex justify-center">
@@ -2924,23 +3152,12 @@
     </section>
     <!-- END PROJECT 3.10 -->
 
-  <!-- CATEGORY: Prototypes & Early Work -->
-  <div id="cat-prototypes-and-early-work" data-category="Prototypes & Early Work" class="fade-in relative my-24 flex justify-center">
-    <div class="relative w-full py-6 border-4 border-red-600 rounded-xl text-center
-              text-3xl font-bold uppercase tracking-widest text-red-400
-              shadow-[0_0_25px_5px_#ff000088] animate-pulse">
-      <div class="absolute inset-0 bg-red-500/5 backdrop-blur-sm z-0 rounded-xl"></div>
-      <div class="absolute inset-0 rounded-xl border-4 border-red-500 opacity-30 blur-md animate-pulse"></div>
-      <span class="relative z-10">Prototypes & Early Work</span>
-    </div>
-  </div>
-
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 4.1: Crush and Create -->
+    <!-- PROJECT 3.11: Crush and Create -->
     <!-- -------------------------------------------- -->
     <section id="crush-and-create" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Crush and Create</h2>
-      <p class="project-meta"><span class="genre">Hyper-Casual Prototype</span><span>Unity developer, gameplay + mesh tools</span><span>Team of 2</span><span>Android (prototype)</span></p>
+      <p class="project-meta"><span class="genre">Hyper-Casual</span><span>Unity developer, gameplay + mesh tools</span><span>Team of 2</span><span>Android</span></p>
       <p class="text-gray-300 mb-6 max-w-4xl">
         A satisfying destruction prototype. The player hits objects with a hammer or bomb, which are cut apart at runtime into mesh pieces and ground into sand; the sand is then collected and used to build a target model, with a director checking progress.
       </p>
@@ -3060,71 +3277,14 @@
         <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">TinySauce SDK</span>
       </div>
     </section>
-    <!-- END PROJECT 4.1 -->
+    <!-- END PROJECT 3.11 -->
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 4.2: Void Island -->
-    <!-- -------------------------------------------- -->
-    <section id="void-island" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
-      <h2 class="text-3xl font-bold neon-red mb-4">Void Island</h2>
-      <p class="project-meta"><span class="genre">Survival Prototype</span><span>Unity developer, systems + gameplay</span><span>Android (landscape)</span></p>
-      <p class="text-gray-300 mb-6 max-w-4xl">
-        A feature-rich survival prototype. The player explores floating islands with a jetpack, gathers resources, crafts tools and armor and builds a house piece by piece with a grid placement system. Inventory, equipment, stats and a save system make it close to a full survival loop.
-      </p>
-
-      <!-- Gallery Swiper -->
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-
-<!-- Slide: Video -->
-<div class="swiper-slide flex justify-center">
-  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Play Void Island gameplay clip 1 full size"
-       onclick="openModal('Videos/FloatingIslands/FloatingIslands.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/FloatingIslands/FloatingIslands.jpg" muted loop playsinline preload="none" aria-hidden="true">
-      <source src="Videos/FloatingIslands/FloatingIslands.mp4" type="video/mp4" />
-    </video>
-  </div>
-</div>
-
-<!-- Slide: Video -->
-<div class="swiper-slide flex justify-center">
-  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Play Void Island gameplay clip 2 full size"
-       onclick="openModal('Videos/FloatingIslands/FloatingIslands1.mp4', 'video')">
-    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/FloatingIslands/FloatingIslands1.jpg" muted loop playsinline preload="none" aria-hidden="true">
-      <source src="Videos/FloatingIslands/FloatingIslands1.mp4" type="video/mp4" />
-    </video>
-  </div>
-</div>
-
-        </div>
-        <!-- Navigation Buttons -->
-        <div class="swiper-button-next text-red-500"></div>
-        <div class="swiper-button-prev text-red-500"></div>
-      </div>
-
-      <details class="project-details">
-        <summary>Features &amp; tech</summary>
-        <ul><li><strong>Stack:</strong> Unity 2021.3, Cinemachine, Input System, Lean Touch, StarterAssets mobile, DOTween, Toony Colors Pro, QuickOutline</li><li><strong>Mechanics:</strong> grid-based house building with ghost preview (floors, walls, doors, windows, stairs), A* grid pathfinding, crafting with recipes, inventory with quick access, equipment slots with stats, jetpack movement</li><li><strong>Content:</strong> ~120 ScriptableObjects (buildings, items, equipment), 3-tier tools, armor sets, loose objects (stove, generator, filter, hammock), 94 prefabs</li><li><strong>Milestones:</strong> a full survival-crafting stack built on ScriptableObject data, a modular building system, mobile joystick and touch controls</li></ul>
-      </details>
-
-      <!-- Project Technologies -->
-      <div class="mt-6 flex flex-wrap gap-2">
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Unity</span>
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">C#</span>
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">ScriptableObjects</span>
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Grid Building</span>
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Cinemachine</span>
-        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Input System</span>
-      </div>
-    </section>
-    <!-- END PROJECT 4.2 -->
-
-    <!-- -------------------------------------------- -->
-    <!-- PROJECT 4.3: Global Game Jam Entry -->
+    <!-- PROJECT 3.12: Global Game Jam Entry -->
     <!-- -------------------------------------------- -->
     <section id="global-game-jam-entry" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Global Game Jam Entry</h2>
-      <p class="project-meta"><span class="genre">Game Jam</span><span>Unity developer, gameplay + AI</span><span>Android / PC (jam entry)</span></p>
+      <p class="project-meta"><span class="genre">Game Jam</span><span>Unity developer, gameplay + AI</span><span>Android / PC</span></p>
       <p class="text-gray-300 mb-6 max-w-4xl">
         A jam game with a surprisingly deep AI. A wolf and bots hunt the player with full state machines, while the player hides, leaves footprints, casts spells and opens doors with keys across procedurally built levels with a tutorial.
       </p>
@@ -3199,10 +3359,78 @@
         <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Epic Toon FX</span>
       </div>
     </section>
-    <!-- END PROJECT 4.3 -->
+    <!-- END PROJECT 3.12 -->
+
+  <!-- CATEGORY: Prototypes & Early Work -->
+  <div id="cat-prototypes-and-early-work" data-category="Prototypes & Early Work" class="fade-in relative my-24 flex justify-center">
+    <div class="relative w-full py-6 border-4 border-red-600 rounded-xl text-center
+              text-3xl font-bold uppercase tracking-widest text-red-400
+              shadow-[0_0_25px_5px_#ff000088] animate-pulse">
+      <div class="absolute inset-0 bg-red-500/5 backdrop-blur-sm z-0 rounded-xl"></div>
+      <div class="absolute inset-0 rounded-xl border-4 border-red-500 opacity-30 blur-md animate-pulse"></div>
+      <span class="relative z-10">Prototypes & Early Work</span>
+    </div>
+  </div>
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 4.4: Fall of Winnterwall -->
+    <!-- PROJECT 4.1: Void Island -->
+    <!-- -------------------------------------------- -->
+    <section id="void-island" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">Void Island</h2>
+      <p class="project-meta"><span class="genre">Survival Prototype</span><span>Unity developer, systems + gameplay</span><span>Android (landscape)</span></p>
+      <p class="text-gray-300 mb-6 max-w-4xl">
+        A feature-rich survival prototype. The player explores floating islands with a jetpack, gathers resources, crafts tools and armor and builds a house piece by piece with a grid placement system. Inventory, equipment, stats and a save system make it close to a full survival loop.
+      </p>
+
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Play Void Island gameplay clip 1 full size"
+       onclick="openModal('Videos/FloatingIslands/FloatingIslands.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/FloatingIslands/FloatingIslands.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/FloatingIslands/FloatingIslands.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile is-landscape border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 1.7778" role="button" tabindex="0" aria-label="Play Void Island gameplay clip 2 full size"
+       onclick="openModal('Videos/FloatingIslands/FloatingIslands1.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/FloatingIslands/FloatingIslands1.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/FloatingIslands/FloatingIslands1.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+        </div>
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
+      </div>
+
+      <details class="project-details">
+        <summary>Features &amp; tech</summary>
+        <ul><li><strong>Stack:</strong> Unity 2021.3, Cinemachine, Input System, Lean Touch, StarterAssets mobile, DOTween, Toony Colors Pro, QuickOutline</li><li><strong>Mechanics:</strong> grid-based house building with ghost preview (floors, walls, doors, windows, stairs), A* grid pathfinding, crafting with recipes, inventory with quick access, equipment slots with stats, jetpack movement</li><li><strong>Content:</strong> ~120 ScriptableObjects (buildings, items, equipment), 3-tier tools, armor sets, loose objects (stove, generator, filter, hammock), 94 prefabs</li><li><strong>Milestones:</strong> a full survival-crafting stack built on ScriptableObject data, a modular building system, mobile joystick and touch controls</li></ul>
+      </details>
+
+      <!-- Project Technologies -->
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Unity</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">C#</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">ScriptableObjects</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Grid Building</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Cinemachine</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Input System</span>
+      </div>
+    </section>
+    <!-- END PROJECT 4.1 -->
+
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 4.2: Fall of Winnterwall -->
     <!-- -------------------------------------------- -->
     <section id="fall-of-winnterwall" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">Fall of Winnterwall</h2>
@@ -3308,7 +3536,7 @@
         <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Lightweight RP</span>
       </div>
     </section>
-    <!-- END PROJECT 4.4 -->
+    <!-- END PROJECT 4.2 -->
 
   </main>
   <!-- END PROJECTS SECTION -->
@@ -3366,9 +3594,9 @@
   <!-- SCRIPTS                                                        -->
   <!-- ============================================================== -->
   <!-- Custom JavaScript files -->
-  <script src="modal.js?v=20261005c"></script>
-  <script src="swiper-config.js?v=20261005c"></script>
-  <script src="particles-config.js?v=20261005c"></script>
-  <script src="main.js?v=20261005c"></script>
+  <script src="modal.js?v=20261005d"></script>
+  <script src="swiper-config.js?v=20261005d"></script>
+  <script src="particles-config.js?v=20261005d"></script>
+  <script src="main.js?v=20261005d"></script>
 </body>
 </html>
