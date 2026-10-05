@@ -314,3 +314,16 @@ li {
         margin-bottom: 1.5pt;
     }
 }
+
+.cv-copy {
+    margin: -2rem 0 2.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+@media print {
+    .cv-copy {
+        display: none;
+    }
+}

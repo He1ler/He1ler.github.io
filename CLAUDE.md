@@ -62,6 +62,15 @@ prev/next list, so the `openModal('…', '…')` form is load-bearing.
 - Social preview: `og-image.jpg` (1200×630) referenced by `og:image`; no Twitter tags on purpose.
   Regenerate if the name/tagline/screenshots change.
 
+## Protection
+- Public repo (free Pages needs it): nothing secret may be committed. `.claude/`, `_originals/` and
+  `Projects-Overview-All.md` are in `.gitignore` (the `.claude/` folder stays on disk, untracked; its
+  earlier commits remain in history).
+- CDN scripts/styles carry SRI hashes (`integrity=`) and Swiper is pinned to an exact version
+  (`swiper@11.2.10`); when bumping a version, recompute the sha384 or the library will not load.
+- The email is assembled at runtime by `email.js` from `data-user` / `data-domain` (`a.js-email`); do not
+  write it as plain text or `mailto:` in the HTML. `LICENSE` is all rights reserved and the footer says so.
+
 ## CV page
 - `cv.html` + `cv.css` (dark neon on screen, white A4 in print) is linked from the nav and the hero; the
   public page shows email, portfolio, GitHub, LinkedIn and Steam only (no phone / date of birth).
@@ -113,6 +122,6 @@ prev/next list, so the `openModal('…', '…')` form is load-bearing.
 
 ## Git
 - Work directly on `main` (no `develop`). Commit messages: `P-<N> <what was done>`, continuing the
-  existing counter (last used: P-70). Commit/push only when asked (the owner has OK'd periodic local
+  existing counter (last used: P-71). Commit/push only when asked (the owner has OK'd periodic local
   commits to save progress during multi-step work; pushing still needs an explicit ask).
 - Preview locally: `python3 -m http.server 8000` from this folder (see `.claude/launch.json`).

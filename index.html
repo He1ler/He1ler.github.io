@@ -29,25 +29,25 @@
   <!-- EXTERNAL RESOURCES & STYLESHEETS                               -->
   <!-- ============================================================== -->
   <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" integrity="sha384-qzrow8+R9k2/XKVt7fpdI3hp6ocDhtrCzBsdbcw7/VRkwEXYcsTTAEeFvhlgiGBW" crossorigin="anonymous" defer></script>
   
   <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.css" integrity="sha384-gAPqlBuTCdtVcYt9ocMOYWrnBZ4XSL6q+4eXqwNycOr4iFczhNKtnYhF3NEXJM51" crossorigin="anonymous" />
   
   <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.js" integrity="sha384-2UI1PfnXFjVMQ7/ZDEF70CR943oH3v6uZrFQGGqJYlvhh4g6z6uVktxYbOlAczav" crossorigin="anonymous" defer></script>
 
   <!-- ============================================================== -->
   <!-- CUSTOM STYLES                                                  -->
   <!-- ============================================================== -->
-  <link rel="stylesheet" href="main.css?v=20261005i">
-  <link rel="stylesheet" href="animations.css?v=20261005i">
-  <link rel="stylesheet" href="modal.css?v=20261005i">
+  <link rel="stylesheet" href="main.css?v=20261005j">
+  <link rel="stylesheet" href="animations.css?v=20261005j">
+  <link rel="stylesheet" href="modal.css?v=20261005j">
 
   <!-- Tailwind, precompiled from tailwind.input.css. Keep it the last stylesheet: its utilities must beat
        equal-specificity Swiper/custom rules (.swiper-slide display, arrow color) and its `pulse` keyframes
        must override the ones in animations.css, exactly as the former Play CDN's end-of-head <style> did. -->
-  <link rel="stylesheet" href="tailwind.css?v=20261005i">
+  <link rel="stylesheet" href="tailwind.css?v=20261005j">
 </head>
 
 <body class="bg-deep text-white">
@@ -172,7 +172,7 @@
         <a href="#projects" class="inline-block px-8 py-3 bg-red-600 text-white font-bold rounded-full shadow-lg transform transition hover:bg-red-700 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,0,60,0.5)]">
           View My Projects
         </a>
-        <a href="mailto:hellerkorol@gmail.com" class="btn-accent">
+        <a href="#contact" class="btn-accent js-email" data-user="hellerkorol" data-domain="gmail.com">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
@@ -3790,8 +3790,8 @@
     </p>
 
     <!-- Contact Email -->
-    <a href="mailto:hellerkorol@gmail.com" class="inline-block mt-4 bg-[#200000] border border-red-500 hover:bg-red-700 hover:text-white hover:shadow-[0_0_10px_#ff0000] px-6 py-3 rounded-full transition duration-300 text-white shadow-md">
-      hellerkorol@gmail.com
+    <a href="#contact" data-user="hellerkorol" data-domain="gmail.com" data-show-address class="js-email inline-block mt-4 bg-[#200000] border border-red-500 hover:bg-red-700 hover:text-white hover:shadow-[0_0_10px_#ff0000] px-6 py-3 rounded-full transition duration-300 text-white shadow-md">
+      Show email address
     </a>
   </section>
   <!-- END CONTACT SECTION -->
@@ -3809,6 +3809,7 @@
     <p class="z-10 relative">
       &copy; <span id="current-year">2026</span> <strong class="text-red-400">Denys Korolchuk</strong> aka <span class="text-red-500 font-semibold">Heller</span> — Unity & Game Developer
     </p>
+    <p class="z-10 relative mt-2 text-xs text-gray-500">All rights reserved. Text, images, videos and code on this site may not be copied or reused without permission. Game names and assets belong to their respective owners.</p>
     <!-- Back to top button -->
     <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="mt-4 px-4 py-2 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300 hover:bg-red-700 transition">
       Back to Top ↑
@@ -3821,9 +3822,10 @@
   <!-- SCRIPTS                                                        -->
   <!-- ============================================================== -->
   <!-- Custom JavaScript files -->
-  <script src="modal.js?v=20261005i"></script>
-  <script src="swiper-config.js?v=20261005i"></script>
-  <script src="particles-config.js?v=20261005i"></script>
-  <script src="main.js?v=20261005i"></script>
+  <script src="modal.js?v=20261005j"></script>
+  <script src="swiper-config.js?v=20261005j"></script>
+  <script src="particles-config.js?v=20261005j"></script>
+  <script src="email.js?v=20261005j"></script>
+  <script src="main.js?v=20261005j"></script>
 </body>
 </html>
