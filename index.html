@@ -40,14 +40,14 @@
   <!-- ============================================================== -->
   <!-- CUSTOM STYLES                                                  -->
   <!-- ============================================================== -->
-  <link rel="stylesheet" href="main.css?v=20261005g">
-  <link rel="stylesheet" href="animations.css?v=20261005g">
-  <link rel="stylesheet" href="modal.css?v=20261005g">
+  <link rel="stylesheet" href="main.css?v=20261005h">
+  <link rel="stylesheet" href="animations.css?v=20261005h">
+  <link rel="stylesheet" href="modal.css?v=20261005h">
 
   <!-- Tailwind, precompiled from tailwind.input.css. Keep it the last stylesheet: its utilities must beat
        equal-specificity Swiper/custom rules (.swiper-slide display, arrow color) and its `pulse` keyframes
        must override the ones in animations.css, exactly as the former Play CDN's end-of-head <style> did. -->
-  <link rel="stylesheet" href="tailwind.css?v=20261005g">
+  <link rel="stylesheet" href="tailwind.css?v=20261005h">
 </head>
 
 <body class="bg-deep text-white">
@@ -1291,7 +1291,94 @@
     <!-- END PROJECT 1.5 -->
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 1.6: KidsProject (WalkSafe) -->
+    <!-- PROJECT 1.6: Math Solitaire -->
+    <!-- -------------------------------------------- -->
+    <section id="math-solitaire" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
+      <h2 class="text-3xl font-bold neon-red mb-4">Math Solitaire</h2>
+      <p class="project-meta"><span class="genre">Solitaire Puzzle</span><span>Lead Unity developer, features + tools + localization</span><span>Team of 4</span><span>Android, iOS, Playable ad</span></p>
+      <p class="text-gray-300 mb-6 max-w-4xl">
+        A 300-level solitaire puzzle rebuilt from a word-game template into a math game. The player moves number and expression cards between stacks to clear the board, with undo, a smart hint engine, an interactive tutorial and 10 languages. Levels are delivered as data and can be changed live, and the whole game was balanced with a custom simulator.
+      </p>
+
+      <!-- Gallery Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Math Solitaire gameplay clip 1 full size"
+       onclick="openModal('Videos/MathSolitaire/MathSolitaire1.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/MathSolitaire/MathSolitaire1.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/MathSolitaire/MathSolitaire1.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Math Solitaire gameplay clip 2 full size"
+       onclick="openModal('Videos/MathSolitaire/MathSolitaire2.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/MathSolitaire/MathSolitaire2.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/MathSolitaire/MathSolitaire2.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Math Solitaire gameplay clip 3 full size"
+       onclick="openModal('Videos/MathSolitaire/MathSolitaire3.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/MathSolitaire/MathSolitaire3.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/MathSolitaire/MathSolitaire3.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Math Solitaire gameplay clip 4 full size"
+       onclick="openModal('Videos/MathSolitaire/MathSolitaire4.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/MathSolitaire/MathSolitaire4.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/MathSolitaire/MathSolitaire4.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Math Solitaire gameplay clip 5 full size"
+       onclick="openModal('Videos/MathSolitaire/MathSolitaire5.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/MathSolitaire/MathSolitaire5.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/MathSolitaire/MathSolitaire5.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+        </div>
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next text-red-500"></div>
+        <div class="swiper-button-prev text-red-500"></div>
+      </div>
+
+      <details class="project-details">
+        <summary>Features &amp; tech</summary>
+        <ul><li><strong>Stack:</strong> Unity 6 (URP), Zenject, UniTask, R3 reactive collections, Odin Inspector, I2 Localization, Firebase Remote Config, IAP, GameAnalytics, Adjust, AppsFlyer, AppMetrica</li><li><strong>Mechanics:</strong> command-pattern card moves with undo, hint engine (obvious moves first, Restore Deck hint), tutorial, level progression and win flow</li><li><strong>Content:</strong> 300 levels delivered as data with live overrides through Remote Config, 10 languages</li><li><strong>Milestones:</strong> difficulty tuned across all 300 levels with a Python simulator and reports, hints and tutorial made consistent, a separate HTML5 playable ad (Phaser + TypeScript for AppLovin and Google Ads), an Editor exporter for remote levels</li></ul>
+      </details>
+
+      <!-- Project Technologies -->
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Unity</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">C#</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">URP</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Zenject</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">UniTask</span>
+        <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">Firebase Remote Config</span>
+      </div>
+    </section>
+    <!-- END PROJECT 1.6 -->
+
+    <!-- -------------------------------------------- -->
+    <!-- PROJECT 1.7: KidsProject (WalkSafe) -->
     <!-- -------------------------------------------- -->
     <section id="kidsproject-walksafe" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">KidsProject (WalkSafe)</h2>
@@ -1435,10 +1522,10 @@
         <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">A* Pathfinding</span>
       </div>
     </section>
-    <!-- END PROJECT 1.6 -->
+    <!-- END PROJECT 1.7 -->
 
     <!-- -------------------------------------------- -->
-    <!-- PROJECT 1.7: The Last Outpost -->
+    <!-- PROJECT 1.8: The Last Outpost -->
     <!-- -------------------------------------------- -->
     <section id="the-last-outpost" class="fade-in mb-16 border-glow rounded-lg p-6 bg-black">
       <h2 class="text-3xl font-bold neon-red mb-4">The Last Outpost</h2>
@@ -1529,7 +1616,7 @@
         <span class="px-3 py-1 bg-red-900/30 border border-red-500/40 rounded-full text-sm text-red-300">IAP</span>
       </div>
     </section>
-    <!-- END PROJECT 1.7 -->
+    <!-- END PROJECT 1.8 -->
 
   <!-- CATEGORY: Mobile Games -->
   <div id="cat-mobile-games" data-category="Mobile Games" class="fade-in relative my-24 flex justify-center">
@@ -3597,9 +3684,9 @@
   <!-- SCRIPTS                                                        -->
   <!-- ============================================================== -->
   <!-- Custom JavaScript files -->
-  <script src="modal.js?v=20261005g"></script>
-  <script src="swiper-config.js?v=20261005g"></script>
-  <script src="particles-config.js?v=20261005g"></script>
-  <script src="main.js?v=20261005g"></script>
+  <script src="modal.js?v=20261005h"></script>
+  <script src="swiper-config.js?v=20261005h"></script>
+  <script src="particles-config.js?v=20261005h"></script>
+  <script src="main.js?v=20261005h"></script>
 </body>
 </html>
