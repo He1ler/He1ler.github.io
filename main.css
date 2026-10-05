@@ -497,6 +497,55 @@ footer {
     background: rgba(var(--accent-rgb), 0.12);
 }
 
+/* Project header chips (role, team, platform) and the collapsible feature list */
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-meta span {
+    padding: 0.15rem 0.75rem;
+    border: 1px solid rgba(var(--accent-rgb), 0.45);
+    border-radius: 9999px;
+    background: rgba(var(--accent-rgb), 0.08);
+    font-size: 0.85rem;
+    color: var(--accent);
+}
+
+.project-details {
+    margin-top: 1.5rem;
+    max-width: 56rem;
+    color: #d1d5db;
+}
+
+.project-details summary {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.project-details summary:hover {
+    text-decoration: underline;
+}
+
+.project-details ul {
+    margin-top: 0.75rem;
+    padding-left: 1.25rem;
+    list-style: disc;
+}
+
+.project-details li {
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+}
+
+.project-details strong {
+    color: #fff;
+}
+
 /* Gallery layout: a tile's shape comes from its --ar (width / height) and the slide hugs the tile,
    so Swiper centers short galleries; initGalleryFit() scales short ones up via --gallery-scale */
 .mySwiper .swiper-slide {

@@ -72,7 +72,7 @@ prev/next list, so the `openModal('…', '…')` form is load-bearing.
   raise CRF (26, 29, …) until the file is ≤ 6 MB. Test in a scratch folder and commit once — every
   committed encode stays in history.
 - Screenshots: keep ≤ ~1600 px on the long side, JPEG quality ~70–80.
-- Working tree: ~8 MB images, ~77 MB videos + posters (40 clips, all ≤ 6 MB). `.git` is ~100 MB since
+- Working tree: ~15 MB images, ~174 MB videos + posters (68 clips, all ≤ 8 MB). `.git` is ~100 MB since
   the history was rewritten on 2026-09-29 to drop every old video encode (one-off, force-pushed; don't
   let it grow back — encode right before committing).
 
@@ -82,18 +82,24 @@ prev/next list, so the `openModal('…', '…')` form is load-bearing.
 - Audience is recruiters/clients, often on mobile — first-load weight and mobile layout matter more
   than effects.
 
-## Known issues (as of 2026-09-29)
-- The 14 original project descriptions are the same placeholder ("Cyber Raid is a high-speed sci-fi
-  shooter…") and all 14 show the same tech tags (Unity, C#, ECS, Shader Graph, Zenject) — both are
-  placeholders to be replaced with real per-project text (owner is filling them in).
-- The 10 sections under "More Projects" (Outpost, RR, Crush & Create, Gas Station, Game Jam, Jump
-  Slash, Kids, Phunky Pharmacy, Scale Master, Unbolt Me) have `<!-- TODO -->` markers instead of a
-  description and tags; titles come from the asset folder names and may need renaming/regrouping.
-- Landscape clips in the Ship Hunter sections are shown cropped to 3:4 (`aspect-[3/4]` +
-  `object-cover`); several source clips are portrait games pillarboxed inside a landscape frame.
+## Project content
+- Source of truth for text: the owner's `Projects-Overview-All.md` (kept local, listed in `.git/info/exclude`,
+  never published). Each section shows the title, role / team / platform chips, description, the gallery,
+  a collapsible "Features & tech" list (`<details class="project-details">`) and 6 tech tags.
+- 27 project sections in 8 categories (Puzzles, Hyper-Casual, Mid-Core Casuals, Military Casuals,
+  Casual-Survivals, Idlers, First Project, More Projects). Countryballs (Steam) merges the base game and
+  the Secret Technologies DLC media; folders `Images|Videos/Countryballs`, `CountryballsDLC`, `NWO`, `Kids`,
+  `HouseBuilder`.
+- Briefs without media on the site yet: Throne Siege, Math Solitaire, Countryballs (mobile), Grid Guardians,
+  EpicUkraine. Add a section (copy a block) once they have screenshots/clips.
+- Landscape clips in the Ship Hunter / Tank Hunter / Invasion sections are shown cropped to 3:4 and several
+  clips are portrait games pillarboxed inside a landscape frame (the tile `--ar` hides the bars).
+- Long source videos are split by length (<= 45 s: one clip, <= 120 s: two, longer: four), re-encoded per
+  the recipe above (4 / 6 / 8 MB budget by clip length) and numbered `<Folder>N.mp4` + `.jpg` poster.
+  Raw originals live outside the repo in `../_originals/`.
 
 ## Git
 - Work directly on `main` (no `develop`). Commit messages: `P-<N> <what was done>`, continuing the
-  existing counter (last used: P-56). Commit/push only when asked (the owner has OK'd periodic local
+  existing counter (last used: P-64). Commit/push only when asked (the owner has OK'd periodic local
   commits to save progress during multi-step work; pushing still needs an explicit ask).
 - Preview locally: `python3 -m http.server 8000` from this folder (see `.claude/launch.json`).
