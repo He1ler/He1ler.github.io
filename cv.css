@@ -1,0 +1,304 @@
+/* cv.css - CV page: dark neon theme on screen, clean white A4 layout in print / PDF */
+:root {
+    --bg: #080808;
+    --card: #140000;
+    --red: #ff003c;
+    --accent: #22d3ee;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.55;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.cv-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(139, 0, 0, 0.5);
+}
+
+.cv-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--red);
+}
+
+.cv-bar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.cv-btn {
+    padding: 0.45rem 1.1rem;
+    border: 2px solid var(--accent);
+    border-radius: 9999px;
+    font-weight: 600;
+    color: var(--accent);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cv-btn:hover {
+    background: var(--accent);
+    color: #031317;
+    text-decoration: none;
+}
+
+.cv-page {
+    max-width: 52rem;
+    margin: 2rem auto 4rem;
+    padding: 2rem 2.25rem;
+    background: linear-gradient(135deg, #1a0000, var(--card), #1a0000);
+    border: 1px solid #b91c1c;
+    border-radius: 1rem;
+    box-shadow: 0 0 25px rgba(255, 0, 60, 0.25);
+}
+
+.cv-head h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: var(--red);
+}
+
+.cv-title {
+    margin: 0.25rem 0 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.cv-tagline {
+    margin: 0.1rem 0 0.75rem;
+    color: var(--muted);
+}
+
+.cv-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.95rem;
+}
+
+section {
+    margin-top: 1.75rem;
+}
+
+h2 {
+    margin: 0 0 0.6rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid rgba(255, 0, 60, 0.45);
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+p {
+    margin: 0 0 0.5rem;
+}
+
+.cv-skills {
+    margin: 0;
+}
+
+.cv-skill {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: 0.75rem;
+    padding: 0.25rem 0;
+}
+
+.cv-skill dt {
+    font-weight: 600;
+    color: #fff;
+}
+
+.cv-skill dd {
+    margin: 0;
+}
+
+.cv-job {
+    margin-bottom: 1.1rem;
+}
+
+.cv-job-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.25rem 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.cv-job-head h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #fff;
+}
+
+.cv-job-head h3 span {
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.cv-job-head time {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+li {
+    margin-bottom: 0.3rem;
+}
+
+.cv-projects {
+    padding-left: 1.1rem;
+}
+
+.cv-projects em {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.cv-note {
+    margin-top: 0.6rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.cv-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+    .cv-page {
+        margin: 1rem 0.75rem 3rem;
+        padding: 1.25rem 1.1rem;
+    }
+
+    .cv-head h1 {
+        font-size: 2rem;
+    }
+
+    .cv-skill {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .cv-two {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .cv-bar-actions a:first-child {
+        display: none;
+    }
+}
+
+@page {
+    size: A4;
+    margin: 12mm 14mm;
+}
+
+@media print {
+    body {
+        background: #fff;
+        color: #111;
+        font-size: 10pt;
+        line-height: 1.35;
+    }
+
+    .cv-bar {
+        display: none;
+    }
+
+    .cv-page {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        background: none;
+        border: 0;
+        box-shadow: none;
+    }
+
+    a,
+    .cv-head h1 {
+        color: #111;
+    }
+
+    .cv-head h1 {
+        font-size: 24pt;
+        color: #b3002d;
+    }
+
+    .cv-title {
+        color: #b3002d;
+        font-size: 12pt;
+    }
+
+    .cv-tagline,
+    .cv-note,
+    .cv-job-head time,
+    .cv-job-head h3 span,
+    .cv-projects em {
+        color: #555;
+    }
+
+    h2 {
+        color: #b3002d;
+        border-color: #b3002d;
+        font-size: 10.5pt;
+    }
+
+    .cv-skill dt,
+    .cv-job-head h3 {
+        color: #111;
+    }
+
+    section {
+        margin-top: 10pt;
+        break-inside: avoid-page;
+    }
+
+    .cv-job {
+        break-inside: avoid;
+        margin-bottom: 7pt;
+    }
+
+    li {
+        margin-bottom: 1.5pt;
+    }
+}

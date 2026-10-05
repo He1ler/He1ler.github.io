@@ -62,6 +62,13 @@ prev/next list, so the `openModal('…', '…')` form is load-bearing.
 - Social preview: `og-image.jpg` (1200×630) referenced by `og:image`; no Twitter tags on purpose.
   Regenerate if the name/tagline/screenshots change.
 
+## CV page
+- `cv.html` + `cv.css` (dark neon on screen, white A4 in print) is linked from the nav and the hero; the
+  public page shows email, portfolio, GitHub, LinkedIn and Steam only (no phone / date of birth).
+- `Denys-Korolchuk-CV.pdf` is printed from it: `chrome --headless --no-pdf-header-footer
+  --print-to-pdf=Denys-Korolchuk-CV.pdf http://localhost:8000/cv.html` (2 pages). Regenerate it whenever
+  `cv.html` changes. An editable Word copy lives outside the repo (`E:\WORK\SelfDevelopment\CV_updated.docx`).
+
 ## Media
 - `Images/<Project>/<Project>N.jpg`, `Videos/<Project>/<Project>N.mp4` (H.264 MP4) plus a poster
   `Videos/<Project>/<Project>N.jpg` next to every clip (long side ≤ 960 px, ~10–60 KB; a frame at 15 %
@@ -107,6 +114,6 @@ prev/next list, so the `openModal('…', '…')` form is load-bearing.
 
 ## Git
 - Work directly on `main` (no `develop`). Commit messages: `P-<N> <what was done>`, continuing the
-  existing counter (last used: P-67). Commit/push only when asked (the owner has OK'd periodic local
+  existing counter (last used: P-68). Commit/push only when asked (the owner has OK'd periodic local
   commits to save progress during multi-step work; pushing still needs an explicit ask).
 - Preview locally: `python3 -m http.server 8000` from this folder (see `.claude/launch.json`).
