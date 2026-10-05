@@ -86,10 +86,12 @@ prev/next list, so the `openModal('…', '…')` form is load-bearing.
 - Source of truth for text: the owner's `Projects-Overview-All.md` (kept local, listed in `.git/info/exclude`,
   never published). Each section shows the title, role / team / platform chips, description, the gallery,
   a collapsible "Features & tech" list (`<details class="project-details">`) and 6 tech tags.
-- 27 project sections in 8 categories (Puzzles, Hyper-Casual, Mid-Core Casuals, Military Casuals,
-  Casual-Survivals, Idlers, First Project, More Projects). Countryballs (Steam) merges the base game and
-  the Secret Technologies DLC media; folders `Images|Videos/Countryballs`, `CountryballsDLC`, `NWO`, `Kids`,
-  `HouseBuilder`.
+- 27 project sections in 4 tiers, biggest / newest first and older / smaller last: Flagship Projects
+  (Countryballs Steam, NWO, KidsProject, The Last Outpost), Mobile Games, Hyper-Casual & Puzzles,
+  Prototypes & Early Work. A red genre chip (Puzzle, Idle Tycoon, ...) on each card replaces the old
+  genre categories. Countryballs (Steam) merges the base game and the Secret Technologies DLC media;
+  folders `Images|Videos/Countryballs`, `CountryballsDLC`, `NWO`, `Kids`, `HouseBuilder`.
+- Featured strip: Countryballs, NWO, Ship Hunter; Throne Siege joins once it has media.
 - Briefs without media on the site yet: Throne Siege, Math Solitaire, Countryballs (mobile), Grid Guardians,
   EpicUkraine. Add a section (copy a block) once they have screenshots/clips.
 - Landscape clips in the Ship Hunter / Tank Hunter / Invasion sections are shown cropped to 3:4 and several
@@ -100,6 +102,6 @@ prev/next list, so the `openModal('…', '…')` form is load-bearing.
 
 ## Git
 - Work directly on `main` (no `develop`). Commit messages: `P-<N> <what was done>`, continuing the
-  existing counter (last used: P-64). Commit/push only when asked (the owner has OK'd periodic local
+  existing counter (last used: P-65). Commit/push only when asked (the owner has OK'd periodic local
   commits to save progress during multi-step work; pushing still needs an explicit ask).
 - Preview locally: `python3 -m http.server 8000` from this folder (see `.claude/launch.json`).

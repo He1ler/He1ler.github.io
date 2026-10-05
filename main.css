@@ -354,7 +354,7 @@ footer {
 
 .featured-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 1.25rem;
 }
 
@@ -411,12 +411,6 @@ footer {
     font-size: 0.75rem;
     color: var(--accent);
     background: rgba(0, 0, 0, 0.65);
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-    .featured-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 }
 
 /* Phones: swipeable row of cards instead of a grid */
@@ -512,6 +506,12 @@ footer {
     background: rgba(var(--accent-rgb), 0.08);
     font-size: 0.85rem;
     color: var(--accent);
+}
+
+.project-meta .genre {
+    border-color: rgba(255, 0, 60, 0.55);
+    background: rgba(255, 0, 60, 0.1);
+    color: #fca5a5;
 }
 
 .project-details {
