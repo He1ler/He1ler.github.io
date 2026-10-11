@@ -40,14 +40,14 @@
   <!-- ============================================================== -->
   <!-- CUSTOM STYLES                                                  -->
   <!-- ============================================================== -->
-  <link rel="stylesheet" href="main.css?v=20261005j">
-  <link rel="stylesheet" href="animations.css?v=20261005j">
-  <link rel="stylesheet" href="modal.css?v=20261005j">
+  <link rel="stylesheet" href="main.css?v=20261011">
+  <link rel="stylesheet" href="animations.css?v=20261011">
+  <link rel="stylesheet" href="modal.css?v=20261011">
 
   <!-- Tailwind, precompiled from tailwind.input.css. Keep it the last stylesheet: its utilities must beat
        equal-specificity Swiper/custom rules (.swiper-slide display, arrow color) and its `pulse` keyframes
        must override the ones in animations.css, exactly as the former Play CDN's end-of-head <style> did. -->
-  <link rel="stylesheet" href="tailwind.css?v=20261005j">
+  <link rel="stylesheet" href="tailwind.css?v=20261011">
 </head>
 
 <body class="bg-deep text-white">
@@ -298,7 +298,9 @@
 
         <a class="featured-card" href="#throne-siege-rts-strategy" aria-label="Throne Siege, jump to project">
           <div class="featured-media is-portrait">
-            <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege4.jpg" alt="" />
+            <video poster="Videos/ThroneSiege/ThroneSiege10.jpg" muted loop playsinline preload="none" aria-hidden="true">
+              <source src="Videos/ThroneSiege/ThroneSiege10.mp4" type="video/mp4" />
+            </video>
           </div>
           <div class="featured-info"><span class="featured-cat">Tactics Card Game</span><h3>Throne Siege</h3><p>Mobile 2D tactics card game: draft cards, place armies on a grid, watch battles auto-resolve.</p><span class="featured-cta">View project &rarr;</span></div>
         </a>
@@ -361,6 +363,46 @@
 <!-- Slide: Video -->
 <div class="swiper-slide flex justify-center">
   <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 1 full size"
+       onclick="openModal('Videos/ThroneSiege/ThroneSiege10.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege10.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/ThroneSiege/ThroneSiege10.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 2 full size"
+       onclick="openModal('Videos/ThroneSiege/ThroneSiege11.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege11.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/ThroneSiege/ThroneSiege11.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 3 full size"
+       onclick="openModal('Videos/ThroneSiege/ThroneSiege12.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege12.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/ThroneSiege/ThroneSiege12.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 4 full size"
+       onclick="openModal('Videos/ThroneSiege/ThroneSiege13.mp4', 'video')">
+    <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege13.jpg" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="Videos/ThroneSiege/ThroneSiege13.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide: Video -->
+<div class="swiper-slide flex justify-center">
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 5 full size"
        onclick="openModal('Videos/ThroneSiege/ThroneSiege1.mp4', 'video')">
     <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege1.jpg" muted loop playsinline preload="none" aria-hidden="true">
       <source src="Videos/ThroneSiege/ThroneSiege1.mp4" type="video/mp4" />
@@ -370,7 +412,7 @@
 
 <!-- Slide: Video -->
 <div class="swiper-slide flex justify-center">
-  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 2 full size"
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 6 full size"
        onclick="openModal('Videos/ThroneSiege/ThroneSiege2.mp4', 'video')">
     <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege2.jpg" muted loop playsinline preload="none" aria-hidden="true">
       <source src="Videos/ThroneSiege/ThroneSiege2.mp4" type="video/mp4" />
@@ -380,7 +422,7 @@
 
 <!-- Slide: Video -->
 <div class="swiper-slide flex justify-center">
-  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 3 full size"
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 7 full size"
        onclick="openModal('Videos/ThroneSiege/ThroneSiege3.mp4', 'video')">
     <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege3.jpg" muted loop playsinline preload="none" aria-hidden="true">
       <source src="Videos/ThroneSiege/ThroneSiege3.mp4" type="video/mp4" />
@@ -390,7 +432,7 @@
 
 <!-- Slide: Video -->
 <div class="swiper-slide flex justify-center">
-  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 4 full size"
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 8 full size"
        onclick="openModal('Videos/ThroneSiege/ThroneSiege4.mp4', 'video')">
     <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege4.jpg" muted loop playsinline preload="none" aria-hidden="true">
       <source src="Videos/ThroneSiege/ThroneSiege4.mp4" type="video/mp4" />
@@ -400,7 +442,7 @@
 
 <!-- Slide: Video -->
 <div class="swiper-slide flex justify-center">
-  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 5 full size"
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 9 full size"
        onclick="openModal('Videos/ThroneSiege/ThroneSiege5.mp4', 'video')">
     <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege5.jpg" muted loop playsinline preload="none" aria-hidden="true">
       <source src="Videos/ThroneSiege/ThroneSiege5.mp4" type="video/mp4" />
@@ -410,7 +452,7 @@
 
 <!-- Slide: Video -->
 <div class="swiper-slide flex justify-center">
-  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 6 full size"
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 10 full size"
        onclick="openModal('Videos/ThroneSiege/ThroneSiege6.mp4', 'video')">
     <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege6.jpg" muted loop playsinline preload="none" aria-hidden="true">
       <source src="Videos/ThroneSiege/ThroneSiege6.mp4" type="video/mp4" />
@@ -420,7 +462,7 @@
 
 <!-- Slide: Video -->
 <div class="swiper-slide flex justify-center">
-  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 7 full size"
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 11 full size"
        onclick="openModal('Videos/ThroneSiege/ThroneSiege7.mp4', 'video')">
     <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege7.jpg" muted loop playsinline preload="none" aria-hidden="true">
       <source src="Videos/ThroneSiege/ThroneSiege7.mp4" type="video/mp4" />
@@ -430,7 +472,7 @@
 
 <!-- Slide: Video -->
 <div class="swiper-slide flex justify-center">
-  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 8 full size"
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 12 full size"
        onclick="openModal('Videos/ThroneSiege/ThroneSiege8.mp4', 'video')">
     <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege8.jpg" muted loop playsinline preload="none" aria-hidden="true">
       <source src="Videos/ThroneSiege/ThroneSiege8.mp4" type="video/mp4" />
@@ -440,7 +482,7 @@
 
 <!-- Slide: Video -->
 <div class="swiper-slide flex justify-center">
-  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 9 full size"
+  <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Play Throne Siege: RTS Strategy gameplay clip 13 full size"
        onclick="openModal('Videos/ThroneSiege/ThroneSiege9.mp4', 'video')">
     <video class="w-full h-full object-cover pointer-events-none" poster="Videos/ThroneSiege/ThroneSiege9.jpg" muted loop playsinline preload="none" aria-hidden="true">
       <source src="Videos/ThroneSiege/ThroneSiege9.mp4" type="video/mp4" />
@@ -452,7 +494,7 @@
 <div class="swiper-slide flex justify-center">
   <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Open Throne Siege: RTS Strategy screenshot 1 full size"
        onclick="openModal('Images/ThroneSiege/ThroneSiege1.jpg', 'image')">
-    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege1.jpg" alt="Throne Siege: RTS Strategy screenshot 1"
+    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege1.jpg" alt="Throne Siege: RTS Strategy screenshot 1\"
          class="w-full h-full object-cover" />
   </div>
 </div>
@@ -461,7 +503,7 @@
 <div class="swiper-slide flex justify-center">
   <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Open Throne Siege: RTS Strategy screenshot 2 full size"
        onclick="openModal('Images/ThroneSiege/ThroneSiege2.jpg', 'image')">
-    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege2.jpg" alt="Throne Siege: RTS Strategy screenshot 2"
+    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege2.jpg" alt="Throne Siege: RTS Strategy screenshot 2\"
          class="w-full h-full object-cover" />
   </div>
 </div>
@@ -470,7 +512,7 @@
 <div class="swiper-slide flex justify-center">
   <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Open Throne Siege: RTS Strategy screenshot 3 full size"
        onclick="openModal('Images/ThroneSiege/ThroneSiege3.jpg', 'image')">
-    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege3.jpg" alt="Throne Siege: RTS Strategy screenshot 3"
+    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege3.jpg" alt="Throne Siege: RTS Strategy screenshot 3\"
          class="w-full h-full object-cover" />
   </div>
 </div>
@@ -479,7 +521,7 @@
 <div class="swiper-slide flex justify-center">
   <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Open Throne Siege: RTS Strategy screenshot 4 full size"
        onclick="openModal('Images/ThroneSiege/ThroneSiege4.jpg', 'image')">
-    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege4.jpg" alt="Throne Siege: RTS Strategy screenshot 4"
+    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege4.jpg" alt="Throne Siege: RTS Strategy screenshot 4\"
          class="w-full h-full object-cover" />
   </div>
 </div>
@@ -488,7 +530,7 @@
 <div class="swiper-slide flex justify-center">
   <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Open Throne Siege: RTS Strategy screenshot 5 full size"
        onclick="openModal('Images/ThroneSiege/ThroneSiege5.jpg', 'image')">
-    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege5.jpg" alt="Throne Siege: RTS Strategy screenshot 5"
+    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege5.jpg" alt="Throne Siege: RTS Strategy screenshot 5\"
          class="w-full h-full object-cover" />
   </div>
 </div>
@@ -497,7 +539,7 @@
 <div class="swiper-slide flex justify-center">
   <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Open Throne Siege: RTS Strategy screenshot 6 full size"
        onclick="openModal('Images/ThroneSiege/ThroneSiege6.jpg', 'image')">
-    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege6.jpg" alt="Throne Siege: RTS Strategy screenshot 6"
+    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege6.jpg" alt="Throne Siege: RTS Strategy screenshot 6\"
          class="w-full h-full object-cover" />
   </div>
 </div>
@@ -506,7 +548,7 @@
 <div class="swiper-slide flex justify-center">
   <div class="gallery-tile border-[4px] border-red-600 rounded-xl shadow-xl overflow-hidden cursor-pointer" style="--ar: 0.5625" role="button" tabindex="0" aria-label="Open Throne Siege: RTS Strategy screenshot 7 full size"
        onclick="openModal('Images/ThroneSiege/ThroneSiege7.jpg', 'image')">
-    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege7.jpg" alt="Throne Siege: RTS Strategy screenshot 7"
+    <img loading="lazy" decoding="async" src="Images/ThroneSiege/ThroneSiege7.jpg" alt="Throne Siege: RTS Strategy screenshot 7\"
          class="w-full h-full object-cover" />
   </div>
 </div>
@@ -3822,10 +3864,10 @@
   <!-- SCRIPTS                                                        -->
   <!-- ============================================================== -->
   <!-- Custom JavaScript files -->
-  <script src="modal.js?v=20261005j"></script>
-  <script src="swiper-config.js?v=20261005j"></script>
-  <script src="particles-config.js?v=20261005j"></script>
-  <script src="email.js?v=20261005j"></script>
-  <script src="main.js?v=20261005j"></script>
+  <script src="modal.js?v=20261011"></script>
+  <script src="swiper-config.js?v=20261011"></script>
+  <script src="particles-config.js?v=20261011"></script>
+  <script src="email.js?v=20261011"></script>
+  <script src="main.js?v=20261011"></script>
 </body>
 </html>
